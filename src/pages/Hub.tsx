@@ -47,7 +47,7 @@ function HubCard({ t, isActive, themeColor, onSelectTool, href }: any) {
                         e.preventDefault();
                     }
                 }}
-                className={`relative z-20 w-full text-left p-6 rounded-2xl border transition-all duration-300 block bg-zinc-950/40 backdrop-blur-sm ${isActive ? `border-zinc-800/80 hover:border-zinc-700 hover:shadow-2xl hover:shadow-${themeColor}-500/5 cursor-pointer` : 'border-zinc-800/50 cursor-not-allowed opacity-60'}`}
+                className={`relative z-20 w-full text-left p-6 rounded-2xl border transition-all duration-300 block bg-zinc-950/40 backdrop-blur-sm ${isActive ? `border-zinc-800 focus:border-zinc-700 md:border-zinc-800/80 hover:border-zinc-700 hover:shadow-2xl hover:shadow-${themeColor}-500/5 cursor-pointer` : 'border-zinc-800 focus:border-zinc-700 md:border-zinc-800/50 cursor-not-allowed opacity-60'}`}
                 aria-label={`Open ${t.title}`}
                 title={isActive ? `Open ${t.title}` : 'Coming soon'}
             >
