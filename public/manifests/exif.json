@@ -1,0 +1,17 @@
+{
+    "name": "PrivaShield EXIF Stripper",
+    "short_name": "PrivaShield",
+    "description": "Locally remove invasive EXIF metadata from images before uploading.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/privashield",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

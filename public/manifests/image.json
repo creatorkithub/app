@@ -1,0 +1,17 @@
+{
+    "name": "Universal Image Converter",
+    "short_name": "Img Converter",
+    "description": "Locally decode and convert raw web images like PSD, TIFF, HEIC.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/universal-image-converter",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

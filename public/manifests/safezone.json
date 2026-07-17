@@ -1,0 +1,17 @@
+{
+    "name": "Social Safe-Zone",
+    "short_name": "Safe Zone",
+    "description": "Overlay layout guides for TikTok, Reels, Shorts UI.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/social-safe-zone",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Pomodoro Task Tracker",
+    "short_name": "Pomodoro",
+    "description": "Track deep-work sessions securely within browser storage via a local Pomodoro ledger.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/pomodoro-tracker",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

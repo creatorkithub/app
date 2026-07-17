@@ -1,0 +1,17 @@
+{
+    "name": "Lorem Context Builder",
+    "short_name": "Lorem Gen",
+    "description": "Generate dynamic dummy paragraphs embedded with Tech, Legal, or Medical vocabulary.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/lorem-builder",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

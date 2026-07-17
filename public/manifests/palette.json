@@ -1,0 +1,17 @@
+{
+    "name": "Image Palette Swatch Extractor",
+    "short_name": "Palette",
+    "description": "Locally detect dominant K-means clusters from images for UI design usage.",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "display": "standalone",
+    "start_url": "/palette-extractor",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "192x192 512x512 any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

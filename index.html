@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied'
+    });
+  </script>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      var manifestUrl = '/manifest.webmanifest';
+      if (path.startsWith('/pdf-toolkit') || path.startsWith('/local-pdf')) manifestUrl = '/manifests/pdf.json';
+      else if (path.startsWith('/crypto-audit') || path.startsWith('/password-analyzer')) manifestUrl = '/manifests/crypto.json';
+      else if (path.startsWith('/privashield') || path.startsWith('/exif-stripper')) manifestUrl = '/manifests/exif.json';
+      else if (path.startsWith('/a11y-scorecard') || path.startsWith('/accessibility')) manifestUrl = '/manifests/a11y.json';
+      else if (path.startsWith('/universal-image-converter') || path.startsWith('/image-converter')) manifestUrl = '/manifests/image.json';
+      else if (path.startsWith('/social-media-safe-zone-overlay') || path.startsWith('/safe-zone')) manifestUrl = '/manifests/safezone.json';
+
+      document.write('<link rel="manifest" id="dynamic-manifest" href="' + manifestUrl + '">');
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () { });
+        });
+      }
+    })();
+  </script>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages (https://github.com/rafgraph/spa-github-pages)
+    (function (l) {
+      if (l.search[1] === 'p' && l.search[2] === '=') {
+        var a = l.search.slice(1).split('&').map(function (s) { return s.replace(/~and~/g, '&') })
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + a[0].slice(2) +
+          (a.length > 1 ? '?' + a.slice(1).join('&').replace(/q=/, '') : '') + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+  <meta name="description"
+    content="A free, 100% offline suite of web tools for creators - process PDFs, convert images, and more." />
+  <meta name="keywords"
+    content="PDF tools, Social media safe zone, Client-side pdf merge, image to pdf, privacy tools, social media overlay" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:title" content="Creator Kit Hub - Client-Side SEO Tools" />
+  <meta property="og:description"
+    content="A free, 100% offline suite of web tools for creators - process PDFs, convert images, and more." />
+  <meta property="og:type" content="website" />
+
+  <link rel="apple-touch-icon" href="/icon.svg" />
+  <title>Creator Kit Hub - Client-Side App Suite</title>
+</head>
+
+<body style="background-color: #09090b; color: #ffffff;" class="bg-[#09090b] text-white">
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
