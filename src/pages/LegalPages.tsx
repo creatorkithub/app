@@ -165,7 +165,7 @@ export const ContactUs = () => {
 
             <div className="mt-8 bg-zinc-900 border border-zinc-800 rounded-xl p-6 text-center">
                 <h3 className="text-zinc-100 font-bold mb-2">Direct Support Channel</h3>
-                <ObfuscatedEmail className="text-blue-400 hover:text-blue-300 transition-colors text-xl font-mono" />
+                <ObfuscatedEmail className="text-blue-400 hover:text-blue-300 transition-colors text-lg sm:text-xl font-mono break-all" />
             </div>
 
 
