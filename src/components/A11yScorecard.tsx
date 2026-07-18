@@ -249,7 +249,7 @@ export default function A11yScorecard() {
                                 { label: 'Normal Text (AAA)', req: 7.0 },
                                 { label: 'Large Text (AAA)', req: 4.5 },
                             ].map((tier, i) => (
-                                <div key={i} className="flex flex-col items-center p-3 rounded-xl bg-zinc-950 border border-zinc-800/50 w-32">
+                                <div key={i} className="flex flex-col items-center p-3 rounded-xl bg-zinc-950 border border-zinc-800/50 w-full">
                                     <div className="text-xs text-zinc-500 font-semibold mb-2 text-center h-8">{tier.label}</div>
                                     {contrast >= tier.req ? (
                                         <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-bold border border-green-500/20 flex items-center gap-1">

@@ -260,11 +260,11 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
 
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#09090b] text-white font-sans selection:bg-blue-500/30 overflow-x-hidden overflow-y-auto pb-12">
-      <div className="flex flex-col-reverse md:flex-row h-[100dvh] w-full flex-shrink-0">
+    <div className="flex flex-col min-h-screen bg-[#09090b] text-white font-sans selection:bg-blue-500/30 overflow-x-hidden pb-12">
+      <div className="flex flex-col md:flex-row min-h-[100dvh] w-full">
 
         {/* Left Sidebar - Controls */}
-        <aside className="w-full md:w-80 flex-shrink-0 border-t md:border-t-0 md:border-r border-[#27272a] bg-[#18181b] flex flex-col h-[65dvh] md:h-full z-20 shadow-2xl relative">
+        <aside className="w-full md:w-80 flex-shrink-0 border-t md:border-t-0 md:border-r border-[#27272a] bg-[#18181b] flex flex-col z-20 shadow-2xl relative order-2 md:order-1">
           <div className="p-3 md:p-5 border-b border-[#27272a]">
             <div className="flex items-center justify-between mb-2 md:mb-4">
               <button onClick={onBack} className="text-xs font-semibold text-zinc-400 hover:text-zinc-200 uppercase tracking-wider flex items-center gap-1.5 transition-colors bg-zinc-800/50 hover:bg-zinc-700 px-3 py-1.5 rounded-full border border-zinc-700">
@@ -457,8 +457,8 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
           </div>
         </aside>
 
-        <main className="flex-1 relative flex flex-col bg-zinc-950 overflow-hidden border-b border-zinc-800 md:border-none md:h-full">
-          <div className="absolute top-0 left-0 right-0 p-3 md:p-4 flex justify-between items-center z-10 pointer-events-none">
+        <main className="flex-1 relative flex flex-col bg-zinc-950 overflow-hidden border-b border-zinc-800 md:border-none h-[50dvh] md:h-auto min-h-[400px] order-1 md:order-2">
+          <div className="absolute top-0 left-0 right-0 p-3 md:p-4 flex justify-between items-center z-50 pointer-events-none">
             <div className="pointer-events-auto bg-zinc-900/80 backdrop-blur-md border border-[#27272a] rounded-full px-3 py-1.5 md:px-4 md:py-2 flex items-center gap-2 md:gap-3 shadow-xl transform scale-90 md:scale-100 origin-top-left">
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)] animate-pulse"></div>
               <span className="text-xs font-medium text-zinc-300 uppercase tracking-wider">Live Preview</span>

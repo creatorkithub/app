@@ -43,6 +43,7 @@ export default function App() {
 
   const [currentPath, setCurrentPath] = useState(getLogicalPath);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [showOfflineTooltip, setShowOfflineTooltip] = useState(false);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -277,14 +278,14 @@ export default function App() {
             </button>
           )}
 
-          <div className="group relative">
-            <div className="flex items-center gap-2 bg-[#18181b]/95 backdrop-blur-md border border-emerald-500/30 px-3 py-2 rounded-full shadow-[0_4_20px_rgba(16,185,129,0.15)] group-hover:bg-[#27272a] group-hover:border-emerald-500/50 transition-all cursor-default">
+          <div className="group relative" onClick={() => setShowOfflineTooltip(!showOfflineTooltip)} onMouseLeave={() => setShowOfflineTooltip(false)}>
+            <div className="flex items-center gap-2 bg-[#18181b]/95 backdrop-blur-md border border-emerald-500/30 px-3 py-2 rounded-full shadow-[0_4_20px_rgba(16,185,129,0.15)] group-hover:bg-[#27272a] group-hover:border-emerald-500/50 transition-all cursor-pointer">
               <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></div>
               <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest hidden sm:inline-block pr-1">Works Offline</span>
             </div>
 
             {/* Hover Tooltip Details */}
-            <div className="absolute bottom-full right-0 mb-3 w-64 p-3 bg-[#18181b] border border-zinc-800 rounded-xl shadow-2xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 origin-bottom-right">
+            <div className={`absolute bottom-full right-0 mb-3 w-64 p-3 bg-[#18181b] border border-zinc-800 rounded-xl shadow-2xl transition-all duration-300 origin-bottom-right ${showOfflineTooltip ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0'}`}>
               <p className="text-xs text-zinc-400 leading-relaxed">
                 <strong className="text-emerald-400 block mb-1">100% Client-Side Privacy</strong>
                 All tools in the hub operate entirely within your browser memory. Even if you disconnect from the internet, your files are processed locally and never uploaded to any cloud server.

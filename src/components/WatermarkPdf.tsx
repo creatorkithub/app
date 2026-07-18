@@ -15,6 +15,7 @@ export default function WatermarkPdf() {
     const [opacity, setOpacity] = useState('0.3');
     const [fontSize, setFontSize] = useState('60');
     const [color, setColor] = useState('#6b7280');
+    const [align, setAlign] = useState('center');
 
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -79,9 +80,19 @@ export default function WatermarkPdf() {
                 const textWidth = helveticaFont.widthOfTextAtSize(watermarkText, size);
                 const textHeight = helveticaFont.heightAtSize(size);
 
+                const padding = 50;
+                let x = width / 2 - textWidth / 2;
+                let y = height / 2 - textHeight / 2;
+
+                if (align.includes('left')) x = padding;
+                else if (align.includes('right')) x = width - textWidth - padding;
+
+                if (align.includes('top')) y = height - textHeight - padding;
+                else if (align.includes('bottom')) y = padding;
+
                 page.drawText(watermarkText, {
-                    x: width / 2 - textWidth / 2,
-                    y: height / 2 - textHeight / 2,
+                    x,
+                    y,
                     size,
                     font: helveticaFont,
                     color: textColor,
@@ -217,6 +228,25 @@ export default function WatermarkPdf() {
                                     </button>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-zinc-400 mb-2">Placement</label>
+                        <div className="grid grid-cols-3 gap-1.5 p-2 bg-zinc-800/50 rounded-xl border border-zinc-700 w-32 aspect-square mb-6">
+                            {[
+                                'top-left', 'top-center', 'top-right',
+                                'middle-left', 'center', 'middle-right',
+                                'bottom-left', 'bottom-center', 'bottom-right'
+                            ].map(p => (
+                                <button
+                                    key={p}
+                                    onClick={() => setAlign(p)}
+                                    disabled={!file}
+                                    className={`w-full h-full rounded border transition-colors ${align === p ? 'bg-orange-500 border-orange-500 shadow-md shadow-orange-500/30' : 'bg-zinc-700/50 border-zinc-600 hover:bg-zinc-600'} disabled:opacity-50`}
+                                    title={p.replace('-', ' ')}
+                                />
+                            ))}
                         </div>
                     </div>
 
