@@ -472,7 +472,7 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
             </button>
           </div>
 
-          <div className="flex-1 flex items-center justify-center p-4 md:p-8 relative">
+          <div className="flex-1 flex items-center md:items-start justify-center p-4 md:p-8 md:pt-32 relative">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-zinc-950 to-zinc-950 pointer-events-none"></div>
 
             {!media ? (
