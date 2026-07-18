@@ -1,0 +1,15 @@
+# Creator Kit Hub 
+
+Creator Kit Hub is a completely free, 100% offline suite of client-side web tools aimed at creators. 
+Because the application runs entirely in the browser (client-side), no files or data are ever uploaded to a server. 
+
+Tools included:
+- LocalPDF Studio: Merge, split, organize, compress, and rotate PDFs.
+- Image Converter: Convert images (JPG, PNG, HEIC, TIFF, etc) locally.
+- Social Media Safe-Zone: Visualize social media safe zones for UI elements.
+- CryptoAudit Analyzer & Password Generator.
+- Accessibility Color Scorecard.
+- PDF Text Extractor
+- PrivaShield EXIF Stripper
+
+All processing is done entirely inside the user's web browser relying purely on client-side JS and WebAssembly. No data hits our servers, guaranteeing 100% data privacy.

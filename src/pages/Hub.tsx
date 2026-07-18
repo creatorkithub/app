@@ -221,7 +221,7 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                         Creator Kit Hub
                     </h1>
                     <p className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-                        A free, 100% offline suite of web tools for creators - process PDFs, convert images, and more.
+                        Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of web tools tailored for modern creators. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more—all localized directly in your browser.
                     </p>
                 </header>
 
@@ -266,6 +266,30 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                         })}
                     </div>
                 </nav>
+
+                <section className="border-t border-zinc-800/50 pt-12 pb-8 mt-12 bg-zinc-950/20 px-6 sm:px-10 rounded-3xl mb-8">
+                    <h2 className="text-2xl font-bold text-zinc-100 mb-4">Why Choose Creator Kit Hub?</h2>
+                    <p className="text-zinc-400 leading-relaxed mb-8 max-w-4xl">
+                        Creator Kit Hub is meticulously engineered to provide an unparalleled suite of <strong className="text-zinc-200">client-side web tools</strong> for digital creators, developers, and designers.
+                        Unlike traditional online utilities that mandate uploading your sensitive files to external servers, our platform operates 100% offline directly within your browser.
+                        This ensures absolute privacy, instantaneous processing speeds, and zero reliance on internet connectivity.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-zinc-400">
+                        <div>
+                            <h3 className="text-zinc-200 font-semibold mb-2">Uncompromising Privacy</h3>
+                            <p>Every tool, from the LocalPDF Studio to the Universal Image Converter, executes natively in your browser using modern WebAssembly and JavaScript APIs. Your data never leaves your device.</p>
+                        </div>
+                        <div>
+                            <h3 className="text-zinc-200 font-semibold mb-2">Lightning Fast Performance</h3>
+                            <p>By eliminating server round-trips, processing latency is virtually zero. Convert heavy images, split massive PDFs, and calculate accessibility ratios instantly without waiting for network transfers.</p>
+                        </div>
+                        <div>
+                            <h3 className="text-zinc-200 font-semibold mb-2">100% Offline Capability</h3>
+                            <p>Once loaded, Creator Kit Hub functions entirely without an internet connection. Our Progressive Web App (PWA) architecture ensures your workflow remains uninterrupted anywhere, anytime.</p>
+                        </div>
+                    </div>
+                </section>
+
 
             </div>
         </main>

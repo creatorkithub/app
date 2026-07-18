@@ -71,24 +71,48 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
   <meta name="description"
-    content="A free, 100% offline suite of web tools for creators - process PDFs, convert images, and more." />
+    content="Creator Kit Hub is a free, 100% offline suite of client-side web tools for creators. Process PDFs, convert images, and secure files locally." />
   <meta name="keywords"
     content="PDF tools, Social media safe zone, Client-side pdf merge, image to pdf, privacy tools, social media overlay" />
 
   <!-- Open Graph / SEO -->
-  <meta property="og:title" content="Creator Kit Hub - Client-Side SEO Tools" />
+  <meta property="og:title" content="Creator Kit Hub - Client-Side Web Tools for Creators" />
   <meta property="og:description"
-    content="A free, 100% offline suite of web tools for creators - process PDFs, convert images, and more." />
+    content="Creator Kit Hub is a free, 100% offline suite of client-side web tools for creators. Process PDFs, convert images, and secure files locally." />
   <meta property="og:type" content="website" />
 
   <link rel="apple-touch-icon" href="/icon.svg" />
-  <title>Creator Kit Hub - Client-Side App Suite</title>
+  <title>Creator Kit Hub - Client-Side Web Tools for Creators</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Creator Kit Hub",
+      "url": "https://creatorkithub.org/",
+      "description": "A free, 100% offline suite of client-side web tools for creators.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Creator Kit Hub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://creatorkithub.org/icon.svg"
+        }
+      }
+    }
+  </script>
+  <style>
+    .gtm-iframe {
+      display: none;
+      visibility: hidden;
+    }
+  </style>
 </head>
 
-<body style="background-color: #09090b; color: #ffffff;" class="bg-[#09090b] text-white">
+<body class="bg-[#09090b] text-white">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTBGDHJ2" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+      class="gtm-iframe"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
