@@ -14,6 +14,26 @@ const routes = [
     'safe-zone',
     'pdf-toolkit',
     'local-pdf',
+    'pdf-toolkit/image-to-pdf',
+    'pdf-toolkit/remover',
+    'pdf-toolkit/splitter',
+    'pdf-toolkit/merger',
+    'pdf-toolkit/watermark',
+    'pdf-toolkit/rotate',
+    'pdf-toolkit/pdf-to-jpg',
+    'pdf-toolkit/sanitizer',
+    'pdf-toolkit/stamper',
+    'pdf-toolkit/all-tools',
+    'local-pdf/image-to-pdf',
+    'local-pdf/remover',
+    'local-pdf/splitter',
+    'local-pdf/merger',
+    'local-pdf/watermark',
+    'local-pdf/rotate',
+    'local-pdf/pdf-to-jpg',
+    'local-pdf/sanitizer',
+    'local-pdf/stamper',
+    'local-pdf/all-tools',
     'universal-image-converter',
     'image-converter',
     'a11y-scorecard',
@@ -55,7 +75,11 @@ function generateRoutes() {
         count++;
     });
 
-    console.log(`Successfully generated ${count} route files for SEO indexing.`);
+    // Generate 404.html for SPA fallback
+    const notFoundPath = path.join(DIST_DIR, '404.html');
+    fs.writeFileSync(notFoundPath, indexHtml);
+
+    console.log(`Successfully generated ${count} route files and 404.html for SEO indexing and SPA fallback.`);
 }
 
 generateRoutes();
