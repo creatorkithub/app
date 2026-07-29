@@ -63,6 +63,10 @@ function generateRoutes() {
     console.log('Generating static HTML files for SPA routes...');
     let count = 0;
 
+    const baseTitle = 'Creator Kit Hub - Client-Side Web Tools for Creators';
+    const baseDescription = 'Creator Kit Hub is a free, 100% offline suite of client-side web tools for creators. Process PDFs, convert images, and secure files locally.';
+    const baseCanonical = '<link rel="canonical" href="https://creatorkithub.org/" />';
+
     routes.forEach(route => {
         const routeDir = path.join(DIST_DIR, route);
         const targetPath = path.join(routeDir, 'index.html');
@@ -71,7 +75,23 @@ function generateRoutes() {
             fs.mkdirSync(routeDir, { recursive: true });
         }
 
-        fs.writeFileSync(targetPath, indexHtml);
+        let customHtml = indexHtml;
+        const routeParts = route.split('/');
+        const pageName = routeParts[routeParts.length - 1]
+            .split('-')
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+
+        const newTitle = `${pageName} - Creator Kit Hub`;
+        const newDescription = `Free client-side tool: ${pageName}. 100% offline and secure.`;
+        const newCanonical = `<link rel="canonical" href="https://creatorkithub.org/${route}/" />`;
+
+        customHtml = customHtml.split(`<title>${baseTitle}</title>`).join(`<title>${newTitle}</title>`);
+        customHtml = customHtml.split(baseCanonical).join(newCanonical);
+        customHtml = customHtml.split(baseDescription).join(newDescription);
+        customHtml = customHtml.split(baseTitle).join(newTitle);
+
+        fs.writeFileSync(targetPath, customHtml);
         count++;
     });
 
