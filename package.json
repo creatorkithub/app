@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node generate-routes-html.cjs",
+    "indexnow": "node scripts/submit-indexnow.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },

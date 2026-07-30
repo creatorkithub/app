@@ -3,6 +3,7 @@ import Hub from './pages/Hub';
 import Success from './pages/Success';
 import { PrivacyPolicy, TermsOfService, ContactUs, AboutUs } from './pages/LegalPages';
 import { Footer } from './components/Footer';
+import { Navbar } from './components/Navbar';
 import { CookieConsent } from './components/CookieConsent';
 import MouseGlow from './components/MouseGlow';
 import { AdProvider } from './contexts/AdContext';
@@ -245,6 +246,7 @@ export default function App() {
     <RouterContext.Provider value={{ navigate }}>
       <AdProvider>
         <MouseGlow />
+        <Navbar />
         <div key={currentPath} className="animate-page-enter w-full h-full min-h-screen">
           <Suspense fallback={
             <div className="flex items-center justify-center min-h-[600px]">
