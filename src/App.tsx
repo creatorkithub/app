@@ -246,7 +246,7 @@ export default function App() {
     <RouterContext.Provider value={{ navigate }}>
       <AdProvider>
         <MouseGlow />
-        <Navbar />
+        <Navbar navigate={navigate} />
         <div key={currentPath} className="animate-page-enter w-full h-full min-h-screen">
           <Suspense fallback={
             <div className="flex items-center justify-center min-h-[600px]">

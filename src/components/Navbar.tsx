@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useRouter } from '../App';
 import { Menu, X, Monitor, FileText, Layers, Wand2, Lock, Palette, Timer, Type, FileCode } from 'lucide-react';
 
-export const Navbar = () => {
-    const { navigate } = useRouter();
+export const Navbar = ({ navigate }: { navigate: (path: string) => void }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
 
