@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { Type, Activity, BookOpen, Smile, Target } from 'lucide-react';
 
 export default function WordCounter({ onBack }: { onBack: () => void }) {
@@ -8,7 +9,7 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
     useSEO(
         'Local Word Counter & Tone Analyzer | Coleman-Liau Reading Age',
         'Analyze your writing instantly. Calculate word count, sentence density, emotion, and Coleman-Liau readability scores locally.',
-        '/tone-analyzer'
+        '/tone-analyzer/'
     );
 
     const stats = useMemo(() => {
@@ -206,6 +207,7 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="WORD_COUNTER_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-cyan-500/10 blur-[100px] pointer-events-none"></div>

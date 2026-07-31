@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from './AdUnit';
 import { useAdContext } from '../contexts/AdContext';
 import { X, Shield, MapPin, Camera, Clock, AlertTriangle, CheckCircle, Loader2, Download, Settings2, Ghost, Lock, Zap } from 'lucide-react';
 import ExifReader from 'exifreader';
@@ -30,7 +31,7 @@ export default function PrivaShield() {
     useSEO({
         title: 'PrivaShield EXIF Editor',
         description: 'Remove EXIF data offline instantly.',
-        canonical: '/privashield'
+        canonical: '/privashield/'
     });
 
     const checkMetadata = async (file: File): Promise<{ meta: any, risk: 'LOW' | 'MEDIUM' | 'HIGH' }> => {
@@ -516,6 +517,7 @@ export default function PrivaShield() {
 
             </div>
 
+            <AdUnit slotId="PRIVA_BOT" />
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative w-full mb-16">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-indigo-500/10 blur-[100px] pointer-events-none"></div>

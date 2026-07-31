@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from './AdUnit';
 import { useAdContext } from '../contexts/AdContext';
 import { Upload, X, Loader2, Download, Settings, Image as ImageIcon, CheckCircle, Zap, Shield, WifiOff } from 'lucide-react';
 import JSZip from 'jszip';
@@ -31,7 +32,7 @@ export default function UniversalImageConverter() {
     useSEO({
         title: 'Universal Image Converter',
         description: 'Convert arrays of images completely offline.',
-        canonical: '/image-converter'
+        canonical: '/image-converter/'
     });
 
     const handleFiles = (newFiles: FileList | File[]) => {
@@ -408,6 +409,7 @@ export default function UniversalImageConverter() {
                 </div>
             </div>
 
+            <AdUnit slotId="IMAGE_BOT" />
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-orange-500/10 blur-[100px] pointer-events-none"></div>

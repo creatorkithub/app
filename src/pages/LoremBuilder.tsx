@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { FileText, Copy, Check, Hash, RefreshCcw, Quote, BookOpen, ListOrdered } from 'lucide-react';
 
 type Industry = 'standard' | 'tech' | 'legal' | 'medical';
@@ -20,7 +21,7 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
     useSEO(
         'Lorem Context Builder | Technical, Legal & Medical Dummy Text',
         'Generate professional dummy text online. Create dynamic placeholder paragraphs embedded with realistic technical, legal, or medical terms.',
-        '/lorem-builder'
+        '/lorem-builder/'
     );
 
     const generatedText = useMemo(() => {
@@ -130,6 +131,7 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="LOREM_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-fuchsia-500/10 blur-[100px] pointer-events-none"></div>

@@ -43,7 +43,7 @@ export const PrivacyPolicy = () => {
     useSEO({
         title: 'Privacy Policy | Creator Kit Hub',
         description: 'Read the privacy policy for Creator Kit Hub.',
-        canonical: '/privacy-policy'
+        canonical: '/privacy-policy/'
     });
     return (
         <PageWrapper title="Privacy Policy" icon={ShieldAlert}>
@@ -114,7 +114,7 @@ export const TermsOfService = () => {
     useSEO({
         title: 'Terms of Service | Creator Kit Hub',
         description: 'Read the terms of service for Creator Kit Hub.',
-        canonical: '/terms-of-service'
+        canonical: '/terms-of-service/'
     });
     return (
         <PageWrapper title="Terms of Service" icon={FileText}>
@@ -156,7 +156,7 @@ export const ContactUs = () => {
     useSEO({
         title: 'Contact Us | Creator Kit Hub',
         description: 'Get in touch with Creator Kit Hub support.',
-        canonical: '/contact-us'
+        canonical: '/contact-us/'
     });
     return (
         <PageWrapper title="Contact Us" icon={Mail}>
@@ -177,7 +177,7 @@ export const AboutUs = () => {
     useSEO({
         title: 'About Us | Creator Kit Hub',
         description: 'Learn about the privacy-first web tools available at Creator Kit Hub.',
-        canonical: '/about-us'
+        canonical: '/about-us/'
     });
     return (
         <PageWrapper title="About Creator Kit Hub" icon={Info}>

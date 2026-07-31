@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { Layers, Upload, Download, Settings, Image as ImageIcon, Shield } from 'lucide-react';
 import ImageTracer from 'imagetracerjs';
 
@@ -17,7 +18,7 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
     useSEO(
         'SVG Vector Tracer Online | Convert Raster Pixels to Sharp SVG',
         'Convert PNG and JPG pixels into crisp vector artwork. Trace image edges locally using advanced threshold mapping algorithms.',
-        '/svg-tracer'
+        '/svg-tracer/'
     );
 
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -204,6 +205,7 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="SVG_TRACER_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-purple-500/10 blur-[100px] pointer-events-none"></div>

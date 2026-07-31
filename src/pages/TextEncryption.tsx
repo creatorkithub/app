@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { Shield, Lock, Unlock, Copy, Check, FileText } from 'lucide-react';
 import CryptoJS from 'crypto-js';
 
@@ -14,7 +15,7 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
     useSEO(
         'Secure Offline Encryption Vault | AES-256 Client-Side Hashing',
         'Protect your data with our offline encryption vault. Secure text and hash passwords locally using military-grade AES-256 client-side encryption.',
-        '/text-encryption'
+        '/text-encryption/'
     );
 
     const handleProcess = () => {
@@ -179,6 +180,7 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="TEXT_ENCRYPTION_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-orange-500/10 blur-[100px] pointer-events-none"></div>

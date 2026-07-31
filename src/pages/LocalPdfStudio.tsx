@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useAdContext } from '../contexts/AdContext';
+import { AdUnit } from '../components/AdUnit';
 import { useSEO } from '../hooks/useSEO';
 import { ArrowLeft, FileText, Image as ImageIcon, Scissors, Layers, Plus, Download, Trash2, GripVertical, Type, RefreshCw, FileArchive, Tag, Hash, Grid, Menu, X } from 'lucide-react';
 import ImageToPdf from '../components/ImageToPdf';
@@ -37,7 +39,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
     useSEO(
         'LocalPDF Studio | 100% Client-Side PDF Tools',
         'Securely merge, split, stamp, and convert PDF documents entirely in your browser memory. Zero file uploads.',
-        '/pdf-toolkit'
+        '/pdf-toolkit/'
     );
 
     useEffect(() => {
@@ -63,7 +65,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                             <div className="p-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400">
                                 <FileText size={18} />
                             </div>
-                            <span className="font-bold text-lg text-zinc-100 tracking-tight hidden sm:inline-block">LocalPDF Studio</span>
+                            <h1 className="font-bold text-lg text-zinc-100 tracking-tight hidden sm:inline-block">LocalPDF Studio</h1>
                         </div>
                     </div>
 
@@ -206,6 +208,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                 </div>
             )}
 
+            <AdUnit slotId="PDF_BOTTOM" />
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>

@@ -1,6 +1,7 @@
 import { Monitor, Layers, Wand2, FileText, Lock, Palette, Timer, Type, FileCode } from 'lucide-react';
 import { useRef, useState, type MouseEvent, useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 
 function HubCard({ t, isActive, themeColor, onSelectTool, href }: any) {
     const cardRef = useRef<HTMLElement>(null);
@@ -225,6 +226,8 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                     </p>
                 </header>
 
+                <AdUnit slotId="HUB_FEED_SLOT" />
+
                 <nav aria-label="Available Tool Suites">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
                         {tools.map(t => {
@@ -240,18 +243,18 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                                                             t.id === 'lorem-builder' ? 'fuchsia' :
                                                                 t.id === 'svg-tracer' ? 'purple' : 'orange';
 
-                            const href = t.id === 'local-pdf' ? '/pdf-toolkit' :
-                                t.id === 'safe-zone' ? '/social-media-safe-zone-overlay' :
-                                    t.id === 'image-converter' ? '/universal-image-converter' :
-                                        t.id === 'a11y-scorecard' ? '/a11y-scorecard' :
-                                            t.id === 'privashield' ? '/privashield' :
-                                                t.id === 'crypto-audit' ? '/crypto-audit' :
-                                                    t.id === 'text-encryption' ? '/text-encryption' :
-                                                        t.id === 'palette-extractor' ? '/palette-extractor' :
-                                                            t.id === 'pomodoro-tracker' ? '/pomodoro-tracker' :
-                                                                t.id === 'tone-analyzer' ? '/tone-analyzer' :
-                                                                    t.id === 'lorem-builder' ? '/lorem-builder' :
-                                                                        t.id === 'svg-tracer' ? '/svg-tracer' : '#';
+                            const href = t.id === 'local-pdf' ? '/pdf-toolkit/' :
+                                t.id === 'safe-zone' ? '/social-media-safe-zone-overlay/' :
+                                    t.id === 'image-converter' ? '/universal-image-converter/' :
+                                        t.id === 'a11y-scorecard' ? '/a11y-scorecard/' :
+                                            t.id === 'privashield' ? '/privashield/' :
+                                                t.id === 'crypto-audit' ? '/crypto-audit/' :
+                                                    t.id === 'text-encryption' ? '/text-encryption/' :
+                                                        t.id === 'palette-extractor' ? '/palette-extractor/' :
+                                                            t.id === 'pomodoro-tracker' ? '/pomodoro-tracker/' :
+                                                                t.id === 'tone-analyzer' ? '/tone-analyzer/' :
+                                                                    t.id === 'lorem-builder' ? '/lorem-builder/' :
+                                                                        t.id === 'svg-tracer' ? '/svg-tracer/' : '#';
 
                             return (
                                 <HubCard

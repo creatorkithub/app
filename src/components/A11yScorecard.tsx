@@ -93,7 +93,7 @@ export default function A11yScorecard() {
     useSEO({
         title: 'A11y Contrast Scorecard',
         description: 'Evaluate UI color accessibility locally without servers.',
-        canonical: '/a11y-scorecard'
+        canonical: '/a11y-scorecard/'
     });
 
     useEffect(() => {

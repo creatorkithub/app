@@ -6,25 +6,25 @@ export const Navbar = ({ navigate }: { navigate: (path: string) => void }) => {
     const [isMobileToolsOpen, setIsMobileToolsOpen] = useState(false);
 
     const tools = [
-        { id: '/social-media-safe-zone-overlay', title: 'Social Media Safe-Zone', icon: Monitor },
-        { id: '/pdf-toolkit', title: 'LocalPDF Studio', icon: FileText },
-        { id: '/universal-image-converter', title: 'Universal Image Converter', icon: Layers },
-        { id: '/a11y-scorecard', title: 'A11y Color Scorecard', icon: Wand2 },
-        { id: '/privashield', title: 'PrivaShield EXIF Stripper', icon: Wand2 },
-        { id: '/crypto-audit', title: 'CryptoAudit Analyzer', icon: Wand2 },
-        { id: '/text-encryption', title: 'Offline Encryption Vault', icon: Lock },
-        { id: '/palette-extractor', title: 'Palette Swatch Extractor', icon: Palette },
-        { id: '/pomodoro-tracker', title: 'Focus & Ledger Tracker', icon: Timer },
-        { id: '/tone-analyzer', title: 'Word Counter & Tone', icon: Type },
-        { id: '/lorem-builder', title: 'Lorem Context Builder', icon: FileCode },
-        { id: '/svg-tracer', title: 'SVG Vector Tracer', icon: Layers }
+        { id: '/social-media-safe-zone-overlay/', title: 'Social Media Safe-Zone', icon: Monitor },
+        { id: '/pdf-toolkit/', title: 'LocalPDF Studio', icon: FileText },
+        { id: '/universal-image-converter/', title: 'Universal Image Converter', icon: Layers },
+        { id: '/a11y-scorecard/', title: 'A11y Color Scorecard', icon: Wand2 },
+        { id: '/privashield/', title: 'PrivaShield EXIF Stripper', icon: Wand2 },
+        { id: '/crypto-audit/', title: 'CryptoAudit Analyzer', icon: Wand2 },
+        { id: '/text-encryption/', title: 'Offline Encryption Vault', icon: Lock },
+        { id: '/palette-extractor/', title: 'Palette Swatch Extractor', icon: Palette },
+        { id: '/pomodoro-tracker/', title: 'Focus & Ledger Tracker', icon: Timer },
+        { id: '/tone-analyzer/', title: 'Word Counter & Tone', icon: Type },
+        { id: '/lorem-builder/', title: 'Lorem Context Builder', icon: FileCode },
+        { id: '/svg-tracer/', title: 'SVG Vector Tracer', icon: Layers }
     ];
 
     const navLinks = [
         { path: '/', label: 'Home' },
-        { path: '/about-us', label: 'About' },
-        { path: '/contact-us', label: 'Contact' },
-        { path: '/privacy-policy', label: 'Privacy' },
+        { path: '/about-us/', label: 'About' },
+        { path: '/contact-us/', label: 'Contact' },
+        { path: '/privacy-policy/', label: 'Privacy' },
     ];
 
     const handleNavigate = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
@@ -78,8 +78,8 @@ export const Navbar = ({ navigate }: { navigate: (path: string) => void }) => {
                             </div>
                         </div>
 
-                        <a href="/about-us" onClick={(e) => handleNavigate(e, '/about-us')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">About</a>
-                        <a href="/contact-us" onClick={(e) => handleNavigate(e, '/contact-us')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">Contact</a>
+                        <a href="/about-us/" onClick={(e) => handleNavigate(e, '/about-us/')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">About</a>
+                        <a href="/contact-us/" onClick={(e) => handleNavigate(e, '/contact-us/')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">Contact</a>
                     </div>
 
                     {/* Mobile Menu Toggle */}

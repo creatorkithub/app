@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { useAdContext } from '../contexts/AdContext';
 import { Upload, Download, Settings, Grid, Monitor, Lock, Loader2, HelpCircle } from 'lucide-react';
 import { FaTiktok, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -21,7 +22,7 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
   useSEO(
     'Social Media Safe-Zone Preview & Composer',
     'Visually guide and optimize your media layouts for Instagram Reels, YouTube Shorts, and TikTok with strict safe-zones.',
-    '/social-media-safe-zone-overlay'
+    '/social-media-safe-zone-overlay/'
   );
 
   const [media, setMedia] = useState<string | null>(null);
@@ -571,6 +572,7 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
+      <AdUnit slotId="SAFE_ZONE_BOTTOM" />
       {/* Features Overview */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-24 mb-16 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-blue-500/10 blur-[100px] pointer-events-none"></div>

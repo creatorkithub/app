@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { Palette, Upload, Copy, Check } from 'lucide-react';
 
 interface Swatch {
@@ -17,7 +18,7 @@ export default function PaletteExtractor({ onBack }: { onBack: () => void }) {
     useSEO(
         'Online Palette Swatch Extractor | K-Means Image Color Finder',
         'Extract dominant color palettes from images instantly. Use our local K-means clustering tool to generate hex color swatches for UI design.',
-        '/palette-extractor'
+        '/palette-extractor/'
     );
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -223,6 +224,7 @@ export default function PaletteExtractor({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="PALETTE_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-pink-500/10 blur-[100px] pointer-events-none"></div>

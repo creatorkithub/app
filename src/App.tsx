@@ -39,6 +39,9 @@ export default function App() {
     } else if (base !== '/' && path === base.substring(0, base.length - 1)) {
       path = '/';
     }
+    if (path.length > 1 && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
     return path;
   };
 
@@ -99,7 +102,7 @@ export default function App() {
       fullPath = base.replace(/\/$/, '') + (path.startsWith('/') ? path : '/' + path);
     }
     window.history.pushState(null, '', fullPath);
-    setCurrentPath(path);
+    setCurrentPath(path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path);
     window.scrollTo(0, 0);
   };
 
@@ -131,7 +134,7 @@ export default function App() {
                   <div className="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg>
                   </div>
-                  <span className="font-bold text-lg text-zinc-100 tracking-tight">Universal Image Converter</span>
+                  <h1 className="font-bold text-lg text-zinc-100 tracking-tight">Universal Image Converter</h1>
                 </div>
               </div>
             </header>
@@ -181,7 +184,7 @@ export default function App() {
                   <div className="p-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   </div>
-                  <span className="font-bold text-lg text-zinc-100 tracking-tight">PrivaShield Extractor</span>
+                  <h1 className="font-bold text-lg text-zinc-100 tracking-tight">PrivaShield Extractor</h1>
                 </div>
               </div>
             </header>
@@ -206,7 +209,7 @@ export default function App() {
                   <div className="p-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   </div>
-                  <span className="font-bold text-lg text-zinc-100 tracking-tight">CryptoAudit</span>
+                  <h1 className="font-bold text-lg text-zinc-100 tracking-tight">CryptoAudit</h1>
                 </div>
               </div>
             </header>

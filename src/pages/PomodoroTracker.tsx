@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { AdUnit } from '../components/AdUnit';
 import { Timer, Play, Pause, RotateCcw, ListTodo, Plus, Trash2, CheckCircle2 } from 'lucide-react';
 
 interface Task {
@@ -22,7 +23,7 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
     useSEO(
         'Pomodoro Task Tracker | Offline Storage',
         'Boost your productivity with a local client-side Pomodoro timer and task ledger. Track your focus streaks securely without cloud sync.',
-        '/pomodoro-tracker'
+        '/pomodoro-tracker/'
     );
 
     const initialTimeLeft = mode === 'focus' ? 25 * 60 : 5 * 60;
@@ -223,6 +224,7 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
+                <AdUnit slotId="POMODORO_BOTTOM" />
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
