@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { useAdContext } from '../contexts/AdContext';
@@ -275,10 +276,10 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
                 <ArrowLeft size={14} /> Back to Hub
               </button>
             </div>
-            <h1 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-2 leading-tight">
+            <h2 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-2 leading-tight">
               <Monitor className="text-blue-400 flex-shrink-0" size={24} />
               Safe-Zone Overlay
-            </h1>
+            </h2>
             <p className="hidden md:block text-xs text-zinc-400 mt-2">Visual layout optimizer</p>
           </div>
 
@@ -572,8 +573,8 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
-      <AdUnit slotId="SAFE_ZONE_BOTTOM" />
-      {/* Features Overview */}
+      
+            {/* Features Overview */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-24 mb-16 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-blue-500/10 blur-[100px] pointer-events-none"></div>
 
@@ -581,9 +582,9 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
             <Monitor size={16} /> Layout Architecture
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
             Pixel-Perfect Safe Area Overlays <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">& Layout Simulation Engine</span>
-          </h2>
+          </h1>
           <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
             A simple, private toolkit for previewing how your content looks on TikTok, Reels, and Shorts. Ensure your UI elements are never blocked by platform overlays.</p>
         </div>
@@ -632,6 +633,21 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
           </div>
         </div>
       </div>
+
+<div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+        <PrivacyFeatures
+          toolName="Social Media Safe-Zone (Local)"
+          useCases={[
+            "Processing unreleased TV commercial rough-cuts locally.",
+            "Testing confidential marketing campaign layouts before launch.",
+            "Analyzing un-blurred prototype product videos privately."
+          ]}
+        />
+      </div>
+<AdUnit slotId="SAFE_ZONE_BOTTOM" />
+            
+
+
     </div>
   );
 }

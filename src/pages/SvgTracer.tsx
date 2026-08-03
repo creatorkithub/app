@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { Layers, Upload, Download, Settings, Image as ImageIcon, Shield } from 'lucide-react';
@@ -77,7 +78,7 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
                                 <Layers size={24} />
                             </div>
                             <div>
-                                <h1 className="font-bold text-2xl text-zinc-100 tracking-tight">SVG Vector Tracer</h1>
+                                <h2 className="font-bold text-2xl text-zinc-100 tracking-tight">SVG Vector Tracer</h2>
                                 <p className="text-xs text-zinc-400 font-medium tracking-wider uppercase mt-1">Raster to Vector Processing</p>
                             </div>
                         </div>
@@ -205,7 +206,9 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                <AdUnit slotId="SVG_TRACER_BOTTOM" />
+                
+
+                
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-purple-500/10 blur-[100px] pointer-events-none"></div>
@@ -214,9 +217,9 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
                             <Layers size={16} /> Raster to Vector Processing
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                             SVG Vector Tracer <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Trace Image Edges Locally</span>
-                        </h2>
+                        </h1>
                         <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                             Transform standard raster images into infinitely scalable vector graphics. The SVG Vector Tracer analyzes raw image pixels locally to draw clean paths using custom threshold mapping algorithms. Convert your logos, sketches, or icons into crisp, responsive vector formats that look flawless at any display size.
                         </p>
@@ -280,6 +283,20 @@ export default function SvgTracer({ onBack }: { onBack: () => void }) {
                     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
                 }
             `}} />
+        
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="SVG Vector Tracer (Local)"
+                        useCases={[
+                            "Vectorizing unreleased corporate logos without exposing them to cloud APIs.",
+                            "Tracing private sketches into digital curves locally.",
+                            "Converting confidential manufacturing schematics to scalable SVG."
+                        ]}
+                    />
+                </div>
+
+            <AdUnit slotId="SVG_TRACER_BOTTOM" />
         </div>
     );
 }

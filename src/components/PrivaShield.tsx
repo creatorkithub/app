@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { PrivacyFeatures } from './PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from './AdUnit';
 import { useAdContext } from '../contexts/AdContext';
@@ -517,7 +518,9 @@ export default function PrivaShield() {
 
             </div>
 
-            <AdUnit slotId="PRIVA_BOT" />
+            
+
+            
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative w-full mb-16">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
@@ -526,9 +529,9 @@ export default function PrivaShield() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(99,102,241,0.1)]">
                         <Ghost size={16} /> Privacy Profiler
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                         Examine & Strip Photographic <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">EXIF Metadata Locally</span>
-                    </h2>
+                    </h1>
                     <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                         Welcome to PrivaShield, your first tier of defense against involuntary digital tracking. Every time you snap a photograph with a modern smartphone, DSLR, or tablet, the physical file captures drastically more information than simply color matrices. Embedded silently within the raw header of your image are Exchangeable Image File Format (EXIF) tags, IPTC data, and XMP nodes.
                     </p>
@@ -574,7 +577,21 @@ export default function PrivaShield() {
                         </p>
                     </div>
                 </div>
+            
+
+            <div className="max-w-7xl mx-auto w-full z-10 relative">
+                <PrivacyFeatures
+                    toolName="PrivaShield EXIF Editor (Local)"
+                    useCases={[
+                        "Scrubbing GPS coordinates from private family photographs.",
+                        "Stripping camera serial numbers prior to public document sharing.",
+                        "Removing creator metadata offline to protect journalistic sources."
+                    ]}
+                />
             </div>
+
+            <AdUnit slotId="PRIVA_BOT" />
+        </div>
         </div >
     );
 }

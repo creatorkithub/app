@@ -13,6 +13,7 @@ import PdfToJpg from '../components/PdfToJpg';
 import PdfMetaSanitizer from '../components/PdfMetaSanitizer';
 import PdfStamper from '../components/PdfStamper';
 import ToolFAQ from '../components/ToolFAQ';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 
 const ALL_TOOLS_LIST = [
     { id: 'image-to-pdf', icon: ImageIcon, label: 'Image to PDF' },
@@ -66,6 +67,59 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
 
     const currentUi = uiContentMap[activeTab] || uiContentMap['all-tools'];
 
+    const privacyUseCasesMap: Record<string, string[]> = {
+        'image-to-pdf': [
+            "Converting personal IDs and passports into PDFs securely.",
+            "Archiving sensitive financial receipts entirely offline.",
+            "Compiling private photo portfolios without cloud storage."
+        ],
+        'remover': [
+            "Stripping confidential clauses from loaded legal contracts.",
+            "Removing unauthorized billing pages from final invoices.",
+            "Deleting blank or corrupted pages locally without upload risks."
+        ],
+        'splitter': [
+            "Extracting specific NDA signature pages for secure archiving.",
+            "Isolating relevant tax statement pages for local storage.",
+            "Breaking apart massive corporate reports securely."
+        ],
+        'merger': [
+            "Combining separated tax returns into a single un-uploaded file.",
+            "Merging signed legal documents completely locally.",
+            "Compiling academic research papers without latency restrictions."
+        ],
+        'watermark': [
+            "Stamping 'CONFIDENTIAL' across proprietary board meeting minutes.",
+            "Protecting draft scripts and manuscripts from unauthorized leaks.",
+            "Adding company branding to internal unreleased documents natively."
+        ],
+        'rotate': [
+            "Fixing upside-down scanned ID cards instantly in the browser.",
+            "Bulk-rotating inverted landscape schematics locally.",
+            "Correcting mobile phone picture orientations inside PDFs."
+        ],
+        'pdf-to-jpg': [
+            "Extracting high-res contract snapshots securely for offline presentations.",
+            "Converting vector graphs to pixels without transmitting to external servers.",
+            "Creating secure thumbnail previews of confidential files."
+        ],
+        'sanitizer': [
+            "Scrubbing hidden author names before distributing press releases.",
+            "Removing tracking EXIF data from sensitive local PDF files.",
+            "Wiping internal organizational tags prior to public file hosting."
+        ],
+        'stamper': [
+            "Paginating massive legal depositions dynamically in the browser.",
+            "Injecting continuous page counts across financial ledger sheets.",
+            "Stamping 'Draft' headers directly onto pre-release blueprints."
+        ],
+        'all-tools': [
+            "Legal professionals redacting & merging NDA contracts.",
+            "Financial accountants processing tax returns and statements.",
+            "Individuals stripping GPS coordinates from personal photos."
+        ]
+    };
+
     useSEO(
         currentSeo.title,
         currentSeo.desc,
@@ -95,7 +149,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                             <div className="p-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-400">
                                 <FileText size={18} />
                             </div>
-                            <h1 className="font-bold text-lg text-zinc-100 tracking-tight hidden sm:inline-block">LocalPDF Studio</h1>
+                            <h2 className="font-bold text-lg text-zinc-100 tracking-tight hidden sm:inline-block">LocalPDF Studio</h2>
                         </div>
                     </div>
 
@@ -238,7 +292,9 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                 </div>
             )}
 
-            <AdUnit slotId="PDF_BOTTOM" />
+            
+
+            
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
@@ -247,9 +303,9 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(244,63,94,0.1)]">
                         <FileText size={16} /> {currentUi.badge}
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                         {currentUi.title1} <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-red-500">{currentUi.title2}</span>
-                    </h2>
+                    </h1>
                     <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                         {currentUi.desc}
                     </p>
@@ -296,6 +352,16 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                     </div>
                 </div>
             </div>
+        
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 w-full z-10 relative">
+                <PrivacyFeatures
+                    toolName={`${currentUi.badge} (Local)`}
+                    useCases={privacyUseCasesMap[activeTab] || privacyUseCasesMap['all-tools']}
+                />
+            </div>
+
+            <AdUnit slotId="PDF_BOTTOM" />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { Type, Activity, BookOpen, Smile, Target } from 'lucide-react';
@@ -100,7 +101,7 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
                                 <Type size={24} />
                             </div>
                             <div>
-                                <h1 className="font-bold text-2xl text-zinc-100 tracking-tight">Word Counter & Tone</h1>
+                                <h2 className="font-bold text-2xl text-zinc-100 tracking-tight">Word Counter & Tone</h2>
                                 <p className="text-xs text-zinc-400 font-medium tracking-wider uppercase mt-1">NLP metrics computed offline</p>
                             </div>
                         </div>
@@ -207,7 +208,9 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                <AdUnit slotId="WORD_COUNTER_BOTTOM" />
+                
+
+                
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-cyan-500/10 blur-[100px] pointer-events-none"></div>
@@ -216,9 +219,9 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(6,182,212,0.1)]">
                             <Type size={16} /> NLP Metrics Computed Offline
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                             Word Counter & Tone Analyzer <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Coleman-Liau Reading Age</span>
-                        </h2>
+                        </h1>
                         <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                             Analyze your writing locally to check reading levels, sentence density, and tone. Your text is processed purely on your device.</p>
                     </div>
@@ -268,6 +271,20 @@ export default function WordCounter({ onBack }: { onBack: () => void }) {
                     "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
                 })
             }} />
+        
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="Word Counter & Tone Analyzer (Local)"
+                        useCases={[
+                            "Analyzing confidential legal drafts without cloud data leakage.",
+                            "Checking tone on sensitive corporate emails before sending.",
+                            "Computing readability scores for unreleased private manuscripts."
+                        ]}
+                    />
+                </div>
+
+            <AdUnit slotId="WORD_COUNTER_BOTTOM" />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { PrivacyFeatures } from './PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from './AdUnit';
 import { useAdContext } from '../contexts/AdContext';
@@ -482,8 +483,10 @@ export default function CryptoAudit() {
                 </div>
             )}
 
+            
+
             {/* Information Section */}
-            <AdUnit slotId="CRYPTO_BOT" />
+            
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-24 mb-16 relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
@@ -492,9 +495,9 @@ export default function CryptoAudit() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(99,102,241,0.1)]">
                         <Shield size={16} /> Zero-Trust Security
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                         Cryptocurrency & Password Hash <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">Auditing Sandbox</span>
-                    </h2>
+                    </h1>
                     <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                         Welcome to CryptoAudit Security, the industry’s most rigorous, fully client-side cryptographic hashing pipeline and password threat modeling sandbox. In an era structured around data breaches and cloud vulnerability, validating digital integrity is paramount. However, when parsing highly sensitive payloads, the last thing you want to do is submit those files to a remote server for "auditing."
                     </p>
@@ -544,6 +547,20 @@ export default function CryptoAudit() {
                     </div>
                 </div>
             </div>
+        
+
+            <div className="max-w-7xl mx-auto w-full z-10 relative mt-12 px-4 md:px-8 space-y-12 mb-12">
+                <PrivacyFeatures
+                    toolName="CryptoAudit Hashing & Passwords (Local)"
+                    useCases={[
+                        "Hashing highly confidential corporate backups securely.",
+                        "Evaluating enterprise master passwords without API transfer.",
+                        "Testing cryptographic signatures disconnected from WiFi."
+                    ]}
+                />
+            </div>
+
+            <AdUnit slotId="CRYPTO_BOT" />
         </div>
     );
 }

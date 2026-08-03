@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { Shield, Lock, Unlock, Copy, Check, FileText } from 'lucide-react';
@@ -71,7 +72,7 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                                 <Shield size={24} />
                             </div>
                             <div>
-                                <h1 className="font-bold text-2xl text-zinc-100 tracking-tight">Offline Encryption Vault</h1>
+                                <h2 className="font-bold text-2xl text-zinc-100 tracking-tight">Offline Encryption Vault</h2>
                                 <p className="text-xs text-emerald-400 font-medium tracking-wider uppercase mt-1">AES-256 Client-Side Protocol</p>
                             </div>
                         </div>
@@ -180,7 +181,9 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                <AdUnit slotId="TEXT_ENCRYPTION_BOTTOM" />
+                
+
+                
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-orange-500/10 blur-[100px] pointer-events-none"></div>
@@ -189,9 +192,9 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(249,115,22,0.1)]">
                             <Shield size={16} /> Privacy-First Protocol
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                             Secure Offline Encryption Vault <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">AES-256 Client-Side Protocol</span>
-                        </h2>
+                        </h1>
                         <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                             Protect your sensitive data with maximum privacy. Our Offline Encryption Vault uses military-grade AES-256 client-side encryption to secure your text and passwords directly on your device. Because all processing happens locally in your browser, your data is never transmitted, stored, or exposed to external servers.
                         </p>
@@ -242,6 +245,20 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
                 })
             }} />
+        
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="Offline Text Encryption (Local)"
+                        useCases={[
+                            "Encrypting sensitive journal entries natively in the browser.",
+                            "Generating secure AES-256 strings for highly confidential legal briefs.",
+                            "Protecting backend server credentials in a zero-trust environment."
+                        ]}
+                    />
+                </div>
+
+            <AdUnit slotId="TEXT_ENCRYPTION_BOTTOM" />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { FileText, Copy, Check, Hash, RefreshCcw, Quote, BookOpen, ListOrdered } from 'lucide-react';
@@ -76,7 +77,7 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                                 <FileText size={24} />
                             </div>
                             <div>
-                                <h1 className="font-bold text-2xl text-zinc-100 tracking-tight">Context Builder</h1>
+                                <h2 className="font-bold text-2xl text-zinc-100 tracking-tight">Context Builder</h2>
                                 <p className="text-xs text-zinc-400 font-medium tracking-wider uppercase mt-1">Lorem Ipsum Generator</p>
                             </div>
                         </div>
@@ -131,7 +132,9 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                <AdUnit slotId="LOREM_BOTTOM" />
+                
+
+                
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-fuchsia-500/10 blur-[100px] pointer-events-none"></div>
@@ -140,9 +143,9 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-500/10 border border-fuchsia-500/20 text-fuchsia-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(217,70,239,0.1)]">
                             <Quote size={16} /> Technical, Legal & Medical Vocab
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                             Lorem Context Builder <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-500">Intelligent Placeholder Text</span>
-                        </h2>
+                        </h1>
                         <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                             Step away from generic placeholder text. Our Lorem Context Builder generates dynamic, highly realistic dummy paragraphs specifically tailored for niche layouts. Whether you are building mockups for a specialized client platform or testing UI responsiveness, instantly inject authentic Technical, Legal, or Medical vocabulary into your designs.
                         </p>
@@ -180,7 +183,21 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                         </div>
                     </div>
                 </div>
-            </div>
+            
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="Lorem Context Builder (Local)"
+                        useCases={[
+                            "Generating niche dummy text for confidential web application mockups.",
+                            "Populating internal engineering portals with realistic technical terms.",
+                            "Creating secure placeholders for private medical UI wireframes."
+                        ]}
+                    />
+                </div>
+
+            <AdUnit slotId="LOREM_BOTTOM" />
+        </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{
                 __html: JSON.stringify({

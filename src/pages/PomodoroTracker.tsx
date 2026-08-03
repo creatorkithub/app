@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PrivacyFeatures } from '../components/PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { Timer, Play, Pause, RotateCcw, ListTodo, Plus, Trash2, CheckCircle2 } from 'lucide-react';
@@ -105,7 +106,7 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                                 <Timer size={24} />
                             </div>
                             <div>
-                                <h1 className="font-bold text-2xl text-zinc-100 tracking-tight">Focus & Ledger</h1>
+                                <h2 className="font-bold text-2xl text-zinc-100 tracking-tight">Focus & Ledger</h2>
                                 <p className="text-xs text-zinc-400 font-medium tracking-wider uppercase mt-1">Local-first productivity</p>
                             </div>
                         </div>
@@ -224,7 +225,9 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                <AdUnit slotId="POMODORO_BOTTOM" />
+                
+
+                
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
@@ -233,9 +236,9 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(244,63,94,0.1)]">
                             <Timer size={16} /> Local-first productivity
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                             Focus & Ledger Tracker <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-500">Secure Browser Pomodoro Timer</span>
-                        </h2>
+                        </h1>
                         <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                             Take control of your productivity without sacrificing your data privacy. Our Focus & Ledger Tracker combines a traditional Pomodoro timer with a secure, local productivity log. Monitor your deep-work intervals and build consistent habits while keeping your operational data safely tucked away inside your local browser storage.
                         </p>
@@ -286,6 +289,20 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                     "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
                 })
             }} />
+        
+
+            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="Pomodoro Tracker & Ledger (Local)"
+                        useCases={[
+                            "Tracking confidential project time blocks natively in the browser.",
+                            "Maintaining a secure, offline ledger of sensitive daily tasks.",
+                            "Avoiding cloud-synced productivity monitors for private work."
+                        ]}
+                    />
+                </div>
+
+            <AdUnit slotId="POMODORO_BOTTOM" />
         </div>
     );
 }

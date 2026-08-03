@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PrivacyFeatures } from './PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { ArrowLeftRight, Code, Link as LinkIcon, Monitor, AlertCircle, CheckCircle2, Lock } from 'lucide-react';
 
@@ -315,9 +316,9 @@ export default function A11yScorecard() {
                             Live UI Preview
                         </div>
 
-                        <h1 className="text-4xl font-extrabold tracking-tight mt-6 transition-colors duration-300" style={{ color: fgColor }}>
+                        <h2 className="text-4xl font-extrabold tracking-tight mt-6 transition-colors duration-300" style={{ color: fgColor }}>
                             Scorecard Framework Pro
-                        </h1>
+                        </h2>
 
                         <p className="text-lg leading-relaxed max-w-2xl transition-colors duration-300" style={{ color: fgColor }}>
                             This is a simulated body paragraph demonstrating how <strong>normal sized text</strong> behaves against your chosen background layer. Proper contrast is critical for legibility, reducing eye strain, and supporting users with visual impairments.
@@ -342,6 +343,8 @@ export default function A11yScorecard() {
                 </div>
             </div>
 
+            
+
             {/* Information Section */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
@@ -350,9 +353,9 @@ export default function A11yScorecard() {
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(244,63,94,0.1)]">
                         <Monitor size={16} /> Accessibility Standard
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
                         A11y Contrast Scorecard <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-500">& UI Simulator Matrix</span>
-                    </h2>
+                    </h1>
                     <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
                         Evaluate color contrast against WCAG guidelines directly in your browser. Ensure your text is legible and compliant without sending your designs to any server.</p>
                 </div>
@@ -400,6 +403,18 @@ export default function A11yScorecard() {
                         </p>
                     </div>
                 </div>
+            </div>
+        
+
+            <div className="max-w-7xl mx-auto w-full z-10 relative mb-12 px-4 md:px-8">
+                <PrivacyFeatures
+                    toolName="A11y Contrast Scorecard (Local)"
+                    useCases={[
+                        "Evaluating proprietary product brand colors without analytics tracking.",
+                        "Validating internal UI contrast for confidential dashboards.",
+                        "Preventing unreleased design palette leaks during prototyping."
+                    ]}
+                />
             </div>
         </div>
     );
