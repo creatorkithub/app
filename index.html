@@ -22,7 +22,7 @@
     })(window, document, 'script', 'dataLayer', 'GTM-MTBGDHJ2');</script>
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <script>
+  <script type="module">
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', {
@@ -32,7 +32,19 @@
       'analytics_storage': 'denied'
     });
   </script>
-  <script>
+  <style>
+    body {
+      background-color: #09090b;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        min-height: 100vh;
+      }
+    }
+  </style>
+  <script type="module">
     (function () {
       var path = window.location.pathname;
       var manifestUrl = '/manifest.webmanifest';
@@ -43,7 +55,11 @@
       else if (path.startsWith('/universal-image-converter') || path.startsWith('/image-converter')) manifestUrl = '/manifests/image.json';
       else if (path.startsWith('/social-media-safe-zone-overlay') || path.startsWith('/safe-zone')) manifestUrl = '/manifests/safezone.json';
 
-      document.write('<link rel="manifest" id="dynamic-manifest" href="' + manifestUrl + '">');
+      var link = document.createElement('link');
+      link.rel = 'manifest';
+      link.id = 'dynamic-manifest';
+      link.href = manifestUrl;
+      document.head.appendChild(link);
 
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
@@ -52,7 +68,7 @@
       }
     })();
   </script>
-  <script type="text/javascript">
+  <script type="module">
     // Single Page Apps for GitHub Pages (https://github.com/rafgraph/spa-github-pages)
     (function (l) {
       if (l.search[1] === 'p' && l.search[2] === '=') {
@@ -71,19 +87,19 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
   <meta name="description"
-    content="Creator Kit Hub is a free, 100% offline suite of client-side web tools for creators. Process PDFs, convert images, and secure files locally." />
+    content="Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more." />
   <meta name="keywords"
     content="PDF tools, Social media safe zone, Client-side pdf merge, image to pdf, privacy tools, social media overlay" />
 
   <!-- Open Graph / SEO -->
-  <meta property="og:title" content="Creator Kit Hub - Client-Side Web Tools for Creators" />
+  <meta property="og:title" content="Creator Kit Hub - 100% Offline Client-Side Web Tools" />
   <meta property="og:description"
-    content="Creator Kit Hub is a free, 100% offline suite of client-side web tools for creators. Process PDFs, convert images, and secure files locally." />
+    content="Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more." />
   <meta property="og:type" content="website" />
 
   <link rel="apple-touch-icon" href="/icon.svg" />
   <link rel="canonical" href="https://creatorkithub.org/" />
-  <title>Creator Kit Hub - Client-Side Web Tools for Creators</title>
+  <title>Creator Kit Hub - 100% Offline Client-Side Web Tools</title>
 
   <script type="application/ld+json">
     {
@@ -119,7 +135,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTBGDHJ2" height="0" width="0"
       class="gtm-iframe"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="root"></div>
+  <div id="root">
+    <!-- SEO_ROOT_CONTENT -->
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
