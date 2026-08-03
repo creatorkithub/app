@@ -51,6 +51,21 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
 
     const currentSeo = seoMetaMap[activeTab] || seoMetaMap['all-tools'];
 
+    const uiContentMap: Record<string, { badge: string, title1: string, title2: string, desc: string }> = {
+        'image-to-pdf': { badge: 'Image to PDF Converter', title1: 'Convert Images to', title2: 'High-Quality PDFs', desc: 'Securely convert JPG, PNG, and other images into a single PDF document entirely offline in your browser. All processing happens locally, ensuring your personal photos never touch a remote server.' },
+        'remover': { badge: 'PDF Page Remover', title1: 'Securely Delete', title2: 'Unwanted PDF Pages', desc: 'Effortlessly select and remove unwanted pages from your PDF documents natively on your device. Streamline your documents for client presentations completely offline and securely.' },
+        'splitter': { badge: 'PDF Splitter Tool', title1: 'Extract & Split', title2: 'PDF Pages Offline', desc: 'Isolate specific page ranges or split a bulky document into individual files instantly. Enjoy lightning-fast extraction completely offline without compromising document formatting.' },
+        'merger': { badge: 'PDF Merger Tool', title1: 'Seamlessly Combine', title2: 'Multiple PDF Files', desc: 'Combine multiple scattered documents into a single cohesive PDF instantly. Ensure perfect chronological ordering while retaining 100% privacy through local client-side processing.' },
+        'watermark': { badge: 'PDF Watermark Editor', title1: 'Protect PDFs With', title2: 'Custom Watermarks', desc: 'Maintain copyright tracking and protect confidential materials by overlaying custom text stamps natively on your device. Zero upload latency and uncompromising document security.' },
+        'rotate': { badge: 'PDF Page Rotator', title1: 'Instantly Rotate', title2: 'Your PDF Pages', desc: 'Fix upside-down scanned documents individually or in bulk. Every rotation operation is handled locally in your browser memory for immediate, secure compilation.' },
+        'pdf-to-jpg': { badge: 'PDF to Image Converter', title1: 'Extract High-Quality', title2: 'JPGs from PDFs', desc: 'Seamlessly share PDF pages on social media or embed them in presentations. Extract high-resolution raster images from every page securely without server bottlenecks.' },
+        'sanitizer': { badge: 'PDF Metadata Sanitizer', title1: 'Scrub Hidden', title2: 'PDF Metadata', desc: 'Deeply cleanse your document structure by stripping unseen authorship histories, EXIF data, and organizational tags before public distribution. 100% offline security.' },
+        'stamper': { badge: 'PDF Number Stamper', title1: 'Add Sequential', title2: 'Page Pagination', desc: 'Dynamically inject continuous page numbers, headers, and footers across your entire customized document index entirely without internet connectivity.' },
+        'all-tools': { badge: 'Privacy-First PDF Toolkit', title1: 'Complete Privacy-Focused', title2: 'Local PDF Editor', desc: 'Welcome to LocalPDF Studio, an advanced, browser-native productivity suite designed to handle all of your PDF manipulation needs flawlessly without ever compromising your privacy. Unlike traditional cloud-based PDF editors that require you to upload your sensitive financial documents, legal contracts, or personal records to a remote server, our architecture guarantees that every single file operation occurs locally.' }
+    };
+
+    const currentUi = uiContentMap[activeTab] || uiContentMap['all-tools'];
+
     useSEO(
         currentSeo.title,
         currentSeo.desc,
@@ -230,13 +245,13 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
 
                 <div className="text-center mb-16 relative z-10 w-full">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(244,63,94,0.1)]">
-                        <FileText size={16} /> Privacy-First PDF Toolkit
+                        <FileText size={16} /> {currentUi.badge}
                     </div>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
-                        Complete Privacy-Focused <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-red-500">Local PDF Editor</span>
+                        {currentUi.title1} <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-red-500">{currentUi.title2}</span>
                     </h2>
                     <p className="mt-8 text-lg text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-                        Welcome to LocalPDF Studio, an advanced, browser-native productivity suite designed to handle all of your PDF manipulation needs flawlessly without ever compromising your privacy. Unlike traditional cloud-based PDF editors that require you to upload your sensitive financial documents, legal contracts, or personal records to a remote server, our architecture guarantees that every single file operation occurs locally.
+                        {currentUi.desc}
                     </p>
                 </div>
 
