@@ -117,7 +117,7 @@ function generateRoutes() {
     'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' }
   };
 
-  const seoParagraphs = `
+  const defaultSeoParagraphs = `
       <article>
         <h3>Why Choose 100% Offline Client-Side Tools?</h3>
         <p>In today's digital landscape, privacy and security are paramount. Our suite of professional web tools strictly operates within your browser's local environment. This offline-first approach guarantees that your sensitive files, whether they are confidential PDFs, personal images, or secure passwords, are never uploaded to any remote server or third-party database. By leveraging advanced HTML5 capabilities and WebAssembly, we deliver lightning-fast data processing locally, completely eliminating slow upload times and bandwidth limitations.</p>
@@ -129,6 +129,81 @@ function generateRoutes() {
         <p>Creator Kit Hub is the ultimate destination for designers, developers, and content creators. We provide intuitive, high-performance utilities including universal image format conversion, precise social media safe zone overlays, accessibility scoring, Pomodoro tracking, and in-depth document sanitation. Our open-access, entirely free platform ensures you have the reliable offline creator tools you need securely at your fingertips, without requiring any software installations, account registrations, or subscriptions.</p>
       </article>
     `;
+
+  const seoContentMap = {
+    'pdf-toolkit/merger': `
+      <article>
+        <h3>Combine Multiple PDF Files Seamlessly</h3>
+        <p>Managing multiple scattered documents can be highly inefficient. The PDF Merger tool is engineered to combine multiple PDF files into a single, cohesive document instantly. Whether you are assembling financial reports, consolidating legal contracts, or combining academic research papers, this offline utility guarantees perfect page chronological ordering without degrading the original file quality.</p>
+        
+        <h3>100% Secure Client-Side Merging</h3>
+        <p>Unlike cloud-based PDF processors, our merger functions entirely within your browser's local memory. By utilizing WebAssembly and client-side JavaScript, your sensitive PDF documents are never uploaded to any remote server. This eliminates all risks of bandwidth limitations, slow upload speeds, or potential data breaches. You can literally disconnect from the internet and continue merging highly confidential files with absolute privacy.</p>
+      </article>`,
+    'pdf-toolkit/splitter': `
+      <article>
+        <h3>Extract PDF Pages Offline</h3>
+        <p>Large PDF documents often contain unnecessary pages that clutter your workflow. The LocalPDF Splitter empowers you to extract specific page ranges or split a bulky document into individual, manageable PDF files. Perfectly isolate the exact invoice, contract page, or diagram you need from a vast compendium in just a few clicks.</p>
+        
+        <h3>Zero-Upload File Splitting</h3>
+        <p>Security is our core priority. Every single PDF splitting action is performed locally on your device's hardware. Your confidential documents never leave your local environment, ensuring that your data is immune to man-in-the-middle attacks and cloud storage vulnerabilities. Enjoy lightning-fast extraction completely offline without compromising document integrity or formatting.</p>
+      </article>`,
+    'pdf-toolkit/remover': `
+      <article>
+        <h3>Delete Unwanted PDF Pages Instantly</h3>
+        <p>When working with extensive digital records, you may frequently encounter irrelevant pages, blank sheets, or outdated sections. The PDF Page Remover gives you a highly visual, drag-and-drop interface to effortlessly select and delete unwanted pages. Streamline your documents for client presentations or archiving in seconds.</p>
+        
+        <h3>Maximum Privacy and Offline Security</h3>
+        <p>Because our removal logic executes directly inside your browser cache natively, you completely bypass the slow file upload queues typical of standard web tools. Your sensitive corporate data, legal drafts, and proprietary blueprints remain securely isolated on your hardware. Completely offline functionality ensures absolute privacy protection while modifying your document structures.</p>
+      </article>`,
+    'pdf-toolkit/watermark': `
+      <article>
+        <h3>Protect Your PDFs with Watermarks</h3>
+        <p>Applying digital watermarks is a crucial step in maintaining copyright tracking and protecting confidential draft materials. Our Watermark PDF tool allows you to overlay custom text stamps, transparency settings, and diagonal brand markings onto every page of your document instantly, ensuring your intellectual property is visually protected.</p>
+        
+        <h3>Local Processing Guarantee</h3>
+        <p>Generating watermarks on sensitive pre-release documents shouldn't require surrendering them to a third-party server. We utilize an offline-first client-side architecture to safely stamp your PDFs using your device's native CPU. This 100% private workflow ensures maximum speed, zero upload latency, and uncompromising document confidentiality.</p>
+      </article>`,
+    'pdf-toolkit/rotate': `
+      <article>
+        <h3>Quickly Rotate PDF Pages</h3>
+        <p>Scanned documents and image-based PDFs often result in incorrectly oriented pages. Our PDF Rotator provides a visual sequence editor allowing you to individually rotate single pages or bulk-rotate entire documents by 90, 180, or 270 degrees. Fix upside-down records immediately without needing expensive desktop software.</p>
+        
+        <h3>Fast and Private Hardware Processing</h3>
+        <p>We believe in absolute data sovereignty. Every rotation operation is handled entirely by your own browser. The rotated files re-compile instantly on your local machine, completely avoiding internet bandwidth limits and eliminating the security risks of transferring personal documents across the web.</p>
+      </article>`,
+    'pdf-toolkit/pdf-to-jpg': `
+      <article>
+        <h3>Convert PDF Documents to High-Quality JPGs</h3>
+        <p>Sharing PDF pages natively on social media or embedding them in presentations often requires converting them to standard image formats. The PDF to JPG converter extracts high-resolution raster images from every individual PDF page. Generating crisp, web-ready JPG images has never been faster or easier.</p>
+        
+        <h3>Free, Unlimited, and 100% Offline</h3>
+        <p>By harnessing client-side computing, this converter runs infinitely without payload restrictions or server bottlenecks. Your original PDF files and the generated JPGs remain securely locked inside your localized system environment. Convert gigabytes of documents instantaneously with absolute privacy and zero subscription fees.</p>
+      </article>`,
+    'pdf-toolkit/sanitizer': `
+      <article>
+        <h3>Remove Hidden PDF Metadata</h3>
+        <p>Before distributing digital PDFs, it is vital to scrub hidden EXIF data, authorship histories, internal tracking schemas, and software version tags that might leak confidential organizational information. The PDF Meta Sanitizer deeply cleanses your document structure, ensuring that your public distributions leave zero digital traces.</p>
+        
+        <h3>Secure Scrubbing Engine</h3>
+        <p>Sanitizing confidential files on a remote cloud server is an inherent privacy contradiction. Our tool resolves this by executing the metadata stripping strictly within your device's browser memory. Your un-sanitized source files are never transmitted online, guaranteeing 100% network isolation and professional-grade security.</p>
+      </article>`,
+    'pdf-toolkit/stamper': `
+      <article>
+        <h3>Add Sequential Page Numbers to PDFs</h3>
+        <p>Properly indexing lengthy legal briefs, academic thesis papers, and technical manuals requires highly accurate pagination. Our PDF Stamper allows you to dynamically inject sequential page numbers, custom header text, and footers universally across your entire document in a highly customizable format.</p>
+        
+        <h3>Client-Side Performance</h3>
+        <p>No matter the size of the document, the stamping layout is rendered entirely offline using client-side JavaScript. This prevents any unauthorized server endpoints from accessing your proprietary texts and guarantees extremely rapid processing capabilities without waiting in prolonged server conversion queues.</p>
+      </article>`,
+    'pdf-toolkit/image-to-pdf': `
+      <article>
+        <h3>Convert JPG and PNG Images to PDF</h3>
+        <p>Whether you need to compile a digital portfolio, assemble scanned receipts for expense reports, or archive visual blueprints, compiling images into a unified document is essential. The Image to PDF converter supports JPG, PNG, and WebP, allowing you to sequence and merge multiple images into one seamless, pagination-friendly PDF file.</p>
+        
+        <h3>Privacy-First Offline Compilation</h3>
+        <p>Your personal photos and sensitive financial scans deserve the highest tier of security. Our 100% client-side architecture guarantees that your high-resolution images are processed locally within your browser. You get lightning-fast compilations free of server delays and completely void of cloud-upload security risks.</p>
+      </article>`
+  };
 
   const internalLinksList = routes.map(r => `<li><a href="/${r}/">${r.split('-').join(' ')}</a></li>`).join('\n          ');
   const internalLinksHtml = `
@@ -143,7 +218,7 @@ function generateRoutes() {
   // Inject base SEO root content for the root index.html itself!
   const baseH1TitleTag = `<h1>${baseTitle}</h1>`;
   const baseH2DescTag = `<h2>${baseDescription}</h2>`;
-  const baseSeoRootContent = `<noscript>\n      ${baseH1TitleTag}\n      ${baseH2DescTag}\n      ${internalLinksHtml}\n      ${seoParagraphs}\n    </noscript>`;
+  const baseSeoRootContent = `<noscript>\n      ${baseH1TitleTag}\n      ${baseH2DescTag}\n      ${internalLinksHtml}\n      ${defaultSeoParagraphs}\n    </noscript>`;
   const processedIndexHtml = indexHtml.split('<!-- SEO_ROOT_CONTENT -->').join(baseSeoRootContent);
   fs.writeFileSync(indexPath, processedIndexHtml);
 
@@ -175,7 +250,8 @@ function generateRoutes() {
 
     const h1TitleTag = `<h1>${newTitle}</h1>`;
     const h2DescTag = `<h2>${newDescription}</h2>`;
-    const seoRootContent = `<noscript>\n      ${h1TitleTag}\n      ${h2DescTag}\n      ${internalLinksHtml}\n      ${seoParagraphs}\n    </noscript>`;
+    const activeSeoParagraphs = seoContentMap[canonicalRoute] || defaultSeoParagraphs;
+    const seoRootContent = `<noscript>\n      ${h1TitleTag}\n      ${h2DescTag}\n      ${internalLinksHtml}\n      ${activeSeoParagraphs}\n    </noscript>`;
 
     customHtml = customHtml.split(`<title>${baseTitle}</title>`).join(`<title>${newTitle}</title>`);
     customHtml = customHtml.split(baseCanonical).join(newCanonical);
