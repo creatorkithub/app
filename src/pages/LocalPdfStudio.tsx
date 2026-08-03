@@ -36,10 +36,25 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const seoMetaMap: Record<string, { title: string, desc: string }> = {
+        'image-to-pdf': { title: 'Image to PDF Converter - Free Offline PDF Tool', desc: 'Securely convert JPG, PNG, and other images to a single PDF document entirely offline in your browser. No server uploads.' },
+        'remover': { title: 'PDF Page Remover - Delete PDF Pages Offline', desc: 'Easily select and remove unwanted pages from your PDF documents locally. Fast, free, and 100% secure.' },
+        'splitter': { title: 'PDF Splitter - Extract PDF Pages Offline', desc: 'Split your PDF files into individual pages or extract specific ranges directly in your browser without uploading.' },
+        'merger': { title: 'PDF Merger - Combine PDF Files Offline', desc: 'Merge multiple PDF documents into a single file quickly and securely. 100% client-side processing.' },
+        'watermark': { title: 'PDF Watermark Tool - Add Text/Image Stamps Offline', desc: 'Protect your PDFs by adding custom text or image watermarks locally in your browser. Zero server uploads.' },
+        'rotate': { title: 'PDF Rotator - Rotate PDF Pages Offline', desc: 'Rotate individual or all PDF pages instantly. Your files never leave your device for maximum privacy.' },
+        'pdf-to-jpg': { title: 'PDF to JPG Converter - Convert PDF to Image Offline', desc: 'Convert PDF document pages to high-quality JPG images securely in your browser without data limits.' },
+        'sanitizer': { title: 'PDF Metadata Sanitizer - Remove PDF Hidden Data Offline', desc: 'Scrub sensitive metadata, author info, and hidden tracking data from your PDFs entirely offline.' },
+        'stamper': { title: 'PDF Stamper - Add Pagination and Signatures Offline', desc: 'Stamp page numbers, images, and simple signatures onto your PDF files directly in your web browser.' },
+        'all-tools': { title: 'PDF Toolkit - 100% Offline Client-Side PDF Tools', desc: 'Access a comprehensive suite of offline PDF tools. Merge, split, edit, and convert PDFs securely without uploading.' }
+    };
+
+    const currentSeo = seoMetaMap[activeTab] || seoMetaMap['all-tools'];
+
     useSEO(
-        'LocalPDF Studio | 100% Client-Side PDF Tools',
-        'Securely merge, split, stamp, and convert PDF documents entirely in your browser memory. Zero file uploads.',
-        '/pdf-toolkit/'
+        currentSeo.title,
+        currentSeo.desc,
+        `/pdf-toolkit/${activeTab === 'all-tools' ? '' : activeTab}/`
     );
 
     useEffect(() => {
