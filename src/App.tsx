@@ -95,6 +95,75 @@ export default function App() {
     link.href = manifestUrl;
   }, [currentPath]);
 
+  useEffect(() => {
+    const seoMetaMap: Record<string, { title: string, desc: string }> = {
+      'pdf-toolkit/image-to-pdf': { title: 'Image to PDF Converter - Free Offline PDF Tool', desc: 'Securely convert JPG, PNG, and other images to a single PDF document entirely offline in your browser. No server uploads.' },
+      'pdf-toolkit/remover': { title: 'PDF Page Remover - Delete PDF Pages Offline', desc: 'Easily select and remove unwanted pages from your PDF documents locally. Fast, free, and 100% secure.' },
+      'pdf-toolkit/splitter': { title: 'PDF Splitter - Extract PDF Pages Offline', desc: 'Split your PDF files into individual pages or extract specific ranges directly in your browser without uploading.' },
+      'pdf-toolkit/merger': { title: 'PDF Merger - Combine PDF Files Offline', desc: 'Merge multiple PDF documents into a single file quickly and securely. 100% client-side processing.' },
+      'pdf-toolkit/watermark': { title: 'PDF Watermark Tool - Add Text/Image Stamps Offline', desc: 'Protect your PDFs by adding custom text or image watermarks locally in your browser. Zero server uploads.' },
+      'pdf-toolkit/rotate': { title: 'PDF Rotator - Rotate PDF Pages Offline', desc: 'Rotate individual or all PDF pages instantly. Your files never leave your device for maximum privacy.' },
+      'pdf-toolkit/pdf-to-jpg': { title: 'PDF to JPG Converter - Convert PDF to Image Offline', desc: 'Convert PDF document pages to high-quality JPG images securely in your browser without data limits.' },
+      'pdf-toolkit/sanitizer': { title: 'PDF Metadata Sanitizer - Remove PDF Hidden Data Offline', desc: 'Scrub sensitive metadata, author info, and hidden tracking data from your PDFs entirely offline.' },
+      'pdf-toolkit/stamper': { title: 'PDF Stamper - Add Pagination and Signatures Offline', desc: 'Stamp page numbers, images, and simple signatures onto your PDF files directly in your web browser.' },
+      'pdf-toolkit/all-tools': { title: 'PDF Toolkit - 100% Offline Client-Side PDF Tools', desc: 'Access a comprehensive suite of offline PDF tools. Merge, split, edit, and convert PDFs securely without uploading.' },
+      'universal-image-converter': { title: 'Universal Image Converter - Convert format Offline', desc: 'Convert between HEIC, JPG, PNG, WEBP, and more visually. Completely free and runs 100% locally.' },
+      'a11y-scorecard': { title: 'A11y Scorecard - Web Accessibility Contrast Checker', desc: 'Analyze color contrast ratios and ensure web accessibility compliance (WCAG) instantly in your browser.' },
+      'privashield': { title: 'PrivaShield EXIF Stripper - Remove Image Metadata Offline', desc: 'Protect your privacy by stripping GPS location and camera EXIF data from your photos before sharing.' },
+      'crypto-audit': { title: 'CryptoAudit Password Analyzer - Offline Security Checker', desc: 'Test password strength and audit security locally. Your keystrokes never leave your device.' },
+      'text-encryption': { title: 'Text Encryption - Secure Offline Message Encrypter', desc: 'Encrypt and decrypt sensitive text messages using military-grade AES encryption entirely offline.' },
+      'palette-extractor': { title: 'Color Palette Extractor - Extract Colors from Images Offline', desc: 'Automatically extract harmonious color palettes from your uploaded images using local browser processing.' },
+      'pomodoro-tracker': { title: 'Pomodoro Tracker - Offline Productivity Timer', desc: 'Boost your productivity with this offline Pomodoro timer. Focus blocks, quick breaks, zero distractions.' },
+      'tone-analyzer': { title: 'Tone Analyzer - Offline Writing Assistant', desc: 'Count words, characters, and analyze the tone of your text passages directly in your web browser.' },
+      'lorem-builder': { title: 'Lorem Ipsum Builder - Custom Dummy Text Generator', desc: 'Generate customized placeholder text (Lorem Ipsum) paragraphs instantly for your design mockups.' },
+      'svg-tracer': { title: 'SVG Tracer - Raster to Vector Converter Offline', desc: 'Convert raster images (PNG, JPG) to scalable vector graphics (SVG) entirely within your browser memory.' },
+      'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' }
+    };
+
+    const canonicalMap: Record<string, string> = {
+      'local-pdf': 'pdf-toolkit',
+      'local-pdf/image-to-pdf': 'pdf-toolkit/image-to-pdf',
+      'local-pdf/remover': 'pdf-toolkit/remover',
+      'local-pdf/splitter': 'pdf-toolkit/splitter',
+      'local-pdf/merger': 'pdf-toolkit/merger',
+      'local-pdf/watermark': 'pdf-toolkit/watermark',
+      'local-pdf/rotate': 'pdf-toolkit/rotate',
+      'local-pdf/pdf-to-jpg': 'pdf-toolkit/pdf-to-jpg',
+      'local-pdf/sanitizer': 'pdf-toolkit/sanitizer',
+      'local-pdf/stamper': 'pdf-toolkit/stamper',
+      'local-pdf/all-tools': 'pdf-toolkit/all-tools',
+      'image-converter': 'universal-image-converter',
+      'accessibility': 'a11y-scorecard',
+      'exif-stripper': 'privashield',
+      'password-analyzer': 'crypto-audit',
+      'safe-zone': 'social-media-safe-zone-overlay'
+    };
+
+    const route = currentPath.replace(/^\//, ''); // Strip leading slash
+    const canonicalRoute = canonicalMap[route] || route;
+    const meta = seoMetaMap[canonicalRoute];
+
+    if (meta) {
+      document.title = meta.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', meta.desc);
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', meta.title);
+
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', meta.desc);
+    } else if (currentPath === '/') {
+      document.title = 'Creator Kit Hub - 100% Offline Client-Side Web Tools';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', 'Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more.');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', 'Creator Kit Hub - 100% Offline Client-Side Web Tools');
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', 'Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more.');
+    }
+  }, [currentPath]);
+
   const navigate = (path: string) => {
     let fullPath = path;
     const base = import.meta.env.BASE_URL || '/';
