@@ -259,6 +259,10 @@ function generateRoutes() {
     customHtml = customHtml.split(baseTitle).join(newTitle);
     customHtml = customHtml.split('<!-- SEO_ROOT_CONTENT -->').join(seoRootContent);
 
+    if (canonicalRoute === 'success') {
+      customHtml = customHtml.replace('</head>', '  <meta name="robots" content="noindex" />\n</head>');
+    }
+
     fs.writeFileSync(targetPath, customHtml);
     count++;
   });
@@ -270,6 +274,7 @@ function generateRoutes() {
   // Dynamic Sitemap Generation (1-to-1 sync with Canonical Pages)
   const uniqueCanonicals = new Set(['']); // Insert root index
   routes.forEach(r => {
+    if (r === 'success') return; // Exclude success page from sitemap
     const canonical = canonicalMap[r] || r;
     uniqueCanonicals.add(canonical);
   });
