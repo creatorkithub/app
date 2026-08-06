@@ -1,15 +1,34 @@
-# Creator Kit Hub 
+# Creator Kit Hub
 
-Creator Kit Hub is a completely free, 100% offline suite of client-side web tools aimed at creators. 
-Because the application runs entirely in the browser (client-side), no files or data are ever uploaded to a server. 
+> Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools.
 
-Tools included:
-- LocalPDF Studio: Merge, split, organize, compress, and rotate PDFs.
-- Image Converter: Convert images (JPG, PNG, HEIC, TIFF, etc) locally.
-- Social Media Safe-Zone: Visualize social media safe zones for UI elements.
-- CryptoAudit Analyzer & Password Generator.
-- Accessibility Color Scorecard.
-- PDF Text Extractor
-- PrivaShield EXIF Stripper
+Because the application runs entirely in the browser using client-side JavaScript and WebAssembly, no files or data are ever uploaded to a remote server. This setup guarantees 100% data privacy, fast processing, and zero bandwidth limits.
 
-All processing is done entirely inside the user's web browser relying purely on client-side JS and WebAssembly. No data hits our servers, guaranteeing 100% data privacy.
+## Available Tools
+
+### PDF Toolkit
+- [PDF Merger](https://creatorkithub.org/pdf-toolkit/merger/): Combine multiple PDF documents into a single file quickly and securely.
+- [PDF Splitter](https://creatorkithub.org/pdf-toolkit/splitter/): Extract PDF pages into individual files.
+- [PDF Page Remover](https://creatorkithub.org/pdf-toolkit/remover/): Select and delete unwanted pages from PDF files.
+- [PDF Watermark](https://creatorkithub.org/pdf-toolkit/watermark/): Apply text or image stamps to protect documents.
+- [PDF Rotator](https://creatorkithub.org/pdf-toolkit/rotate/): Rotate PDF pages by 90, 180, or 270 degrees.
+- [PDF to JPG](https://creatorkithub.org/pdf-toolkit/pdf-to-jpg/): Convert robust PDF pages into high-quality JPGs.
+- [PDF Metadata Sanitizer](https://creatorkithub.org/pdf-toolkit/sanitizer/): Scrub hidden EXIF and authorship data from PDFs.
+- [PDF Stamper](https://creatorkithub.org/pdf-toolkit/stamper/): Add custom pagination or sequential page numbers.
+- [Image to PDF](https://creatorkithub.org/pdf-toolkit/image-to-pdf/): Merge and sequence JPG, PNG and WebP into one PDF document.
+
+### Creator Utilities
+- [Universal Image Converter](https://creatorkithub.org/universal-image-converter/): Convert images between HEIC, JPG, PNG, WEBP and more locally.
+- [A11y Scorecard](https://creatorkithub.org/a11y-scorecard/): Check color contrast ratios for Web Accessibility (WCAG).
+- [PrivaShield EXIF Stripper](https://creatorkithub.org/privashield/): Protect privacy by stripping GPS and EXIF data from photos.
+- [CryptoAudit Password Analyzer](https://creatorkithub.org/crypto-audit/): Local password security checking.
+- [Text Encryption](https://creatorkithub.org/text-encryption/): Client-side message AES encrypter/decrypter.
+- [Color Palette Extractor](https://creatorkithub.org/palette-extractor/): Identify color schemes from images entirely via browser.
+- [Pomodoro Tracker](https://creatorkithub.org/pomodoro-tracker/): Offline productivity timer.
+- [Tone Analyzer](https://creatorkithub.org/tone-analyzer/): Analyze text for word count and underlying sentiment tone.
+- [Lorem Ipsum Builder](https://creatorkithub.org/lorem-builder/): Client-side customized text generation.
+- [SVG Tracer](https://creatorkithub.org/svg-tracer/): Offline raster to SVG vector conversion.
+- [Social Media Safe Zone Overlay](https://creatorkithub.org/social-media-safe-zone-overlay/): Preview video dimensions and UI boundaries for TikTok/Reels/Shorts.
+
+## Full Context
+A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).

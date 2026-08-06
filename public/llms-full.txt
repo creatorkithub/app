@@ -1,0 +1,79 @@
+# Creator Kit Hub - Full Context & Capabilities Overview
+
+> Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools.
+
+## Why 100% Offline Client-Side?
+
+In today's digital landscape, privacy and security are paramount. Our suite of professional web tools strictly operates within your browser's local environment. This offline-first approach guarantees that your sensitive files, whether they are confidential PDFs, personal images, or secure passwords, are never uploaded to any remote server or third-party database. By leveraging advanced HTML5 capabilities and WebAssembly, we deliver lightning-fast data processing locally, completely eliminating slow upload times and bandwidth limitations.
+
+Every action you perform using our tool suite—from splitting and merging PDFs, extracting file palettes, cleaning EXIF metadata, to auditing passwords—is executed real-time on your own device's hardware. Once the web application is loaded, you can safely disconnect your internet connectivity and continue working without interruptions.
+
+## Tool Deep Dives
+
+### PDF Toolkit
+
+**Combine Multiple PDF Files Seamlessly (PDF Merger)**
+Managing multiple scattered documents can be highly inefficient. The PDF Merger tool is engineered to combine multiple PDF files into a single, cohesive document instantly. Whether you are assembling financial reports, consolidating legal contracts, or combining academic research papers, this offline utility guarantees perfect page chronological ordering without degrading the original file quality.
+
+**Extract PDF Pages Offline (PDF Splitter)**
+Large PDF documents often contain unnecessary pages that clutter your workflow. The LocalPDF Splitter empowers you to extract specific page ranges or split a bulky document into individual, manageable PDF files. Perfectly isolate the exact invoice, contract page, or diagram you need from a vast compendium in just a few clicks.
+
+**Delete Unwanted PDF Pages Instantly (PDF Remover)**
+When working with extensive digital records, you may frequently encounter irrelevant pages, blank sheets, or outdated sections. The PDF Page Remover gives you a highly visual, drag-and-drop interface to effortlessly select and delete unwanted pages. Streamline your documents for client presentations or archiving in seconds.
+
+**Protect Your PDFs with Watermarks (PDF Watermark)**
+Applying digital watermarks is a crucial step in maintaining copyright tracking and protecting confidential draft materials. Our Watermark PDF tool allows you to overlay custom text stamps, transparency settings, and diagonal brand markings onto every page of your document instantly, ensuring your intellectual property is visually protected.
+
+**Quickly Rotate PDF Pages (PDF Rotator)**
+Scanned documents and image-based PDFs often result in incorrectly oriented pages. Our PDF Rotator provides a visual sequence editor allowing you to individually rotate single pages or bulk-rotate entire documents by 90, 180, or 270 degrees. Fix upside-down records immediately without needing expensive desktop software.
+
+**Convert PDF Documents to High-Quality JPGs (PDF to JPG)**
+Sharing PDF pages natively on social media or embedding them in presentations often requires converting them to standard image formats. The PDF to JPG converter extracts high-resolution raster images from every individual PDF page. Generating crisp, web-ready JPG images has never been faster or easier.
+
+**Remove Hidden PDF Metadata (PDF Sanitizer)**
+Before distributing digital PDFs, it is vital to scrub hidden EXIF data, authorship histories, internal tracking schemas, and software version tags that might leak confidential organizational information. The PDF Meta Sanitizer deeply cleanses your document structure, ensuring that your public distributions leave zero digital traces.
+
+**Add Sequential Page Numbers to PDFs (PDF Stamper)**
+Properly indexing lengthy legal briefs, academic thesis papers, and technical manuals requires highly accurate pagination. Our PDF Stamper allows you to dynamically inject sequential page numbers, custom header text, and footers universally across your entire document in a highly customizable format.
+
+**Convert JPG and PNG Images to PDF (Image to PDF)**
+Whether you need to compile a digital portfolio, assemble scanned receipts for expense reports, or archive visual blueprints, compiling images into a unified document is essential. The Image to PDF converter supports JPG, PNG, and WebP, allowing you to sequence and merge multiple images into one seamless, pagination-friendly PDF file.
+
+### Privacy & Security Tools
+
+**PrivaShield EXIF Stripper**
+Protect your privacy by stripping GPS location and camera EXIF data from your photos before sharing online.
+
+**CryptoAudit Password Analyzer**
+Test password strength and audit security locally. Your keystrokes never leave your device.
+
+**Text Encryption**
+Encrypt and decrypt sensitive text messages using military-grade AES encryption entirely offline.
+
+### Design & Creator Tools
+
+**Universal Image Converter**
+Convert between HEIC, JPG, PNG, WEBP, and more visually. Completely free and runs 100% locally.
+
+**Color Palette Extractor**
+Automatically extract harmonious color palettes from your uploaded images using local browser processing.
+
+**SVG Tracer**
+Convert raster images (PNG, JPG) to scalable vector graphics (SVG) entirely within your browser memory.
+
+**Social Media Safe Zone Overlay**
+Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked by native app elements.
+
+### Productivity Utilities
+
+**A11y Scorecard**
+Analyze color contrast ratios and ensure web accessibility compliance (WCAG) instantly in your browser.
+
+**Pomodoro Tracker**
+Boost your productivity with this offline Pomodoro timer. Focus blocks, quick breaks, zero distractions.
+
+**Tone Analyzer & Word Count**
+Count words, characters, and analyze the tone of your text passages directly in your web browser.
+
+**Lorem Ipsum Builder**
+Generate customized placeholder text (Lorem Ipsum) paragraphs instantly for your design mockups.
