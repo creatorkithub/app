@@ -14,6 +14,7 @@ import PdfMetaSanitizer from '../components/PdfMetaSanitizer';
 import PdfStamper from '../components/PdfStamper';
 import ToolFAQ from '../components/ToolFAQ';
 import { PrivacyFeatures } from '../components/PrivacyFeatures';
+import { useRouter } from '../App';
 
 const ALL_TOOLS_LIST = [
     { id: 'image-to-pdf', icon: ImageIcon, label: 'Image to PDF' },
@@ -36,6 +37,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
     });
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { navigate } = useRouter();
 
     const seoMetaMap: Record<string, { title: string, desc: string }> = {
         'image-to-pdf': { title: 'Image to PDF Converter - Free Offline PDF Tool', desc: 'Securely convert JPG, PNG, and other images to a single PDF document entirely offline in your browser. No server uploads.' },
@@ -158,26 +160,28 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                         {ALL_TOOLS_LIST.slice(0, 6).map(tab => {
                             const isTabActive = activeTab === tab.id;
                             return (
-                                <button
+                                <a
                                     key={tab.id}
-                                    onClick={() => setActiveTab(tab.id as any)}
-                                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap snap-start flex-shrink-0 ${isTabActive
+                                    href={`/pdf-toolkit/${tab.id === 'all-tools' ? '' : tab.id}/`}
+                                    onClick={(e) => { e.preventDefault(); navigate(`/pdf-toolkit/${tab.id === 'all-tools' ? '' : tab.id}/`); setActiveTab(tab.id as any); }}
+                                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap snap-start flex-shrink-0 cursor-pointer ${isTabActive
                                         ? 'bg-zinc-100 text-zinc-900 shadow-sm'
                                         : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'
                                         }`}
                                 >
                                     <tab.icon size={16} className={isTabActive ? 'text-zinc-900' : ''} />
                                     {tab.label}
-                                </button>
+                                </a>
                             );
                         })}
                     </div>
 
                     {/* Desktop 'More' Tools Dropdown */}
                     <div className="relative group flex-shrink-0 z-50 hidden md:block">
-                        <button
-                            onClick={() => setActiveTab('all-tools')}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap shadow-sm ${['all-tools', 'watermark', 'sanitizer', 'stamper'].includes(activeTab)
+                        <a
+                            href="/pdf-toolkit/all-tools/"
+                            onClick={(e) => { e.preventDefault(); navigate('/pdf-toolkit/all-tools/'); setActiveTab('all-tools'); }}
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all whitespace-nowrap shadow-sm cursor-pointer ${['all-tools', 'watermark', 'sanitizer', 'stamper'].includes(activeTab)
                                 ? 'bg-zinc-100 text-zinc-900 border border-zinc-200'
                                 : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/80 bg-zinc-900/50 border border-zinc-800'
                                 }`}
@@ -185,23 +189,24 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                             <Grid size={16} className={['all-tools', 'watermark', 'sanitizer', 'stamper'].includes(activeTab) ? 'text-zinc-900' : ''} />
                             <span className="hidden sm:inline-block">All PDF Tools</span>
                             <span className="sm:hidden">More</span>
-                        </button>
+                        </a>
                         <div className="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100] origin-top-right transform group-hover:scale-100 scale-95">
                             <div className="bg-[#18181b]/95 backdrop-blur-2xl border border-zinc-800 rounded-2xl p-2 w-60 shadow-2xl flex flex-col gap-1 ring-1 ring-white/5">
                                 {ALL_TOOLS_LIST.slice(6, 9).map(tab => {
                                     const isTabActive = activeTab === tab.id;
                                     return (
-                                        <button
+                                        <a
                                             key={tab.id}
-                                            onClick={(e) => { e.stopPropagation(); setActiveTab(tab.id as any); }}
-                                            className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${isTabActive ? 'bg-orange-500/15 text-orange-400' : 'text-zinc-300 hover:bg-zinc-800/80 hover:text-white'
+                                            href={`/pdf-toolkit/${tab.id}/`}
+                                            onClick={(e) => { e.preventDefault(); e.stopPropagation(); navigate(`/pdf-toolkit/${tab.id}/`); setActiveTab(tab.id as any); }}
+                                            className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer ${isTabActive ? 'bg-orange-500/15 text-orange-400' : 'text-zinc-300 hover:bg-zinc-800/80 hover:text-white'
                                                 }`}
                                         >
                                             <div className={`p-1.5 flex items-center justify-center rounded-lg ${isTabActive ? 'bg-transparent text-orange-400' : 'bg-zinc-800 text-zinc-400'}`}>
                                                 <tab.icon size={16} />
                                             </div>
                                             {tab.label}
-                                        </button>
+                                        </a>
                                     );
                                 })}
                             </div>
@@ -210,12 +215,13 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
 
                     {/* Mobile Hamburger Toggle */}
                     <div className="md:hidden flex-shrink-0 z-50 flex items-center gap-2">
-                        <button
-                            onClick={() => setActiveTab('all-tools')}
-                            className={`p-2 rounded-xl text-sm font-medium transition-all shadow-sm ${activeTab === 'all-tools' ? 'bg-orange-500/20 text-orange-400' : 'bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white'}`}
+                        <a
+                            href="/pdf-toolkit/all-tools/"
+                            onClick={(e) => { e.preventDefault(); navigate('/pdf-toolkit/all-tools/'); setActiveTab('all-tools'); }}
+                            className={`p-2 rounded-xl text-sm font-medium transition-all shadow-sm flex items-center justify-center cursor-pointer ${activeTab === 'all-tools' ? 'bg-orange-500/20 text-orange-400' : 'bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white'}`}
                         >
                             <Grid size={20} />
-                        </button>
+                        </a>
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="p-2 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-400 hover:text-white transition-all shadow-sm flex items-center gap-2"
@@ -231,14 +237,15 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                         {ALL_TOOLS_LIST.map(tab => {
                             const isTabActive = activeTab === tab.id;
                             return (
-                                <button
+                                <a
                                     key={tab.id}
-                                    onClick={() => { setActiveTab(tab.id as any); setIsMobileMenuOpen(false); }}
-                                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all w-full text-left ${isTabActive ? 'bg-orange-500/10 border border-orange-500/20 text-orange-400' : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/80 border border-transparent'}`}
+                                    href={`/pdf-toolkit/${tab.id === 'all-tools' ? '' : tab.id}/`}
+                                    onClick={(e) => { e.preventDefault(); navigate(`/pdf-toolkit/${tab.id === 'all-tools' ? '' : tab.id}/`); setActiveTab(tab.id as any); setIsMobileMenuOpen(false); }}
+                                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold transition-all w-full text-left cursor-pointer ${isTabActive ? 'bg-orange-500/10 border border-orange-500/20 text-orange-400' : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/80 border border-transparent'}`}
                                 >
                                     <tab.icon size={18} className={isTabActive ? 'text-orange-400' : 'text-zinc-500'} />
                                     {tab.label}
-                                </button>
+                                </a>
                             );
                         })}
                     </div>
@@ -254,27 +261,27 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                 {activeTab === 'all-tools' && (
                     <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 w-full">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
-                            <button onClick={() => setActiveTab('watermark')} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl">
+                            <a href="/pdf-toolkit/watermark/" onClick={(e) => { e.preventDefault(); navigate('/pdf-toolkit/watermark/'); setActiveTab('watermark'); }} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl cursor-pointer block">
                                 <div className="p-4 bg-orange-500/10 rounded-2xl inline-block mb-6 shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform">
                                     <Type size={32} className="text-orange-400" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-100 mb-3">Watermark</h3>
                                 <p className="text-zinc-400 leading-relaxed text-sm">Embed text overlay drafts across all the pages of your document to protect originality.</p>
-                            </button>
-                            <button onClick={() => setActiveTab('sanitizer')} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl">
+                            </a>
+                            <a href="/pdf-toolkit/sanitizer/" onClick={(e) => { e.preventDefault(); navigate('/pdf-toolkit/sanitizer/'); setActiveTab('sanitizer'); }} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl cursor-pointer block">
                                 <div className="p-4 bg-orange-500/10 rounded-2xl inline-block mb-6 shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform">
                                     <Tag size={32} className="text-orange-400" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-100 mb-3">Meta Sanitizer</h3>
                                 <p className="text-zinc-400 leading-relaxed text-sm">Scrub internal authorship, hidden titles, and creation metadata for complete privacy.</p>
-                            </button>
-                            <button onClick={() => setActiveTab('stamper')} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl">
+                            </a>
+                            <a href="/pdf-toolkit/stamper/" onClick={(e) => { e.preventDefault(); navigate('/pdf-toolkit/stamper/'); setActiveTab('stamper'); }} className="p-8 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 hover:border-orange-500/50 hover:bg-zinc-900 transition-all group text-left shadow-2xl cursor-pointer block">
                                 <div className="p-4 bg-orange-500/10 rounded-2xl inline-block mb-6 shadow-inner border border-orange-500/20 group-hover:scale-110 transition-transform">
                                     <Hash size={32} className="text-orange-400" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-100 mb-3">Stamp Page Number</h3>
                                 <p className="text-zinc-400 leading-relaxed text-sm">Dynamically inject sequential page numbers logically across headers and footers.</p>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 )}
@@ -292,9 +299,9 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                 </div>
             )}
 
-            
 
-            
+
+
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
@@ -352,7 +359,7 @@ export default function LocalPdfStudio({ onBack, initialTool }: { onBack: () => 
                     </div>
                 </div>
             </div>
-        
+
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 w-full z-10 relative">
                 <PrivacyFeatures
