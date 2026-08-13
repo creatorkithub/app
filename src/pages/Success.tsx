@@ -16,7 +16,7 @@ export default function Success() {
     if (!isOpen) return null;
 
     return (
-        <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-blue-500/30 flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="fixed inset-0 z-[100] min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-blue-500/30 flex flex-col items-center justify-center overflow-hidden">
 
             {/* Background ambient light */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>

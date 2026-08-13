@@ -46,6 +46,8 @@ export default function App() {
   };
 
   const [currentPath, setCurrentPath] = useState(getLogicalPath);
+  const [lastToolPath, setLastToolPath] = useState(currentPath !== '/success' ? currentPath : '/');
+  useEffect(() => { if (currentPath !== '/success') setLastToolPath(currentPath); }, [currentPath]);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showOfflineTooltip, setShowOfflineTooltip] = useState(false);
 
@@ -176,20 +178,20 @@ export default function App() {
   };
 
   const renderPage = () => {
-    if (currentPath === '/success') return <Success />;
-    if (currentPath === '/privacy-policy') return <PrivacyPolicy />;
-    if (currentPath === '/terms-of-service') return <TermsOfService />;
-    if (currentPath === '/contact-us') return <ContactUs />;
-    if (currentPath === '/about-us') return <AboutUs />;
+    const activePath = currentPath === '/success' ? lastToolPath : currentPath;
+    if (activePath === '/privacy-policy') return <PrivacyPolicy />;
+    if (activePath === '/terms-of-service') return <TermsOfService />;
+    if (activePath === '/contact-us') return <ContactUs />;
+    if (activePath === '/about-us') return <AboutUs />;
 
-    if (currentPath === '/social-media-safe-zone-overlay' || currentPath === '/safe-zone') {
+    if (activePath === '/social-media-safe-zone-overlay' || activePath === '/safe-zone') {
       return <SafeZoneTool onBack={() => navigate('/')} />;
     }
-    if (currentPath.startsWith('/pdf-toolkit') || currentPath.startsWith('/local-pdf')) {
-      const toolId = currentPath.split('/')[2];
+    if (activePath.startsWith('/pdf-toolkit') || activePath.startsWith('/local-pdf')) {
+      const toolId = activePath.split('/')[2];
       return <LocalPdfStudio onBack={() => navigate('/')} initialTool={toolId} />;
     }
-    if (currentPath === '/universal-image-converter' || currentPath === '/image-converter') {
+    if (activePath === '/universal-image-converter' || activePath === '/image-converter') {
       return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-orange-500/30 overflow-y-auto">
           <div className="max-w-7xl mx-auto h-full flex flex-col">
@@ -214,7 +216,7 @@ export default function App() {
         </div>
       );
     }
-    if (currentPath === '/a11y-scorecard' || currentPath === '/accessibility') {
+    if (activePath === '/a11y-scorecard' || activePath === '/accessibility') {
       return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-rose-500/30 overflow-y-auto">
           <div className="max-w-7xl mx-auto h-full flex flex-col">
@@ -239,7 +241,7 @@ export default function App() {
         </div>
       );
     }
-    if (currentPath === '/privashield' || currentPath === '/exif-stripper') {
+    if (activePath === '/privashield' || activePath === '/exif-stripper') {
       return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-indigo-500/30 overflow-y-auto">
           <div className="max-w-7xl mx-auto h-full flex flex-col">
@@ -264,7 +266,7 @@ export default function App() {
         </div>
       );
     }
-    if (currentPath === '/crypto-audit' || currentPath === '/password-analyzer') {
+    if (activePath === '/crypto-audit' || activePath === '/password-analyzer') {
       return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-purple-500/30 overflow-y-auto">
           <div className="max-w-7xl mx-auto h-full flex flex-col">
@@ -289,12 +291,12 @@ export default function App() {
         </div>
       );
     }
-    if (currentPath === '/text-encryption') return <TextEncryption onBack={() => navigate('/')} />;
-    if (currentPath === '/palette-extractor') return <PaletteExtractor onBack={() => navigate('/')} />;
-    if (currentPath === '/pomodoro-tracker') return <PomodoroTracker onBack={() => navigate('/')} />;
-    if (currentPath === '/tone-analyzer') return <WordCounter onBack={() => navigate('/')} />;
-    if (currentPath === '/lorem-builder') return <LoremBuilder onBack={() => navigate('/')} />;
-    if (currentPath === '/svg-tracer') return <SvgTracer onBack={() => navigate('/')} />;
+    if (activePath === '/text-encryption') return <TextEncryption onBack={() => navigate('/')} />;
+    if (activePath === '/palette-extractor') return <PaletteExtractor onBack={() => navigate('/')} />;
+    if (activePath === '/pomodoro-tracker') return <PomodoroTracker onBack={() => navigate('/')} />;
+    if (activePath === '/tone-analyzer') return <WordCounter onBack={() => navigate('/')} />;
+    if (activePath === '/lorem-builder') return <LoremBuilder onBack={() => navigate('/')} />;
+    if (activePath === '/svg-tracer') return <SvgTracer onBack={() => navigate('/')} />;
 
     return (
       <Hub onSelectTool={(toolId) => {
@@ -319,7 +321,7 @@ export default function App() {
       <AdProvider>
         <MouseGlow />
         <Navbar navigate={navigate} />
-        <div key={currentPath} className="animate-page-enter w-full h-full min-h-screen">
+        <div key={currentPath === '/success' ? lastToolPath : currentPath} className="animate-page-enter w-full h-full min-h-screen">
           <Suspense fallback={
             <div className="flex items-center justify-center min-h-[600px]">
               <div className="flex flex-col items-center gap-4">
@@ -331,6 +333,7 @@ export default function App() {
             {renderPage()}
           </Suspense>
         </div>
+        {currentPath === '/success' && <Success />}
         <CookieConsent />
         <Footer />
 
@@ -345,17 +348,17 @@ export default function App() {
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') setDeferredPrompt(null);
               }}
-              className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-full shadow-[0_4_20px_rgba(37,99,235,0.3)] transition-all font-bold text-[10px] uppercase tracking-wider animate-in slide-in-from-right-4 fade-in"
+              className="group flex items-center bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-full shadow-[0_4_20px_rgba(37,99,235,0.3)] transition-all font-bold text-[10px] uppercase tracking-wider animate-in slide-in-from-right-4 fade-in"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
-              Install App
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[100px] group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 whitespace-nowrap">Install App</span>
             </button>
           )}
 
           <div className="group relative" onClick={() => setShowOfflineTooltip(!showOfflineTooltip)} onMouseLeave={() => setShowOfflineTooltip(false)}>
-            <div className="flex items-center gap-2 bg-[#18181b]/95 backdrop-blur-md border border-emerald-500/30 px-3 py-2 rounded-full shadow-[0_4_20px_rgba(16,185,129,0.15)] group-hover:bg-[#27272a] group-hover:border-emerald-500/50 transition-all cursor-pointer">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse"></div>
-              <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest hidden sm:inline-block pr-1">Works Offline</span>
+            <div className="flex items-center bg-[#18181b]/95 backdrop-blur-md border border-emerald-500/30 p-3.5 rounded-full shadow-[0_4_20px_rgba(16,185,129,0.15)] group-hover:bg-[#27272a] group-hover:border-emerald-500/50 transition-all cursor-pointer">
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-pulse flex-shrink-0"></div>
+              <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-[120px] group-hover:opacity-100 group-hover:ml-2 text-[10px] font-bold text-emerald-400 uppercase tracking-widest transition-all duration-300 whitespace-nowrap hidden sm:block">Works Offline</span>
             </div>
 
             {/* Hover Tooltip Details */}
@@ -364,7 +367,7 @@ export default function App() {
                 <strong className="text-emerald-400 block mb-1">100% Client-Side Privacy</strong>
                 All tools in the hub operate entirely within your browser memory. Even if you disconnect from the internet, your files are processed locally and never uploaded to any cloud server.
               </p>
-              <div className="absolute -bottom-1.5 right-8 w-3 h-3 bg-[#18181b] border-b border-r border-zinc-800 transform rotate-45"></div>
+              <div className="absolute -bottom-1.5 right-4 w-3 h-3 bg-[#18181b] border-b border-r border-zinc-800 transform rotate-45"></div>
             </div>
           </div>
         </div>
