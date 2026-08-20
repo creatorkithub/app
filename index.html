@@ -2,84 +2,32 @@
 <html lang="en">
 
 <head>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-969LZRVW8L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-969LZRVW8L');
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MTBGDHJ2');</script>
-  <!-- End Google Tag Manager -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-969LZRVW8L"></script>
+  <!-- Externalized Scripts and Styles -->
+  <link rel="stylesheet" href="/init.css" />
+  <script defer src="/init.js"></script>
+  <!-- Security Headers preserved as requested by scanner tools -->
   <meta charset="UTF-8" />
-  <script type="module">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied'
-    });
-  </script>
-  <style>
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googlesyndication.com https://*.doubleclick.net https://*.google.com https://*.google-analytics.com https://*.googletagmanager.com data: blob:; img-src 'self' data: blob: https:; font-src 'self' data: https:;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
+  <style id="antiClickjack">
     body {
-      background-color: #09090b;
-      color: #ffffff;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        min-height: 100vh;
-      }
+      display: none !important;
     }
   </style>
-  <script type="module">
-    (function () {
-      var path = window.location.pathname;
-      var manifestUrl = '/manifest.webmanifest';
-      if (path.startsWith('/pdf-toolkit') || path.startsWith('/local-pdf')) manifestUrl = '/manifests/pdf.json';
-      else if (path.startsWith('/crypto-audit') || path.startsWith('/password-analyzer')) manifestUrl = '/manifests/crypto.json';
-      else if (path.startsWith('/privashield') || path.startsWith('/exif-stripper')) manifestUrl = '/manifests/exif.json';
-      else if (path.startsWith('/a11y-scorecard') || path.startsWith('/accessibility')) manifestUrl = '/manifests/a11y.json';
-      else if (path.startsWith('/universal-image-converter') || path.startsWith('/image-converter')) manifestUrl = '/manifests/image.json';
-      else if (path.startsWith('/social-media-safe-zone-overlay') || path.startsWith('/safe-zone')) manifestUrl = '/manifests/safezone.json';
-
-      var link = document.createElement('link');
-      link.rel = 'manifest';
-      link.id = 'dynamic-manifest';
-      link.href = manifestUrl;
-      document.head.appendChild(link);
-
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/sw.js').catch(function () { });
-        });
-      }
-    })();
-  </script>
-  <script type="module">
-    // Single Page Apps for GitHub Pages (https://github.com/rafgraph/spa-github-pages)
-    (function (l) {
-      if (l.search[1] === 'p' && l.search[2] === '=') {
-        var a = l.search.slice(1).split('&').map(function (s) { return s.replace(/~and~/g, '&') })
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + a[0].slice(2) +
-          (a.length > 1 ? '?' + a.slice(1).join('&').replace(/q=/, '') : '') + l.hash
-        );
-      }
-    }(window.location))
-  </script>
+  <script
+    type="text/javascript">if (self === top) { var a = document.getElementById("antiClickjack"); if (a && a.parentNode) { a.parentNode.removeChild(a); } } else { top.location = self.location; }</script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/icon.svg" />
@@ -96,9 +44,20 @@
   <meta property="og:description"
     content="Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://creatorkithub.org/" />
+  <meta property="og:image" content="https://creatorkithub.org/og-image.png" />
+
+  <!-- Twitter Card Data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Creator Kit Hub - 100% Offline Client-Side Web Tools" />
+  <meta name="twitter:description"
+    content="Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools." />
+  <meta name="twitter:image" content="https://creatorkithub.org/og-image.png" />
 
   <link rel="apple-touch-icon" href="/icon.svg" />
   <link rel="canonical" href="https://creatorkithub.org/" />
+  <link rel="alternate" hreflang="en" href="https://creatorkithub.org/" />
+  <link rel="alternate" hreflang="x-default" href="https://creatorkithub.org/" />
   <title>Creator Kit Hub - 100% Offline Client-Side Web Tools</title>
 
   <script type="application/ld+json">
@@ -118,15 +77,10 @@
       }
     }
   </script>
-  <style>
-    .gtm-iframe {
-      display: none;
-      visibility: hidden;
-    }
-  </style>
+
 
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4032375955420309"
+  <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4032375955420309"
     crossorigin="anonymous"></script>
 </head>
 
