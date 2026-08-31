@@ -4,10 +4,17 @@ import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from '../components/AdUnit';
 import { FileText, Copy, Check, Hash, RefreshCcw, Quote, BookOpen, ListOrdered } from 'lucide-react';
 
-type Industry = 'standard' | 'tech' | 'legal' | 'medical';
+type BaseLanguage = 'standard' | 'english' | 'spanish' | 'french' | 'german' | 'italian' | 'portuguese';
+type Domain = 'none' | 'tech' | 'legal' | 'medical';
 
-const VOCAB = {
+const VOCAB: Record<string, string[]> = {
     standard: ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua", "enim", "ad", "minim", "veniam", "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi", "ut", "aliquip", "ex", "ea", "commodo", "consequat"],
+    english: ["the", "and", "to", "of", "a", "in", "is", "that", "it", "with", "as", "for", "was", "on", "are", "by", "be", "this", "which", "or", "but", "not", "from", "an", "they", "we", "you", "at", "have", "has", "had", "all", "their", "there", "can", "will", "would", "about", "if", "one", "more", "out", "up", "so", "what", "some", "who", "them", "my", "other", "its", "only", "into", "then", "than", "could", "also", "new", "any", "these", "two", "may", "first", "do", "any", "like", "our", "over", "even", "most", "where", "after", "while", "how", "well", "should", "such", "through", "because", "each", "just", "those", "down", "why", "very", "much", "must", "same"],
+    spanish: ["el", "la", "de", "que", "y", "a", "en", "un", "ser", "se", "no", "haber", "por", "con", "su", "para", "como", "estar", "tener", "le", "lo", "todo", "pero", "más", "hacer", "o", "poder", "decir", "este", "ir", "otro", "ese", "si", "me", "ya", "ver", "porque", "dar", "cuando", "él", "muy", "sin", "vez", "mucho", "saber", "qué", "sobre", "mi", "alguno", "mismo", "yo", "también", "hasta", "año", "dos", "querer", "entre", "así", "primero", "desde", "grande", "eso", "ni", "nos", "llegar", "pasar", "tiempo", "ella", "sí", "día", "uno", "bien", "poco", "deber", "entonces", "poner", "cosa", "tanto", "hombre", "parecer", "nuestro", "tan", "donde", "ahora", "parte", "después", "vida", "quedar", "siempre", "creer", "hablar"],
+    french: ["le", "la", "de", "un", "une", "et", "à", "il", "est", "en", "ce", "qui", "pour", "dans", "les", "des", "sur", "pas", "que", "avec", "par", "se", "ne", "vous", "son", "sa", "au", "plus", "je", "nous", "comme", "mais", "ou", "si", "tout", "fait", "lui", "être", "faire", "on", "quand", "très", "peut", "bien", "elle", "sont", "même", "aussi", "encore", "voir", "dire", "avoir", "leur", "cette", "sans", "deux", "mon", "ma", "où", "temps", "peu", "toujours", "vie", "beaucoup", "alors", "chose", "rien", "jamais", "homme", "ici", "moins", "jour", "autre", "monde", "avant", "après", "trop", "oui", "non", "pourquoi", "comment"],
+    german: ["der", "die", "und", "in", "den", "von", "zu", "das", "mit", "sich", "des", "auf", "für", "ist", "im", "dem", "nicht", "ein", "eine", "als", "auch", "es", "an", "werden", "aus", "er", "hat", "dass", "sie", "nach", "wird", "bei", "einer", "um", "am", "sind", "noch", "wie", "einem", "über", "einen", "so", "zum", "war", "haben", "nur", "oder", "aber", "vor", "zur", "bis", "mehr", "durch", "man", "sein", "wurde", "sei", "prozent", "hatte", "kann", "gegen", "vom", "können", "schon", "wenn", "habe", "seine", "ihre", "dann", "unter", "wir", "soll", "ich", "eines", "jahr", "zwei", "diese", "dieser", "wieder", "keine", "uhr", "seiner", "worden", "will", "zwischen", "immer", "was", "sagte", "gibt"],
+    italian: ["il", "di", "e", "a", "un", "in", "che", "non", "si", "da", "lo", "per", "con", "ma", "come", "su", "mi", "anche", "o", "io", "se", "questo", "chi", "ci", "quello", "più", "fare", "tutto", "essere", "avere", "mio", "quale", "cosa", "quando", "molto", "così", "lui", "senza", "bene", "cui", "lei", "ancora", "tu", "solo", "due", "tempo", "vita", "altro", "mai", "fatto", "uomo", "dove", "sempre", "poi", "qui", "ogni", "ora", "modo", "prima", "giorno", "qualche", "niente", "nessuno", "stato", "oggi", "dire", "ad", "suo", "parte", "sua", "loro"],
+    portuguese: ["o", "a", "de", "e", "que", "do", "da", "em", "um", "para", "é", "com", "não", "uma", "os", "no", "se", "na", "por", "mais", "as", "dos", "como", "mas", "foi", "ao", "ele", "das", "tem", "à", "seu", "sua", "ou", "ser", "quando", "muito", "há", "nos", "já", "está", "eu", "também", "só", "pelo", "pela", "até", "isso", "ela", "entre", "era", "depois", "sem", "mesmo", "aos", "ter", "seus", "quem", "nas", "me", "esse", "eles", "estão", "você", "tinha", "foram", "essa", "num", "nem", "suas", "meu", "às", "minha", "têm", "numa", "pelos", "elas", "havia", "seja", "qual", "será"],
     tech: ["algorithm", "bandwidth", "blockchain", "cloud", "deployment", "encryption", "framework", "gateway", "hash", "iteration", "kernel", "latency", "middleware", "node", "opensource", "protocol", "quantum", "repository", "scalable", "token", "ui", "virtualization", "webhook", "xml", "saas", "api", "container"],
     legal: ["affidavit", "breach", "contract", "defendant", "evidence", "fiduciary", "guarantor", "hearsay", "indemnity", "jurisdiction", "liability", "malpractice", "negligence", "objection", "plaintiff", "quorum", "retainer", "subpoena", "testimony", "verdict", "waiver", "tort", "litigation"],
     medical: ["acute", "benign", "cardiac", "diagnosis", "edema", "fracture", "glucose", "hypertension", "immune", "jaundice", "kinase", "lesion", "malignant", "neurology", "oncology", "pathology", "quarantine", "respiratory", "syndrome", "trauma", "ultrasound", "vaccine", "white-blood-cell"]
@@ -15,7 +22,8 @@ const VOCAB = {
 
 export default function LoremBuilder({ onBack }: { onBack: () => void }) {
     const [paragraphs, setParagraphs] = useState(3);
-    const [industry, setIndustry] = useState<Industry>('standard');
+    const [baseLanguage, setBaseLanguage] = useState<BaseLanguage>('english');
+    const [domain, setDomain] = useState<Domain>('none');
     const [copied, setCopied] = useState(false);
     const [seed, setSeed] = useState(0);
 
@@ -38,9 +46,14 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                 let sentence = '';
 
                 for (let w = 0; w < wordsInSentence; w++) {
-                    const dict = (industry === 'standard' || Math.random() > 0.4)
-                        ? VOCAB.standard
-                        : VOCAB[industry];
+                    const isBaseWord = Math.random() > 0.4;
+                    let dict;
+
+                    if (domain === 'none' || isBaseWord) {
+                        dict = VOCAB[baseLanguage];
+                    } else {
+                        dict = VOCAB[domain];
+                    }
 
                     const word = dict[Math.floor(Math.random() * dict.length)];
 
@@ -55,7 +68,7 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
             output += paragraphText.trim() + '\n\n';
         }
         return output.trim();
-    }, [paragraphs, industry, seed]);
+    }, [paragraphs, baseLanguage, domain, seed]);
 
     const handleCopy = () => {
         navigator.clipboard.writeText(generatedText);
@@ -65,7 +78,7 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
 
     return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-fuchsia-500/30 overflow-y-auto">
-            <div className="max-w-4xl mx-auto h-full flex flex-col pt-8">
+            <div className="max-w-7xl mx-auto h-full flex flex-col pt-8">
                 <header className="mb-8 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <button onClick={onBack} className="p-2 -ml-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center" title="Back to Hub">
@@ -84,57 +97,73 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                     </div>
                 </header>
 
-                <div className="flex flex-col gap-6 flex-1 h-full min-h-[500px]">
-                    <div className="flex flex-col md:flex-row gap-4 p-4 md:p-6 bg-zinc-950 border border-zinc-800 rounded-3xl items-center justify-between shadow-xl">
+                <div className="flex flex-col md:flex-row gap-6 flex-1 h-full min-h-[500px] mb-8">
+                    {/* Main Text Area - Left Column */}
+                    <div className="flex-1 flex flex-col min-h-[400px] md:min-h-0 order-2 md:order-1 relative group">
+                        <textarea
+                            readOnly
+                            value={generatedText}
+                            className="w-full h-full flex-1 bg-zinc-900/40 border border-zinc-800/80 rounded-3xl p-6 md:p-8 text-zinc-300 focus:outline-none transition-colors custom-scrollbar font-serif text-lg leading-relaxed shadow-inner resize-none"
+                        ></textarea>
+                    </div>
 
-                        <div className="flex gap-2 bg-zinc-900 p-1.5 rounded-xl border border-zinc-800/80 w-full md:w-auto overflow-x-auto custom-scrollbar">
-                            <button onClick={() => setIndustry('standard')} className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${industry === 'standard' ? 'bg-fuchsia-500 text-white' : 'text-zinc-400 hover:text-zinc-200'}`}>Standard Latin</button>
-                            <button onClick={() => setIndustry('tech')} className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${industry === 'tech' ? 'bg-fuchsia-500 text-white' : 'text-zinc-400 hover:text-zinc-200'}`}>Tech / DevOps</button>
-                            <button onClick={() => setIndustry('legal')} className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${industry === 'legal' ? 'bg-fuchsia-500 text-white' : 'text-zinc-400 hover:text-zinc-200'}`}>Legal Framework</button>
-                            <button onClick={() => setIndustry('medical')} className={`px-4 py-2 rounded-lg text-sm font-bold whitespace-nowrap transition-all ${industry === 'medical' ? 'bg-fuchsia-500 text-white' : 'text-zinc-400 hover:text-zinc-200'}`}>Medical / Pharma</button>
+                    {/* Sidebar Controls - Right Column */}
+                    <div className="w-full md:w-80 lg:w-96 flex flex-col gap-4 order-1 md:order-2 shrink-0">
+                        {/* Domain Selectors */}
+                        <div className="flex flex-col gap-2 p-5 bg-zinc-950 border border-zinc-800 rounded-3xl shadow-xl">
+                            <h3 className="text-zinc-500 text-xs font-bold mb-2 uppercase tracking-wider">Base Language</h3>
+                            <div className="flex flex-wrap gap-2">
+                                <button onClick={() => setBaseLanguage('standard')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'standard' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>Latin</button>
+                                <button onClick={() => setBaseLanguage('english')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'english' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>English</button>
+                                <button onClick={() => setBaseLanguage('spanish')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'spanish' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>Spanish</button>
+                                <button onClick={() => setBaseLanguage('french')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'french' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>French</button>
+                                <button onClick={() => setBaseLanguage('german')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'german' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>German</button>
+                                <button onClick={() => setBaseLanguage('italian')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'italian' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>Italian</button>
+                                <button onClick={() => setBaseLanguage('portuguese')} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${baseLanguage === 'portuguese' ? 'bg-zinc-100 text-zinc-900 shadow-md' : 'bg-zinc-900/50 text-zinc-400 hover:text-zinc-200 border border-zinc-800/80 hover:bg-zinc-800/50'}`}>Portuguese</button>
+                            </div>
+
+                            <div className="w-full h-px bg-zinc-800/80 my-3"></div>
+
+                            <h3 className="text-zinc-500 text-xs font-bold mb-2 uppercase tracking-wider">Technical Format</h3>
+                            <div className="grid grid-cols-2 gap-2">
+                                <button onClick={() => setDomain(domain === 'tech' ? 'none' : 'tech')} className={`px-4 py-3 rounded-2xl text-sm font-bold transition-all text-center flex-col gap-1 items-center justify-center flex ${domain === 'tech' ? 'bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/30' : 'bg-zinc-900/40 text-zinc-400 hover:text-zinc-200 border border-zinc-800/50 hover:bg-zinc-800'}`}>Tech / DevOps</button>
+                                <button onClick={() => setDomain(domain === 'legal' ? 'none' : 'legal')} className={`px-4 py-3 rounded-2xl text-sm font-bold transition-all text-center flex-col gap-1 items-center justify-center flex ${domain === 'legal' ? 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/30' : 'bg-zinc-900/40 text-zinc-400 hover:text-zinc-200 border border-zinc-800/50 hover:bg-zinc-800'}`}>Legal Framework</button>
+                                <button onClick={() => setDomain(domain === 'medical' ? 'none' : 'medical')} className={`px-4 py-3 rounded-2xl text-sm font-bold transition-all text-center flex-col gap-1 items-center justify-center flex col-span-2 ${domain === 'medical' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30' : 'bg-zinc-900/40 text-zinc-400 hover:text-zinc-200 border border-zinc-800/50 hover:bg-zinc-800'}`}>Medical / Pharma</button>
+                            </div>
                         </div>
 
-                        <div className="flex items-center gap-4 w-full md:w-auto">
-                            <div className="flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-800/80 flex-1 md:flex-none">
-                                <Hash size={16} className="text-zinc-500" />
-                                <span className="text-sm font-medium text-zinc-400 w-16">Count:</span>
+                        {/* Count & Refresh */}
+                        <div className="flex items-center justify-between p-5 bg-zinc-950 border border-zinc-800 rounded-3xl shadow-xl">
+                            <div className="flex items-center gap-3">
+                                <Hash size={18} className="text-zinc-500" />
+                                <span className="text-sm font-bold text-zinc-300">Paragraphs:</span>
                                 <input
                                     type="number"
                                     value={paragraphs}
                                     min="1"
                                     max="20"
                                     onChange={(e) => setParagraphs(Math.min(20, Math.max(1, parseInt(e.target.value) || 1)))}
-                                    className="bg-transparent text-white font-bold w-12 focus:outline-none"
+                                    className="bg-zinc-900 border border-zinc-800/80 rounded-xl px-3 py-1.5 text-white font-bold w-16 focus:outline-none focus:border-fuchsia-500/50 text-center"
                                 />
                             </div>
 
-                            <button onClick={() => setSeed(s => s + 1)} className="p-3 bg-zinc-900 border border-zinc-800/80 hover:bg-zinc-800 rounded-xl text-zinc-300 transition-colors" title="Regenerate Seed">
+                            <button onClick={() => setSeed(s => s + 1)} className="p-2.5 bg-zinc-900 border border-zinc-800/80 hover:border-zinc-700 rounded-xl text-zinc-300 transition-colors" title="Regenerate Text">
                                 <RefreshCcw size={18} />
                             </button>
                         </div>
-                    </div>
 
-                    <div className="flex-1 relative group">
-                        <textarea
-                            readOnly
-                            value={generatedText}
-                            className="w-full h-full min-h-[400px] bg-zinc-900/40 border border-zinc-800/80 rounded-3xl p-6 md:p-8 text-zinc-300 focus:outline-none transition-colors custom-scrollbar font-serif text-lg leading-relaxed shadow-inner resize-none"
-                        ></textarea>
-
-                        <div className="absolute top-4 right-4 z-10">
-                            <button
-                                onClick={handleCopy}
-                                className="flex items-center gap-2 px-5 py-2.5 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold rounded-xl shadow-lg transition-transform active:scale-95"
-                            >
-                                {copied ? <><Check size={18} /> Copied</> : <><Copy size={18} /> Copy to Clipboard</>}
-                            </button>
-                        </div>
+                        {/* Copy to Clipboard */}
+                        <button
+                            onClick={handleCopy}
+                            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold rounded-3xl shadow-[0_0_20px_rgba(217,70,239,0.2)] transition-all active:scale-95 text-lg mt-auto md:mt-0"
+                        >
+                            {copied ? <><Check size={20} /> Copied</> : <><Copy size={20} /> Copy to Clipboard</>}
+                        </button>
                     </div>
                 </div>
 
-                
 
-                
+
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-fuchsia-500/10 blur-[100px] pointer-events-none"></div>
@@ -166,9 +195,9 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                             <div className="w-14 h-14 rounded-2xl bg-violet-500/10 border border-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                                 <ListOrdered size={28} />
                             </div>
-                            <h3 className="text-xl font-bold text-zinc-100 mb-4">Dynamic Generation</h3>
+                            <h3 className="text-xl font-bold text-zinc-100 mb-4">Global Multilingual Support</h3>
                             <p className="text-zinc-400 text-sm leading-relaxed mb-4">
-                                Customize paragraph counts and length distributions on the fly. The engine randomizes sentence structures to emulate authentic human reading patterns.
+                                Generate your placeholder text in Classic Latin, English, Spanish, French, German, Italian, or Portuguese. Combine these base languages effortlessly with any technical format.
                             </p>
                         </div>
 
@@ -183,9 +212,29 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                         </div>
                     </div>
                 </div>
-            
 
-            <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+                {/* FAQ Section */}
+                <div className="max-w-4xl mx-auto px-4 md:px-8 mt-16 mb-20 relative z-10 w-full">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+                        <p className="text-zinc-400">Everything you need to know about our intelligent context builder.</p>
+                    </div>
+                    <div className="space-y-4">
+                        <div className="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-3xl backdrop-blur-xl">
+                            <h3 className="text-lg font-bold text-white mb-2">How does the multilingual feature work?</h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Just pick your preferred language from the sidebar. Instead of using the usual Latin 'lorem ipsum' words, our generator uses real, common words from Italian, Portuguese, Spanish, French, or German. It helps your mockups feel much more authentic depending on who you're designing for.</p>
+                        </div>
+                        <div className="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-3xl backdrop-blur-xl">
+                            <h3 className="text-lg font-bold text-white mb-2">Can I combine languages with technical formats?</h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Absolutely! We built the language options and technical formats as two separate things. So you can totally create a medical paragraph using Spanish words, or generate some DevOps-themed text in Italian.</p>
+                        </div>
+                        <div className="p-6 bg-zinc-900/40 border border-zinc-800/80 rounded-3xl backdrop-blur-xl">
+                            <h3 className="text-lg font-bold text-white mb-2">Is the text actually meaningful?</h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed">Nope, it's still total gibberish so people don't get distracted trying to read it. But we deliberately mix up the word and paragraph lengths, and randomly sprinkle in technical terms like 'encryption' or 'oncology' so it visually looks like real content sitting on the page.</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
                     <PrivacyFeatures
                         toolName="Lorem Context Builder (Local)"
                         useCases={[
@@ -196,8 +245,8 @@ export default function LoremBuilder({ onBack }: { onBack: () => void }) {
                     />
                 </div>
 
-            <AdUnit slotId="LOREM_BOTTOM" />
-        </div>
+                <AdUnit slotId="LOREM_BOTTOM" />
+            </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
