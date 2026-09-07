@@ -30,5 +30,10 @@ Because the application runs entirely in the browser using client-side JavaScrip
 - [SVG Tracer](https://creatorkithub.org/svg-tracer/): Offline raster to SVG vector conversion.
 - [Social Media Safe Zone Overlay](https://creatorkithub.org/social-media-safe-zone-overlay/): Preview video dimensions and UI boundaries for TikTok/Reels/Shorts.
 
+### Blog
+- [Blog Hub](https://creatorkithub.org/blog/): Access our latest privacy and offline security guides.
+- [Why Offline Tools Matter](https://creatorkithub.org/blog/why-offline-tools-matter/): Why strictly processing your data inside the browser guarantees absolute privacy compared to cloud solutions.
+- [PDF Security Best Practices](https://creatorkithub.org/blog/pdf-security-best-practices/): Exploring the hidden dangers within PDFs and how to sanitize them natively.
+
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).
