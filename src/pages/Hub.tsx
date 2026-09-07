@@ -222,7 +222,7 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-zinc-100 to-zinc-500 bg-clip-text text-transparent">
                         Creator Kit Hub
                     </h1>
-                    <p className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+                    <p className="text-zinc-400 text-lg md:text-xl max-w-4xl lg:max-w-5xl leading-relaxed">
                         Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of web tools tailored for modern creators. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more-all localized directly in your browser.
                     </p>
                 </header>
@@ -319,6 +319,7 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                                 Instead of uploading your file to a server cluster, we utilize highly optimized WebAssembly (Wasm) ports of robust libraries (like PDF.js and ExifReader) and native JavaScript APIs. When you drop a file into Creator Kit Hub, it is parsed directly into your device's active system memory (RAM). The device's CPU performs the file modification, and the resulting file is saved instantly. At no point is an internet connection opened to transmit your document payload.
                             </p>
                         </details>
+
                         <details className="group bg-zinc-900/30 border border-zinc-800/60 rounded-2xl p-6 open:bg-zinc-900/60 transition-colors cursor-pointer">
                             <summary className="text-lg font-bold text-zinc-100 flex justify-between items-center outline-none">
                                 Does Creator Kit Hub support heavy multi-gigabyte processing?
@@ -326,6 +327,36 @@ export default function Hub({ onSelectTool }: { onSelectTool: (toolId: string) =
                             </summary>
                             <p className="mt-4 text-zinc-400 leading-relaxed text-sm">
                                 Advanced tools like our File CryptoAudit are capable of streaming chunks of massive multi-gigabyte files locally. Because we use Web Streams APIs and chunking, we can process massive files securely without crashing your browser tab, bypassing traditional network upload size limits completely. Limitations are bound only by your local machine's computing power.
+                            </p>
+                        </details>
+
+                        <details className="group bg-zinc-900/30 border border-zinc-800/60 rounded-2xl p-6 open:bg-zinc-900/60 transition-colors cursor-pointer">
+                            <summary className="text-lg font-bold text-zinc-100 flex justify-between items-center outline-none">
+                                Are there any data caps or file size limits?
+                                <span className="text-zinc-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                            </summary>
+                            <p className="mt-4 text-zinc-400 leading-relaxed text-sm">
+                                Because everything runs locally on your machine, there are absolutely no artificial data caps or maximum file sizes imposed by us. There are no premium subscription tiers to unlock higher bandwidth. If your computer or phone has enough RAM to handle a 5GB file, you can process it effortlessly without waiting for uploads.
+                            </p>
+                        </details>
+
+                        <details className="group bg-zinc-900/30 border border-zinc-800/60 rounded-2xl p-6 open:bg-zinc-900/60 transition-colors cursor-pointer">
+                            <summary className="text-lg font-bold text-zinc-100 flex justify-between items-center outline-none">
+                                Are these tools really 100% free?
+                                <span className="text-zinc-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                            </summary>
+                            <p className="mt-4 text-zinc-400 leading-relaxed text-sm">
+                                Yes, Creator Kit Hub is completely free to use. Traditional file conversion websites charge monthly fees because they have to pay for expensive cloud server processing architectures. Since our tools leverage the processing power of your own device, our server costs remain incredibly low, allowing us to keep this entire suite accessible and free.
+                            </p>
+                        </details>
+
+                        <details className="group bg-zinc-900/30 border border-zinc-800/60 rounded-2xl p-6 open:bg-zinc-900/60 transition-colors cursor-pointer">
+                            <summary className="text-lg font-bold text-zinc-100 flex justify-between items-center outline-none">
+                                Can I use these tools on my mobile phone?
+                                <span className="text-zinc-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+                            </summary>
+                            <p className="mt-4 text-zinc-400 leading-relaxed text-sm">
+                                Yes! Creator Kit Hub is designed with a mobile-first philosophy and structured as a Progressive Web App (PWA). Modern smartphones are equipped with incredibly powerful processors capable of executing WebAssembly seamlessly. Our tools adapt naturally to smaller screens so you can safely strip metadata from photos or split PDFs right from your mobile browser.
                             </p>
                         </details>
                     </div>

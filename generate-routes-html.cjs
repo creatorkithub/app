@@ -47,7 +47,10 @@ const routes = [
   'pomodoro-tracker',
   'tone-analyzer',
   'lorem-builder',
-  'svg-tracer'
+  'svg-tracer',
+  'blog',
+  'blog/why-offline-tools-matter',
+  'blog/pdf-security-best-practices'
 ];
 
 function generateRoutes() {
@@ -114,7 +117,10 @@ function generateRoutes() {
     'tone-analyzer': { title: 'Tone Analyzer - Offline Writing Assistant', desc: 'Count words, characters, and analyze the tone of your text passages directly in your web browser.' },
     'lorem-builder': { title: 'Lorem Ipsum Builder - Custom Dummy Text Generator', desc: 'Generate customized placeholder text (Lorem Ipsum) paragraphs instantly for your design mockups.' },
     'svg-tracer': { title: 'SVG Tracer - Raster to Vector Converter Offline', desc: 'Convert raster images (PNG, JPG) to scalable vector graphics (SVG) entirely within your browser memory.' },
-    'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' }
+    'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' },
+    'blog': { title: 'Creator Kit Blog - Privacy & Offline Security Guides', desc: 'Deep dives, security insights, and comprehensive guides curated to elevate your digital workflows and maximize offline efficiency.' },
+    'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
+    'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' }
   };
 
   const defaultSeoParagraphs = `

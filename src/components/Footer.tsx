@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useRouter } from '../App';
 
 export const Footer = () => {
@@ -17,6 +17,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-medium text-zinc-400">
+                        <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('/blog'); }} className="hover:text-zinc-200 transition-colors">Blog</a>
                         <a href="/about-us" onClick={(e) => { e.preventDefault(); navigate('/about-us'); }} className="hover:text-zinc-200 transition-colors">About</a>
                         <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); navigate('/privacy-policy'); }} className="hover:text-zinc-200 transition-colors">Privacy Policy</a>
                         <a href="/terms-of-service" onClick={(e) => { e.preventDefault(); navigate('/terms-of-service'); }} className="hover:text-zinc-200 transition-colors">Terms of Service</a>

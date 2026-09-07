@@ -22,6 +22,7 @@ export const Navbar = ({ navigate }: { navigate: (path: string) => void }) => {
 
     const navLinks = [
         { path: '/', label: 'Home' },
+        { path: '/blog/', label: 'Blog' },
         { path: '/about-us/', label: 'About' },
         { path: '/contact-us/', label: 'Contact' },
         { path: '/privacy-policy/', label: 'Privacy' },
@@ -78,6 +79,7 @@ export const Navbar = ({ navigate }: { navigate: (path: string) => void }) => {
                             </div>
                         </div>
 
+                        <a href="/blog/" onClick={(e) => handleNavigate(e, '/blog/')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">Blog</a>
                         <a href="/about-us/" onClick={(e) => handleNavigate(e, '/about-us/')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">About</a>
                         <a href="/contact-us/" onClick={(e) => handleNavigate(e, '/contact-us/')} className="px-3 py-2 text-sm font-medium text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-zinc-800/50">Contact</a>
                     </div>
