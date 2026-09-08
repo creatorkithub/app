@@ -50,7 +50,9 @@ const routes = [
   'svg-tracer',
   'blog',
   'blog/why-offline-tools-matter',
-  'blog/pdf-security-best-practices'
+  'blog/pdf-security-best-practices',
+  'blog/creator-kit-guide',
+  'blog/mastering-productivity'
 ];
 
 function generateRoutes() {
@@ -120,7 +122,9 @@ function generateRoutes() {
     'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' },
     'blog': { title: 'Creator Kit Blog - Privacy & Offline Security Guides', desc: 'Deep dives, security insights, and comprehensive guides curated to elevate your digital workflows and maximize offline efficiency.' },
     'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
-    'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' }
+    'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' },
+    'blog/creator-kit-guide': { title: 'The Ultimate Creator Kit Guide - Maximizing Offline Web Tools', desc: 'Explore a detailed guide for utilizing the Creator Kit Hub effectively. Unlock the full potential of 100% offline, privacy-first web utilities for your daily workflow.' },
+    'blog/mastering-productivity': { title: 'Mastering Productivity with Client-Side Utilities', desc: 'Learn modern strategies to eliminate cloud latency and boost your workflow efficiency with offline, secure browser-based tools.' }
   };
 
   const defaultSeoParagraphs = `
@@ -210,6 +214,16 @@ function generateRoutes() {
         
         <h3>Privacy-First Offline Compilation</h3>
         <p>Your personal photos and sensitive financial scans deserve the highest tier of security. Our 100% client-side architecture guarantees that your high-resolution images are processed locally within your browser. You get lightning-fast compilations free of server delays and completely void of cloud-upload security risks.</p>
+      </article>`,
+    'blog/creator-kit-guide': `
+      <article>
+        <h3>Comprehensive Offline Toolkit Guide</h3>
+        <p>Understanding how to leverage standalone client-side web tools can drastically improve your workflow speed and data privacy limits. This technical guide explores advanced applications within the Creator Kit Hub to maximize your daily asset management capabilities.</p>
+      </article>`,
+    'blog/mastering-productivity': `
+      <article>
+        <h3>Eliminating Cloud Latency</h3>
+        <p>Switching from server-dependent services to specialized edge and local offline computation removes upload queue bottlenecks. Mastering these productivity pipelines ensures that your data stays secure, unmonitored by remote services, and always accessible when internet connectivity is unstable.</p>
       </article>`
   };
 
