@@ -2,6 +2,32 @@
 
 const articles = [
     {
+        title: 'Mastering Digital Productivity with Stickynotes on Windows',
+        description: 'In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus. Discover how integrating minimalist tools can radically improve your daily desktop workflow.',
+        href: '/blog/mastering-productivity',
+        date: 'Sep 8, 2026',
+        readTime: '7 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" /></svg>
+        ),
+        color: 'text-emerald-400',
+        bg: 'bg-emerald-500/10 hover:bg-emerald-500/20',
+        border: 'border-emerald-500/20'
+    },
+    {
+        title: 'The Comprehensive Guide to CreatorKitHub Tools',
+        description: 'Our ultimate guide to maximizing your offline, client-side digital workflows. Explore how each tool inside the Hub is engineered to guarantee 100% privacy while radically speeding up productivity.',
+        href: '/blog/creator-kit-guide',
+        date: 'Sep 8, 2026',
+        readTime: '8 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m20.66 7-8.91 5.96a2 2 0 0 1-2.24 0L.59 7" /><path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7" /></svg>
+        ),
+        color: 'text-indigo-400',
+        bg: 'bg-indigo-500/10 hover:bg-indigo-500/20',
+        border: 'border-indigo-500/20'
+    },
+    {
         title: 'Why Offline Client-Side Web Tools Matter for Privacy',
         description: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.',
         href: '/blog/why-offline-tools-matter',
@@ -35,8 +61,8 @@ export default function BlogHub({ onNavigate }: { onNavigate: (path: string) => 
             <div className="max-w-5xl mx-auto h-full flex flex-col pt-8">
                 <header className="mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
                     <div>
-                        <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500 mb-4 tracking-tight">
-                            Creator Kit Blog
+                        <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-500 mb-4 tracking-tight pb-2">
+                            Creator Kit Hub Blog
                         </h1>
                         <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
                             Deep dives, security insights, and comprehensive guides curated to elevate your digital workflows and maximize offline efficiency.

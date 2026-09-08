@@ -1,5 +1,6 @@
 
 import { BlogSidebar } from '../../components/BlogSidebar';
+import { BlogFooter } from '../../components/BlogFooter';
 
 export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -70,13 +71,14 @@ export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string)
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Managing Your Files Locally</h2>
 
-                        <p>Eventually, you'll probably need to collect and merge various files from different places—maybe sorting a stack of tax forms or client invoices. Keeping all of this local just ensures your financial breadcrumbs aren't floating around a third-party server.</p>
+                        <p>Eventually, you'll probably need to collect and merge various files from different places - maybe sorting a stack of tax forms or client invoices. Keeping all of this local just ensures your financial breadcrumbs aren't floating around a third-party server.</p>
 
                         <p>Using a <a href="/pdf-toolkit/merger" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">Client-Side PDF Merger</a> means your sensitive documents never have to sit in someone else's database. You keep total control over where they go, moving them around safely on your own machine.</p>
 
-                        <p>Solid document security really comes down to two simple habits: clearing out the invisible junk hiding under the surface, and asserting ownership over the visible pages—all while doing the work safely on your own private device.</p>
+                        <p>Solid document security really comes down to two simple habits: clearing out the invisible junk hiding under the surface, and asserting ownership over the visible pages - all while doing the work safely on your own private device.</p>
 
                     </article>
+                    <BlogFooter tags={['PDF', 'Metadata', 'Security']} currentPath="/blog/pdf-security-best-practices" onNavigate={onNavigate} />
                 </div>
 
                 {/* Right Column: Promotional Sidebar */}

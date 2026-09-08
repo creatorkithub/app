@@ -1,5 +1,6 @@
 
 import { BlogSidebar } from '../../components/BlogSidebar';
+import { BlogFooter } from '../../components/BlogFooter';
 
 export default function WhyOfflineTools({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -80,6 +81,7 @@ export default function WhyOfflineTools({ onNavigate }: { onNavigate: (path: str
                         <p>When you edit contracts, strip metadata from personal photos, or extract colors from design assets locally, you can rest easy knowing you're protecting your digital privacy. Next time you need to process a file, give an offline tool a try to experience better speed, no upload limits, and total peace of mind.</p>
 
                     </article>
+                    <BlogFooter tags={['Privacy', 'Client-Side', 'Security']} currentPath="/blog/why-offline-tools-matter" onNavigate={onNavigate} />
                 </div>
 
                 {/* Right Column: Promotional Sidebar */}

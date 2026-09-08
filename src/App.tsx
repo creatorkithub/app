@@ -23,6 +23,8 @@ const SvgTracer = lazy(() => import('./pages/SvgTracer'));
 const BlogHub = lazy(() => import('./pages/BlogHub'));
 const WhyOfflineTools = lazy(() => import('./pages/blog/WhyOfflineTools'));
 const PdfSecurity = lazy(() => import('./pages/blog/PdfSecurity'));
+const MasteringProductivity = lazy(() => import('./pages/blog/MasteringProductivity'));
+const CreatorKitGuide = lazy(() => import('./pages/blog/CreatorKitGuide'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -124,7 +126,9 @@ export default function App() {
       'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' },
       'blog': { title: 'Creator Kit Blog - Privacy & Offline Security Guides', desc: 'Deep dives, security insights, and comprehensive guides curated to elevate your digital workflows and maximize offline efficiency.' },
       'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
-      'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' }
+      'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' },
+      'blog/mastering-productivity': { title: 'Mastering Digital Productivity with Stickynotes on Windows', desc: 'In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus.' },
+      'blog/creator-kit-guide': { title: 'The Comprehensive Guide to CreatorKitHub Tools', desc: 'Our ultimate guide to maximizing your offline, client-side digital workflows. Explore how each tool inside the Hub guarantees privacy.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -305,6 +309,8 @@ export default function App() {
     if (activePath === '/blog') return <BlogHub onNavigate={navigate} />;
     if (activePath === '/blog/why-offline-tools-matter') return <WhyOfflineTools onNavigate={navigate} />;
     if (activePath === '/blog/pdf-security-best-practices') return <PdfSecurity onNavigate={navigate} />;
+    if (activePath === '/blog/mastering-productivity') return <MasteringProductivity onNavigate={navigate} />;
+    if (activePath === '/blog/creator-kit-guide') return <CreatorKitGuide onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {

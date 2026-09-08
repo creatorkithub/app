@@ -34,6 +34,8 @@ Because the application runs entirely in the browser using client-side JavaScrip
 - [Blog Hub](https://creatorkithub.org/blog/): Access our latest privacy and offline security guides.
 - [Why Offline Tools Matter](https://creatorkithub.org/blog/why-offline-tools-matter/): Why strictly processing your data inside the browser guarantees absolute privacy compared to cloud solutions.
 - [PDF Security Best Practices](https://creatorkithub.org/blog/pdf-security-best-practices/): Exploring the hidden dangers within PDFs and how to sanitize them natively.
+- [Mastering Digital Productivity](https://creatorkithub.org/blog/mastering-productivity/): How minimalist offline tools like screen stickynotes are the key to true desktop focus.
+- [CreatorKitHub Tools Guide](https://creatorkithub.org/blog/creator-kit-guide/): The comprehensive guide to our offline, client-side digital workflows and why they guarantee privacy.
 
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).
