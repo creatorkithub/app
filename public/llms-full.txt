@@ -6,7 +6,7 @@
 
 In today's digital landscape, privacy and security are paramount. Our suite of professional web tools strictly operates within your browser's local environment. This offline-first approach guarantees that your sensitive files, whether they are confidential PDFs, personal images, or secure passwords, are never uploaded to any remote server or third-party database. By leveraging advanced HTML5 capabilities and WebAssembly, we deliver lightning-fast data processing locally, completely eliminating slow upload times and bandwidth limitations.
 
-Every action you perform using our tool suite—from splitting and merging PDFs, extracting file palettes, cleaning EXIF metadata, to auditing passwords—is executed real-time on your own device's hardware. Once the web application is loaded, you can safely disconnect your internet connectivity and continue working without interruptions.
+Every action you perform using our tool suite-from splitting and merging PDFs, extracting file palettes, cleaning EXIF metadata, to auditing passwords-is executed real-time on your own device's hardware. Once the web application is loaded, you can safely disconnect your internet connectivity and continue working without interruptions.
 
 ## Tool Deep Dives
 

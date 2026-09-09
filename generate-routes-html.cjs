@@ -52,7 +52,11 @@ const routes = [
   'blog/why-offline-tools-matter',
   'blog/pdf-security-best-practices',
   'blog/creator-kit-guide',
-  'blog/mastering-productivity'
+  'blog/mastering-productivity',
+  'blog/svg-tracing-techniques',
+  'blog/text-encryption-privacy',
+  'blog/color-theory-web-design',
+  'blog/mastering-typography'
 ];
 
 function generateRoutes() {
@@ -77,6 +81,9 @@ function generateRoutes() {
   const baseTitle = 'Creator Kit Hub - 100% Offline Client-Side Web Tools';
   const baseDescription = 'Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools. Securely process PDFs, convert high-resolution images, generate precise social media safe zones, and much more.';
   const baseCanonical = '<link rel="canonical" href="https://creatorkithub.org/" />';
+  const baseOgUrl = '<meta property="og:url" content="https://creatorkithub.org/" />';
+  const baseHrefLangEn = '<link rel="alternate" hreflang="en" href="https://creatorkithub.org/" />';
+  const baseHrefLangX = '<link rel="alternate" hreflang="x-default" href="https://creatorkithub.org/" />';
 
   // Canonical mapping for duplicate aliases
   const canonicalMap = {
@@ -133,11 +140,11 @@ function generateRoutes() {
         <p>In today's digital landscape, privacy and security are paramount. Our suite of professional web tools strictly operates within your browser's local environment. This offline-first approach guarantees that your sensitive files, whether they are confidential PDFs, personal images, or secure passwords, are never uploaded to any remote server or third-party database. By leveraging advanced HTML5 capabilities and WebAssembly, we deliver lightning-fast data processing locally, completely eliminating slow upload times and bandwidth limitations.</p>
         
         <h3>Uncompromising Data Security</h3>
-        <p>We believe that your data belongs to you. Every action you perform using our tool suite—from splitting and merging PDFs, extracting file palettes, cleaning EXIF metadata, to auditing passwords—is executed real-time on your own device's hardware. Once the web application is loaded, you can safely disconnect your internet connectivity and continue working without interruptions. This design eliminates the threat of man-in-the-middle attacks and data breaches associated with cloud processing services. Rest assured knowing your workflows are fortified with the highest level of client-side data security.</p>
+        <p>We believe that your data belongs to you. Every action you perform using our tool suite-from splitting and merging PDFs, extracting file palettes, cleaning EXIF metadata, to auditing passwords-is executed real-time on your own device's hardware. Once the web application is loaded, you can safely disconnect your internet connectivity and continue working without interruptions. This design eliminates the threat of man-in-the-middle attacks and data breaches associated with cloud processing services. Rest assured knowing your workflows are fortified with the highest level of client-side data security.</p>
         
         <h3>Comprehensive Suite for Creators</h3>
         <blockquote>"Creator Kit Hub provides unparalleled privacy by executing 100% of data processing strictly within the client-side browser environment, bypassing server interactions."</blockquote>
-        <p><cite>— Cybersecurity Engineering Analysis</cite></p>
+        <p><cite>- Cybersecurity Engineering Analysis</cite></p>
         <p>Creator Kit Hub is the ultimate destination for designers, developers, and content creators. We provide intuitive, high-performance utilities including universal image format conversion, precise social media safe zone overlays, accessibility scoring, Pomodoro tracking, and in-depth document sanitation. Our open-access, entirely free platform ensures you have the reliable offline creator tools you need securely at your fingertips, without requiring any software installations, account registrations, or subscriptions.</p>
       </article>
     `;
@@ -261,6 +268,9 @@ function generateRoutes() {
 
     const canonicalRoute = canonicalMap[route] || route;
     const newCanonical = `<link rel="canonical" href="https://creatorkithub.org/${canonicalRoute}/" />`;
+    const newOgUrl = `<meta property="og:url" content="https://creatorkithub.org/${canonicalRoute}/" />`;
+    const newHrefLangEn = `<link rel="alternate" hreflang="en" href="https://creatorkithub.org/${canonicalRoute}/" />`;
+    const newHrefLangX = `<link rel="alternate" hreflang="x-default" href="https://creatorkithub.org/${canonicalRoute}/" />`;
     const metaLookup = seoMetaMap[canonicalRoute];
 
     let newTitle = metaLookup ? metaLookup.title : `${pageName} - Free Offline Creator Tools`;
@@ -277,6 +287,9 @@ function generateRoutes() {
 
     customHtml = customHtml.split(`<title>${baseTitle}</title>`).join(`<title>${newTitle}</title>`);
     customHtml = customHtml.split(baseCanonical).join(newCanonical);
+    customHtml = customHtml.split(baseOgUrl).join(newOgUrl);
+    customHtml = customHtml.split(baseHrefLangEn).join(newHrefLangEn);
+    customHtml = customHtml.split(baseHrefLangX).join(newHrefLangX);
     customHtml = customHtml.split(baseDescription).join(newDescription);
     customHtml = customHtml.split(baseTitle).join(newTitle);
     customHtml = customHtml.split('<!-- SEO_ROOT_CONTENT -->').join(seoRootContent);

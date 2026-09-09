@@ -25,6 +25,10 @@ const WhyOfflineTools = lazy(() => import('./pages/blog/WhyOfflineTools'));
 const PdfSecurity = lazy(() => import('./pages/blog/PdfSecurity'));
 const MasteringProductivity = lazy(() => import('./pages/blog/MasteringProductivity'));
 const CreatorKitGuide = lazy(() => import('./pages/blog/CreatorKitGuide'));
+const SvgTracingTechniques = lazy(() => import('./pages/blog/SvgTracingTechniques'));
+const TextEncryptionPrivacy = lazy(() => import('./pages/blog/TextEncryptionPrivacy'));
+const ColorTheoryWebDesign = lazy(() => import('./pages/blog/ColorTheoryWebDesign'));
+const MasteringTypography = lazy(() => import('./pages/blog/MasteringTypography'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -54,6 +58,30 @@ export default function App() {
   useEffect(() => { if (currentPath !== '/success') setLastToolPath(currentPath); }, [currentPath]);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showOfflineTooltip, setShowOfflineTooltip] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (e: any) => {
+      let currentScroll = window.scrollY;
+      const target = e.target;
+      if (target && target.scrollTop !== undefined) {
+        if (target.scrollTop > 0) currentScroll = target.scrollTop;
+      }
+
+      if (currentScroll > 300) setShowScrollTop(true);
+      else if (currentScroll < 100) setShowScrollTop(false);
+    };
+    window.addEventListener('scroll', handleScroll, true);
+    return () => window.removeEventListener('scroll', handleScroll, true);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollingElement = document.querySelector('.overflow-y-auto') as HTMLElement;
+    if (scrollingElement) {
+      scrollingElement.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handlePopState = () => {
@@ -128,7 +156,11 @@ export default function App() {
       'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
       'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' },
       'blog/mastering-productivity': { title: 'Mastering Digital Productivity with Stickynotes on Windows', desc: 'In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus.' },
-      'blog/creator-kit-guide': { title: 'The Comprehensive Guide to CreatorKitHub Tools', desc: 'Our ultimate guide to maximizing your offline, client-side digital workflows. Explore how each tool inside the Hub guarantees privacy.' }
+      'blog/creator-kit-guide': { title: 'The Comprehensive Guide to CreatorKitHub Tools', desc: 'Our ultimate guide to maximizing your offline, client-side digital workflows. Explore how each tool inside the Hub guarantees privacy.' },
+      'blog/svg-tracing-techniques': { title: 'From Raster to Vector: The Power of SVG Tracing', desc: 'Discover how leveraging offline SVG tracing natively upgrades your rasterized images into infinitely scalable mathematical vectors.' },
+      'blog/text-encryption-privacy': { title: 'Understanding Client-Side Text Encryption', desc: 'Learn how zero-knowledge client-side encryption safely bridges the communication gap without compromising sensitive data.' },
+      'blog/color-theory-web-design': { title: 'Color Extraction Magic: Building Harmonious Palettes', desc: 'Learn how to algorithmically extract dominant and harmonious hex codes straight from visual media using strictly offline tools.' },
+      'blog/mastering-typography': { title: 'The Art of Lorem Ipsum: Mock Text for Better UI Prototyping', desc: 'Discover why utilizing offline dummy text generators deeply enhances structural wireframing and responsive design.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -311,6 +343,10 @@ export default function App() {
     if (activePath === '/blog/pdf-security-best-practices') return <PdfSecurity onNavigate={navigate} />;
     if (activePath === '/blog/mastering-productivity') return <MasteringProductivity onNavigate={navigate} />;
     if (activePath === '/blog/creator-kit-guide') return <CreatorKitGuide onNavigate={navigate} />;
+    if (activePath === '/blog/svg-tracing-techniques') return <SvgTracingTechniques onNavigate={navigate} />;
+    if (activePath === '/blog/text-encryption-privacy') return <TextEncryptionPrivacy onNavigate={navigate} />;
+    if (activePath === '/blog/color-theory-web-design') return <ColorTheoryWebDesign onNavigate={navigate} />;
+    if (activePath === '/blog/mastering-typography') return <MasteringTypography onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {
@@ -353,6 +389,17 @@ export default function App() {
 
         {/* Global Floating Offline Indicator */}
         <div className="fixed bottom-6 right-6 z-[99] flex items-center gap-3">
+
+          {/* Bring to Top Button (Blogs Only) */}
+          {currentPath.startsWith('/blog') && showScrollTop && (
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center justify-center w-[46px] h-[46px] bg-[#18181b]/95 hover:bg-[#27272a] text-zinc-400 hover:text-zinc-200 backdrop-blur-md border border-zinc-800 hover:border-zinc-700 rounded-full shadow-[0_4_20px_rgba(0,0,0,0.5)] transition-all animate-in slide-in-from-bottom-2 fade-in"
+              aria-label="Back to top"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            </button>
+          )}
 
           {/* Native Install Button (Only visible when browser allows installation and not on homepage) */}
           {deferredPrompt && currentPath !== '/' && (

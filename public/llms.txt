@@ -36,6 +36,10 @@ Because the application runs entirely in the browser using client-side JavaScrip
 - [PDF Security Best Practices](https://creatorkithub.org/blog/pdf-security-best-practices/): Exploring the hidden dangers within PDFs and how to sanitize them natively.
 - [Mastering Digital Productivity](https://creatorkithub.org/blog/mastering-productivity/): How minimalist offline tools like screen stickynotes are the key to true desktop focus.
 - [CreatorKitHub Tools Guide](https://creatorkithub.org/blog/creator-kit-guide/): The comprehensive guide to our offline, client-side digital workflows and why they guarantee privacy.
+- [From Raster to Vector: The Power of SVG Tracing](https://creatorkithub.org/blog/svg-tracing-techniques/): Discover how leveraging offline SVG tracing natively upgrades your rasterized images into infinitely scalable vectors.
+- [Understanding Client-Side Text Encryption](https://creatorkithub.org/blog/text-encryption-privacy/): Learn how zero-knowledge client-side encryption safely bridges the communication gap without compromising sensitive data.
+- [Color Extraction Magic](https://creatorkithub.org/blog/color-theory-web-design/): Extract dominant and harmonious hex codes straight from visual media using strictly offline client-side tools.
+- [The Art of Lorem Ipsum](https://creatorkithub.org/blog/mastering-typography/): Discover why utilizing robust offline dummy text generators deeply enhances structural wireframing.
 
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).

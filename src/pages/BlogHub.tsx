@@ -1,6 +1,56 @@
-
-
 const articles = [
+    {
+        title: 'From Raster to Vector: The Power of SVG Tracing in Modern Web Design',
+        description: 'Scalability is the pillar of digital responsiveness. Discover how leveraging offline SVG tracing natively upgrades your rasterized images into infinitely scalable mathematical vectors.',
+        href: '/blog/svg-tracing-techniques',
+        date: 'Sep 9, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>
+        ),
+        color: 'text-emerald-400',
+        bg: 'bg-emerald-500/10 hover:bg-emerald-500/20',
+        border: 'border-emerald-500/20'
+    },
+    {
+        title: 'Data Privacy in the Digital Age: Understanding Client-Side Text Encryption',
+        description: 'Sending passwords or API keys over instant messaging apps is incredibly risky. Learn how zero-knowledge client-side encryption safely bridges the communication gap.',
+        href: '/blog/text-encryption-privacy',
+        date: 'Sep 9, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+        ),
+        color: 'text-rose-400',
+        bg: 'bg-rose-500/10 hover:bg-rose-500/20',
+        border: 'border-rose-500/20'
+    },
+    {
+        title: 'Color Extraction Magic: Building Harmonious Palettes directly from Images',
+        description: 'Designing a beautiful UI often starts with a solitary piece of inspiration photography. Learn how to algorithmically extract dominant and harmonious hex codes.',
+        href: '/blog/color-theory-web-design',
+        date: 'Sep 9, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22a9.971 9.971 0 0 0 6.643-2.5l-1.393-2.41a9.971 9.971 0 0 1-5.25.91" /><path d="M21 16.5a9.971 9.971 0 0 0 .91-5.25l-2.41 1.393a9.971 9.971 0 0 1-2.5 6.643" /><path d="M18.643 5.357a9.971 9.971 0 0 0-6.643-2.5l1.393 2.41A9.971 9.971 0 0 1 18.643 4.357" /><path d="M11.5 2a9.971 9.971 0 0 0-5.25.91l2.41 1.393a9.971 9.971 0 0 1 6.643 2.5" /><path d="M5.357 5.357a9.971 9.971 0 0 0-2.5 6.643l2.41-1.393a9.971 9.971 0 0 1 .91-5.25" /><path d="M2.91 11.5a9.971 9.971 0 0 0 .91 5.25l1.393-2.41a9.971 9.971 0 0 1 2.5-6.643" /><circle cx="12" cy="12" r="9" /></svg>
+        ),
+        color: 'text-indigo-400',
+        bg: 'bg-indigo-500/10 hover:bg-indigo-500/20',
+        border: 'border-indigo-500/20'
+    },
+    {
+        title: 'The Art of Lorem Ipsum: How to Use Mock Text for Better UI Design Prototyping',
+        description: 'Using real copy during early layout phases heavily biases spatial assessment. Discover why utilizing robust offline dummy text generators deeply enhances structural wireframing.',
+        href: '/blog/mastering-typography',
+        date: 'Sep 9, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 7V4h16v3" /><path d="M9 20h6" /><path d="M12 4v16" /></svg>
+        ),
+        color: 'text-blue-400',
+        bg: 'bg-blue-500/10 hover:bg-blue-500/20',
+        border: 'border-blue-500/20'
+    },
     {
         title: 'Mastering Digital Productivity with Stickynotes on Windows',
         description: 'In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus. Discover how integrating minimalist tools can radically improve your daily desktop workflow.',
