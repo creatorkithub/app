@@ -26,8 +26,9 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,wasm,txt,woff2}'],
-        maximumFileSizeToCacheInBytes: 15728640 // 15MB limit for large tool WASM files
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,wasm,txt,xml,woff2}'],
+        maximumFileSizeToCacheInBytes: 15728640, // 15MB limit for large tool WASM files
+        navigateFallbackDenylist: [/^\/.*\.xml$/, /^\/.*\.txt$/]
       }
     })
   ],
