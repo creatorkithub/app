@@ -29,6 +29,10 @@ const SvgTracingTechniques = lazy(() => import('./pages/blog/SvgTracingTechnique
 const TextEncryptionPrivacy = lazy(() => import('./pages/blog/TextEncryptionPrivacy'));
 const ColorTheoryWebDesign = lazy(() => import('./pages/blog/ColorTheoryWebDesign'));
 const MasteringTypography = lazy(() => import('./pages/blog/MasteringTypography'));
+const A11yScorecardGuide = lazy(() => import('./pages/blog/A11yScorecardGuide'));
+const PrivaShieldGuide = lazy(() => import('./pages/blog/PrivaShieldGuide'));
+const CryptoAuditGuide = lazy(() => import('./pages/blog/CryptoAuditGuide'));
+const SafeZoneGuide = lazy(() => import('./pages/blog/SafeZoneGuide'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -160,7 +164,11 @@ export default function App() {
       'blog/svg-tracing-techniques': { title: 'From Raster to Vector: The Power of SVG Tracing', desc: 'Discover how leveraging offline SVG tracing natively upgrades your rasterized images into infinitely scalable mathematical vectors.' },
       'blog/text-encryption-privacy': { title: 'Understanding Client-Side Text Encryption', desc: 'Learn how zero-knowledge client-side encryption safely bridges the communication gap without compromising sensitive data.' },
       'blog/color-theory-web-design': { title: 'Color Extraction Magic: Building Harmonious Palettes', desc: 'Learn how to algorithmically extract dominant and harmonious hex codes straight from visual media using strictly offline tools.' },
-      'blog/mastering-typography': { title: 'The Art of Lorem Ipsum: Mock Text for Better UI Prototyping', desc: 'Discover why utilizing offline dummy text generators deeply enhances structural wireframing and responsive design.' }
+      'blog/mastering-typography': { title: 'The Art of Lorem Ipsum: Mock Text for Better UI Prototyping', desc: 'Discover why utilizing offline dummy text generators deeply enhances structural wireframing and responsive design.' },
+      'blog/a11y-scorecard-guide': { title: 'The Complete Guide to Web Accessibility and Color Contrast', desc: 'Ensure every user can smoothly navigate your content by adhering to high contrast design guidelines and verifiable color accessibility.' },
+      'blog/privashield-guide': { title: 'The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping', desc: 'Understand how EXIF location tags leak your exact GPS coordinates and how to securely scrub them 100% locally offline.' },
+      'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
+      'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -347,6 +355,10 @@ export default function App() {
     if (activePath === '/blog/text-encryption-privacy') return <TextEncryptionPrivacy onNavigate={navigate} />;
     if (activePath === '/blog/color-theory-web-design') return <ColorTheoryWebDesign onNavigate={navigate} />;
     if (activePath === '/blog/mastering-typography') return <MasteringTypography onNavigate={navigate} />;
+    if (activePath === '/blog/a11y-scorecard-guide') return <A11yScorecardGuide onNavigate={navigate} />;
+    if (activePath === '/blog/privashield-guide') return <PrivaShieldGuide onNavigate={navigate} />;
+    if (activePath === '/blog/crypto-audit-guide') return <CryptoAuditGuide onNavigate={navigate} />;
+    if (activePath === '/blog/safe-zone-guide') return <SafeZoneGuide onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {

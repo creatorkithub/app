@@ -56,7 +56,11 @@ const routes = [
   'blog/svg-tracing-techniques',
   'blog/text-encryption-privacy',
   'blog/color-theory-web-design',
-  'blog/mastering-typography'
+  'blog/mastering-typography',
+  'blog/a11y-scorecard-guide',
+  'blog/privashield-guide',
+  'blog/crypto-audit-guide',
+  'blog/safe-zone-guide'
 ];
 
 function generateRoutes() {
@@ -131,7 +135,11 @@ function generateRoutes() {
     'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
     'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' },
     'blog/creator-kit-guide': { title: 'The Ultimate Creator Kit Guide - Maximizing Offline Web Tools', desc: 'Explore a detailed guide for utilizing the Creator Kit Hub effectively. Unlock the full potential of 100% offline, privacy-first web utilities for your daily workflow.' },
-    'blog/mastering-productivity': { title: 'Mastering Productivity with Client-Side Utilities', desc: 'Learn modern strategies to eliminate cloud latency and boost your workflow efficiency with offline, secure browser-based tools.' }
+    'blog/mastering-productivity': { title: 'Mastering Productivity with Client-Side Utilities', desc: 'Learn modern strategies to eliminate cloud latency and boost your workflow efficiency with offline, secure browser-based tools.' },
+    'blog/a11y-scorecard-guide': { title: 'The Complete Guide to Web Accessibility and Color Contrast', desc: 'Ensure every user can smoothly navigate your content by adhering to high contrast design guidelines and verifiable color accessibility.' },
+    'blog/privashield-guide': { title: 'The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping', desc: 'Understand how EXIF location tags leak your exact GPS coordinates and how to securely scrub them 100% locally offline.' },
+    'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
+    'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' }
   };
 
   const defaultSeoParagraphs = `

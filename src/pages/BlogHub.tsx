@@ -1,5 +1,57 @@
 const articles = [
     {
+        title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones',
+        description: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.',
+        href: '/blog/safe-zone-guide',
+        date: 'Sep 11, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+        ),
+        color: 'text-orange-400',
+        bg: 'bg-orange-500/10 hover:bg-orange-500/20',
+        border: 'border-orange-500/20'
+    },
+    {
+        title: 'Password Security in 2026: Why Local Auditing is the Future',
+        description: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.',
+        href: '/blog/crypto-audit-guide',
+        date: 'Sep 11, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+        ),
+        color: 'text-purple-400',
+        bg: 'bg-purple-500/10 hover:bg-purple-500/20',
+        border: 'border-purple-500/20'
+    },
+    {
+        title: 'The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping',
+        description: 'Understand how EXIF location tags leak your exact GPS coordinates and how to securely scrub them 100% locally offline.',
+        href: '/blog/privashield-guide',
+        date: 'Sep 11, 2026',
+        readTime: '10 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+        ),
+        color: 'text-indigo-400',
+        bg: 'bg-indigo-500/10 hover:bg-indigo-500/20',
+        border: 'border-indigo-500/20'
+    },
+    {
+        title: 'The Complete Guide to Web Accessibility and Color Contrast',
+        description: 'Ensure every user can smoothly navigate your content by adhering to high contrast design guidelines and verifiable color accessibility.',
+        href: '/blog/a11y-scorecard-guide',
+        date: 'Sep 11, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="m14.31 8 5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16 3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94" /></svg>
+        ),
+        color: 'text-rose-400',
+        bg: 'bg-rose-500/10 hover:bg-rose-500/20',
+        border: 'border-rose-500/20'
+    },
+    {
         title: 'From Raster to Vector: The Power of SVG Tracing in Modern Web Design',
         description: 'Scalability is the pillar of digital responsiveness. Discover how leveraging offline SVG tracing natively upgrades your rasterized images into infinitely scalable mathematical vectors.',
         href: '/blog/svg-tracing-techniques',
@@ -105,7 +157,16 @@ const articles = [
     }
 ];
 
+import { useState } from 'react';
+
 export default function BlogHub({ onNavigate }: { onNavigate: (path: string) => void }) {
+    const [currentPage, setCurrentPage] = useState(1);
+    const blogsPerPage = 10;
+    const totalPages = Math.ceil(articles.length / blogsPerPage);
+    const indexOfLastBlog = currentPage * blogsPerPage;
+    const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+    const currentBlogs = articles.slice(indexOfFirstBlog, indexOfLastBlog);
+
     return (
         <div className="min-h-screen bg-[#09090b] text-white p-4 sm:p-8 font-sans selection:bg-zinc-500/30 overflow-y-auto w-full">
             <div className="max-w-5xl mx-auto h-full flex flex-col pt-8">
@@ -128,7 +189,7 @@ export default function BlogHub({ onNavigate }: { onNavigate: (path: string) => 
                 </header>
 
                 <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {articles.map((article, i) => (
+                    {currentBlogs.map((article, i) => (
                         <article
                             key={i}
                             className="group cursor-pointer rounded-2xl bg-[#18181b] border border-zinc-800 hover:border-zinc-700 hover:shadow-2xl hover:shadow-black/50 transition-all duration-300 overflow-hidden flex flex-col h-full relative"
@@ -159,6 +220,30 @@ export default function BlogHub({ onNavigate }: { onNavigate: (path: string) => 
                         </article>
                     ))}
                 </main>
+
+                {totalPages > 1 && (
+                    <div className="flex items-center justify-center gap-4 mt-12 pb-8">
+                        <button
+                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                            disabled={currentPage === 1}
+                            className="px-6 py-2.5 rounded-full bg-zinc-800 hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-300 transition-all font-medium flex items-center gap-2"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                            Previous
+                        </button>
+                        <span className="text-zinc-500 font-medium tracking-wide text-sm flex-shrink-0">
+                            Page {currentPage} of {totalPages}
+                        </span>
+                        <button
+                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                            disabled={currentPage === totalPages}
+                            className="px-6 py-2.5 rounded-full bg-zinc-800 hover:bg-zinc-700 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-300 transition-all font-medium flex items-center gap-2"
+                        >
+                            Next
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
