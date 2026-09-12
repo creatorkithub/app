@@ -130,7 +130,7 @@ export default function A11yScorecard() {
 
                     if (foundAA && foundAAA) break;
                 }
-            } catch (e) { }
+            } catch (_e) { }
 
             setSuggestions({ aa: foundAA, aaa: foundAAA });
         } else {
@@ -343,7 +343,7 @@ export default function A11yScorecard() {
                 </div>
             </div>
 
-            
+
 
             {/* Information Section */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative">
@@ -404,7 +404,7 @@ export default function A11yScorecard() {
                     </div>
                 </div>
             </div>
-        
+
 
             <div className="max-w-7xl mx-auto w-full z-10 relative mb-12 px-4 md:px-8">
                 <PrivacyFeatures

@@ -34,7 +34,7 @@ export const Footer = () => {
                                     } else {
                                         window.dispatchEvent(new Event('show-consent-banner'));
                                     }
-                                } catch (err) {
+                                } catch (_err) {
                                     window.dispatchEvent(new Event('show-consent-banner'));
                                 }
                             }}

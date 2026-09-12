@@ -4,11 +4,6 @@ import * as pdfjsLib from 'pdfjs-dist';
 import JSZip from 'jszip';
 import { Upload, FileArchive, Loader2, Download, Settings, FileImageIcon } from 'lucide-react';
 
-interface ExtractedImage {
-    pageNum: number;
-    blob: Blob | null; // null if still rendering
-}
-
 export default function PdfToJpg() {
     const { triggerCTA } = useAdContext();
     const [file, setFile] = useState<File | null>(null);

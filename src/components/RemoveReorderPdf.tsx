@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useAdContext } from '../contexts/AdContext';
 import { PDFDocument } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
-import { Upload, X, Loader2, Download, Trash2, GripVertical } from 'lucide-react';
+import { Upload, Loader2, Download, Trash2, GripVertical } from 'lucide-react';
 
 // Configure pdfjs worker
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;

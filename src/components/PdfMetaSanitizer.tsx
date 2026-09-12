@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useAdContext } from '../contexts/AdContext';
 import { PDFDocument } from 'pdf-lib';
-import { Upload, FileText, Loader2, Tag, Shield, CheckCircle2 } from 'lucide-react';
+import { Upload, Loader2, Tag, Shield, CheckCircle2 } from 'lucide-react';
 
 export default function PdfMetaSanitizer() {
     const { triggerCTA } = useAdContext();

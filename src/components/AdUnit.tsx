@@ -1,13 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 interface AdUnitProps {
     slotId?: string;
     className?: string;
 }
 
-const PUBLISHER_ID = 'ca-pub-4032375955420309';
-
-export const AdUnit: React.FC<AdUnitProps> = ({ slotId = 'PLACEHOLDER_SLOT_ID', className = '' }) => {
+export const AdUnit: React.FC<AdUnitProps> = (_props) => {
     // Hidden natively to allow Google Auto Ads to dictate placement.
     // To restore manual placements, remove 'return null' and uncomment the logic below.
     return null;

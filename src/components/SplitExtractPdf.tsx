@@ -3,7 +3,7 @@ import { useAdContext } from '../contexts/AdContext';
 import { PDFDocument } from 'pdf-lib';
 import { sanitizePdfMeta } from '../lib/sanitize';
 import JSZip from 'jszip';
-import { Upload, FileText, Loader2, Download, Settings, Scissors } from 'lucide-react';
+import { Upload, FileText, Loader2, Settings, Scissors } from 'lucide-react';
 
 type SplitMode = 'individual' | 'range' | 'custom';
 

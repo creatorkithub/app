@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { PrivacyFeatures } from './PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from './AdUnit';
@@ -57,7 +57,7 @@ export default function PrivaShield() {
             }
 
             return { meta: tags, risk: rawRisk };
-        } catch (err) {
+        } catch (_err) {
             // Failed to parse means it likely has no EXIF or a stripped header.
             return { meta: null, risk: 'LOW' };
         }
@@ -216,7 +216,7 @@ export default function PrivaShield() {
                     riskLevel: 'LOW',
                     metadata: null
                 } : f));
-            } catch (err: any) {
+            } catch (_err: any) {
                 setFiles(prev => prev.map(f => f.id === currentFiles[i].id ? { ...f, status: 'error' } : f));
             }
         }
@@ -518,9 +518,9 @@ export default function PrivaShield() {
 
             </div>
 
-            
 
-            
+
+
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 relative w-full mb-16">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
@@ -577,21 +577,21 @@ export default function PrivaShield() {
                         </p>
                     </div>
                 </div>
-            
 
-            <div className="max-w-7xl mx-auto w-full z-10 relative">
-                <PrivacyFeatures
-                    toolName="PrivaShield EXIF Editor (Local)"
-                    useCases={[
-                        "Scrubbing GPS coordinates from private family photographs.",
-                        "Stripping camera serial numbers prior to public document sharing.",
-                        "Removing creator metadata offline to protect journalistic sources."
-                    ]}
-                />
+
+                <div className="max-w-7xl mx-auto w-full z-10 relative">
+                    <PrivacyFeatures
+                        toolName="PrivaShield EXIF Editor (Local)"
+                        useCases={[
+                            "Scrubbing GPS coordinates from private family photographs.",
+                            "Stripping camera serial numbers prior to public document sharing.",
+                            "Removing creator metadata offline to protect journalistic sources."
+                        ]}
+                    />
+                </div>
+
+                <AdUnit slotId="PRIVA_BOT" />
             </div>
-
-            <AdUnit slotId="PRIVA_BOT" />
-        </div>
         </div >
     );
 }

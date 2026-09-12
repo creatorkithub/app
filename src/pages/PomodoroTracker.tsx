@@ -67,7 +67,7 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                 gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
                 oscillator.start(audioCtx.currentTime);
                 oscillator.stop(audioCtx.currentTime + 0.5);
-            } catch (e) { } // ignore if blocked
+            } catch (_e) { } // ignore if blocked
         }
         return () => clearInterval(interval);
     }, [isActive, timeLeft, mode]);
@@ -225,9 +225,9 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                
 
-                
+
+
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-rose-500/10 blur-[100px] pointer-events-none"></div>
@@ -289,18 +289,18 @@ export default function PomodoroTracker({ onBack }: { onBack: () => void }) {
                     "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
                 })
             }} />
-        
+
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
-                    <PrivacyFeatures
-                        toolName="Pomodoro Tracker & Ledger (Local)"
-                        useCases={[
-                            "Tracking confidential project time blocks natively in the browser.",
-                            "Maintaining a secure, offline ledger of sensitive daily tasks.",
-                            "Avoiding cloud-synced productivity monitors for private work."
-                        ]}
-                    />
-                </div>
+                <PrivacyFeatures
+                    toolName="Pomodoro Tracker & Ledger (Local)"
+                    useCases={[
+                        "Tracking confidential project time blocks natively in the browser.",
+                        "Maintaining a secure, offline ledger of sensitive daily tasks.",
+                        "Avoiding cloud-synced productivity monitors for private work."
+                    ]}
+                />
+            </div>
 
             <AdUnit slotId="POMODORO_BOTTOM" />
         </div>

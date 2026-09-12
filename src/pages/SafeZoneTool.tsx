@@ -140,7 +140,7 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
           stream.addTrack(audioTracks[0]);
         }
       }
-    } catch (e) { }
+    } catch (_e) { }
 
     let options = { mimeType: 'video/webm' };
     if (!MediaRecorder.isTypeSupported('video/webm')) {
@@ -573,8 +573,8 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
-      
-            {/* Features Overview */}
+
+      {/* Features Overview */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-24 mb-16 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-blue-500/10 blur-[100px] pointer-events-none"></div>
 
@@ -634,7 +634,7 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
         </div>
       </div>
 
-<div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
         <PrivacyFeatures
           toolName="Social Media Safe-Zone (Local)"
           useCases={[
@@ -644,8 +644,8 @@ export default function SafeZoneTool({ onBack }: { onBack: () => void }) {
           ]}
         />
       </div>
-<AdUnit slotId="SAFE_ZONE_BOTTOM" />
-            
+      <AdUnit slotId="SAFE_ZONE_BOTTOM" />
+
 
 
     </div>

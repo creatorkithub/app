@@ -60,7 +60,9 @@ const routes = [
   'blog/a11y-scorecard-guide',
   'blog/privashield-guide',
   'blog/crypto-audit-guide',
-  'blog/safe-zone-guide'
+  'blog/safe-zone-guide',
+  'blog/tone-analyzer-guide',
+  'blog/universal-image-converter-guide'
 ];
 
 function generateRoutes() {
@@ -139,7 +141,9 @@ function generateRoutes() {
     'blog/a11y-scorecard-guide': { title: 'The Complete Guide to Web Accessibility and Color Contrast', desc: 'Ensure every user can smoothly navigate your content by adhering to high contrast design guidelines and verifiable color accessibility.' },
     'blog/privashield-guide': { title: 'The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping', desc: 'Understand how EXIF location tags leak your exact GPS coordinates and how to securely scrub them 100% locally offline.' },
     'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
-    'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' }
+    'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' },
+    'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
+    'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' }
   };
 
   const defaultSeoParagraphs = `

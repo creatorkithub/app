@@ -125,11 +125,7 @@ export default function ImageToPdf() {
                 const availWidth = targetWidth - marginPt * 2;
                 const availHeight = targetHeight - marginPt * 2;
 
-                const scaleFactor = Math.min(
-                    availWidth / imgDims.width,
-                    availHeight / imgDims.height,
-                    1 // don't scale up past 100% unless we force to fit? actually let's scale to fit if it's larger. But if we want it to fit perfectly:
-                );
+
 
                 // Wait, if it's smaller, maybe we center it. Let's scale up or down to fit within margin
                 const drawScale = Math.min(availWidth / imgDims.width, availHeight / imgDims.height);
@@ -146,7 +142,7 @@ export default function ImageToPdf() {
             }
 
             const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const blob = new Blob([pdfBytes as any], { type: 'application/pdf' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;

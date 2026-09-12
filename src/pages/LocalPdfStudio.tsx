@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useAdContext } from '../contexts/AdContext';
 import { AdUnit } from '../components/AdUnit';
 import { useSEO } from '../hooks/useSEO';
-import { ArrowLeft, FileText, Image as ImageIcon, Scissors, Layers, Plus, Download, Trash2, GripVertical, Type, RefreshCw, FileArchive, Tag, Hash, Grid, Menu, X } from 'lucide-react';
+import { ArrowLeft, FileText, Image as ImageIcon, Scissors, Layers, Plus, Trash2, Type, RefreshCw, FileArchive, Tag, Hash, Grid, Menu, X } from 'lucide-react';
 import ImageToPdf from '../components/ImageToPdf';
 import RemoveReorderPdf from '../components/RemoveReorderPdf';
 import SplitExtractPdf from '../components/SplitExtractPdf';

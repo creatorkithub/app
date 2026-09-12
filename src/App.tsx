@@ -33,6 +33,8 @@ const A11yScorecardGuide = lazy(() => import('./pages/blog/A11yScorecardGuide'))
 const PrivaShieldGuide = lazy(() => import('./pages/blog/PrivaShieldGuide'));
 const CryptoAuditGuide = lazy(() => import('./pages/blog/CryptoAuditGuide'));
 const SafeZoneGuide = lazy(() => import('./pages/blog/SafeZoneGuide'));
+const ToneAnalyzerGuide = lazy(() => import('./pages/blog/ToneAnalyzerGuide'));
+const UniversalImageConverterGuide = lazy(() => import('./pages/blog/UniversalImageConverterGuide'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -168,7 +170,9 @@ export default function App() {
       'blog/a11y-scorecard-guide': { title: 'The Complete Guide to Web Accessibility and Color Contrast', desc: 'Ensure every user can smoothly navigate your content by adhering to high contrast design guidelines and verifiable color accessibility.' },
       'blog/privashield-guide': { title: 'The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping', desc: 'Understand how EXIF location tags leak your exact GPS coordinates and how to securely scrub them 100% locally offline.' },
       'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
-      'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' }
+      'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' },
+      'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
+      'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -359,6 +363,8 @@ export default function App() {
     if (activePath === '/blog/privashield-guide') return <PrivaShieldGuide onNavigate={navigate} />;
     if (activePath === '/blog/crypto-audit-guide') return <CryptoAuditGuide onNavigate={navigate} />;
     if (activePath === '/blog/safe-zone-guide') return <SafeZoneGuide onNavigate={navigate} />;
+    if (activePath === '/blog/tone-analyzer-guide') return <ToneAnalyzerGuide onNavigate={navigate} />;
+    if (activePath === '/blog/universal-image-converter-guide') return <UniversalImageConverterGuide onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {

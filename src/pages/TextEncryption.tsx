@@ -45,7 +45,7 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     setOutputText(originalText);
                 }
             }
-        } catch (e) {
+        } catch (_e) {
             setError('Could not process the text. Check your passcode or encrypted string format.');
         }
     };
@@ -181,9 +181,9 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     </div>
                 </div>
 
-                
 
-                
+
+
                 {/* Features Overview */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 mb-16 relative w-full">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-orange-500/10 blur-[100px] pointer-events-none"></div>
@@ -245,18 +245,18 @@ export default function TextEncryption({ onBack }: { onBack: () => void }) {
                     "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" }
                 })
             }} />
-        
+
 
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-12 w-full z-10 relative">
-                    <PrivacyFeatures
-                        toolName="Offline Text Encryption (Local)"
-                        useCases={[
-                            "Encrypting sensitive journal entries natively in the browser.",
-                            "Generating secure AES-256 strings for highly confidential legal briefs.",
-                            "Protecting backend server credentials in a zero-trust environment."
-                        ]}
-                    />
-                </div>
+                <PrivacyFeatures
+                    toolName="Offline Text Encryption (Local)"
+                    useCases={[
+                        "Encrypting sensitive journal entries natively in the browser.",
+                        "Generating secure AES-256 strings for highly confidential legal briefs.",
+                        "Protecting backend server credentials in a zero-trust environment."
+                    ]}
+                />
+            </div>
 
             <AdUnit slotId="TEXT_ENCRYPTION_BOTTOM" />
         </div>

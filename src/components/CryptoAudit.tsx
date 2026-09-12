@@ -3,7 +3,7 @@ import { PrivacyFeatures } from './PrivacyFeatures';
 import { useSEO } from '../hooks/useSEO';
 import { AdUnit } from './AdUnit';
 import { useAdContext } from '../contexts/AdContext';
-import { Shield, FileText, Lock, Key, RefreshCw, CheckCircle, AlertTriangle, XCircle, Search, Terminal, Zap, Fingerprint, SearchCode, Loader2, Eye, EyeOff } from 'lucide-react';
+import { Shield, FileText, Lock, Key, RefreshCw, CheckCircle, AlertTriangle, XCircle, Terminal, Zap, Fingerprint, SearchCode, Loader2, Eye, EyeOff } from 'lucide-react';
 import zxcvbn from 'zxcvbn';
 import SparkMD5 from 'spark-md5';
 
@@ -483,10 +483,10 @@ export default function CryptoAudit() {
                 </div>
             )}
 
-            
+
 
             {/* Information Section */}
-            
+
             {/* Features Overview */}
             <div className="max-w-7xl mx-auto px-4 md:px-8 mt-24 mb-16 relative">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-32 bg-indigo-500/10 blur-[100px] pointer-events-none"></div>
@@ -547,7 +547,7 @@ export default function CryptoAudit() {
                     </div>
                 </div>
             </div>
-        
+
 
             <div className="max-w-7xl mx-auto w-full z-10 relative mt-12 px-4 md:px-8 space-y-12 mb-12">
                 <PrivacyFeatures

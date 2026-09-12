@@ -58,7 +58,7 @@ export const AdProvider = ({ children }: { children: ReactNode }) => {
             if ((window as any).adsbygoogle) {
                 ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
             }
-        } catch (e) {
+        } catch (_e) {
             console.log("AdBlocker detected or AdSense not loaded.");
         }
 

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useAdContext } from '../contexts/AdContext';
 import { PDFDocument, rgb, degrees, StandardFonts } from 'pdf-lib';
-import { Upload, FileText, Loader2, Download, Settings, Type } from 'lucide-react';
+import { Upload, FileText, Loader2, Settings, Type } from 'lucide-react';
 
 export default function WatermarkPdf() {
     const { triggerCTA } = useAdContext();

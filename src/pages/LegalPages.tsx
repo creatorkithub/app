@@ -91,7 +91,7 @@ export const PrivacyPolicy = () => {
                     } else {
                         window.dispatchEvent(new Event('show-consent-banner'));
                     }
-                } catch (err) {
+                } catch (_err) {
                     window.dispatchEvent(new Event('show-consent-banner'));
                 }
             }}>"Do Not Sell or Share My Personal Information"</button> link located in our website's footer or via our privacy preference center.</p>

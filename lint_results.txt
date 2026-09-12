@@ -1,0 +1,477 @@
+
+> web-tool-app@0.0.0 lint
+> oxlint
+
+
+  ! eslint(no-unused-vars): Catch parameter 'e' is caught but never used.
+    ,-[src/contexts/AdContext.tsx:61:18]
+ 60 |             }
+ 61 |         } catch (e) {
+    :                  |
+    :                  `-- 'e' is declared here
+ 62 |             console.log("AdBlocker detected or AdSense not loaded.");
+    `----
+  help: Consider handling this error.
+
+  ! react(only-export-components): Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.
+    ,-[src/contexts/AdContext.tsx:24:14]
+ 23 | 
+ 24 | export const useAdContext = () => useContext(AdContext);
+    :              ^^^^^^^^^^^^
+ 25 | 
+    `----
+
+  ! react(only-export-components): Fast refresh only works when a file only exports components. Move your React context(s) to a separate file.
+    ,-[src/contexts/AdContext.tsx:15:14]
+ 14 | 
+ 15 | export const AdContext = createContext<AdContextType>({
+    :              ^^^^^^^^^
+ 16 |     triggerCTA: (action) => action(),
+    `----
+
+  ! eslint(no-unused-vars): Catch parameter 'e' is caught but never used.
+    ,-[src/pages/TextEncryption.tsx:48:18]
+ 47 |             }
+ 48 |         } catch (e) {
+    :                  |
+    :                  `-- 'e' is declared here
+ 49 |             setError('Could not process the text. Check your passcode or encrypted string format.');
+    `----
+  help: Consider handling this error.
+
+  ! eslint(no-unused-vars): Identifier 'useEffect' is imported but never used.
+   ,-[src/components/AdUnit.tsx:1:17]
+ 1 | import React, { useEffect, useRef } from 'react';
+   :                 ^^^^|^^^^
+   :                     `-- 'useEffect' is imported here
+ 2 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'useRef' is imported but never used.
+   ,-[src/components/AdUnit.tsx:1:28]
+ 1 | import React, { useEffect, useRef } from 'react';
+   :                            ^^^|^^
+   :                               `-- 'useRef' is imported here
+ 2 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Variable 'PUBLISHER_ID' is declared but never used. Unused variables should start with a '_'.
+   ,-[src/components/AdUnit.tsx:8:7]
+ 7 | 
+ 8 | const PUBLISHER_ID = 'ca-pub-4032375955420309';
+   :       ^^^^^^|^^^^^
+   :             `-- 'PUBLISHER_ID' is declared here
+ 9 | 
+   `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Parameter 'slotId' is declared but never used. Unused parameters should start with a '_'.
+    ,-[src/components/AdUnit.tsx:10:49]
+  9 | 
+ 10 | export const AdUnit: React.FC<AdUnitProps> = ({ slotId = 'PLACEHOLDER_SLOT_ID', className = '' }) => {
+    :                                                 ^^^|^^
+    :                                                    `-- 'slotId' is declared here
+ 11 |     // Hidden natively to allow Google Auto Ads to dictate placement.
+    `----
+  help: Consider removing this parameter.
+
+  ! eslint(no-unused-vars): Parameter 'className' is declared but never used. Unused parameters should start with a '_'.
+    ,-[src/components/AdUnit.tsx:10:81]
+  9 | 
+ 10 | export const AdUnit: React.FC<AdUnitProps> = ({ slotId = 'PLACEHOLDER_SLOT_ID', className = '' }) => {
+    :                                                                                 ^^^^|^^^^
+    :                                                                                     `-- 'className' is declared here
+ 11 |     // Hidden natively to allow Google Auto Ads to dictate placement.
+    `----
+  help: Consider removing this parameter.
+
+  ! eslint(no-unused-vars): Identifier 'Download' is imported but never used.
+   ,-[src/components/WatermarkPdf.tsx:4:37]
+ 3 | import { PDFDocument, rgb, degrees, StandardFonts } from 'pdf-lib';
+ 4 | import { Upload, FileText, Loader2, Download, Settings, Type } from 'lucide-react';
+   :                                     ^^^^|^^^
+   :                                         `-- 'Download' is imported here
+ 5 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Catch parameter 'e' is caught but never used.
+     ,-[src/components/A11yScorecard.tsx:133:22]
+ 132 |                 }
+ 133 |             } catch (e) { }
+     :                      |
+     :                      `-- 'e' is declared here
+ 134 | 
+     `----
+  help: Consider handling this error.
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+     ,-[src/components/A11yScorecard.tsx:102:9]
+  99 | 
+ 100 |     useEffect(() => {
+     :     ^^^^|^^^^
+     :         `-- This is the containing effect
+ 101 |         const ratio = calculateContrast(fgColor, bgColor);
+ 102 |         setContrast(ratio);
+     :         ^^^^^|^^^^^
+     :              `-- Avoid calling setState() directly within an effect
+ 103 | 
+     `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! eslint(no-unused-vars): Catch parameter 'err' is caught but never used.
+    ,-[src/pages/LegalPages.tsx:94:26]
+ 93 |                     }
+ 94 |                 } catch (err) {
+    :                          ^|^
+    :                           `-- 'err' is declared here
+ 95 |                     window.dispatchEvent(new Event('show-consent-banner'));
+    `----
+  help: Consider handling this error.
+
+  ! eslint(no-unused-vars): Catch parameter 'e' is caught but never used.
+     ,-[src/pages/SafeZoneTool.tsx:143:14]
+ 142 |       }
+ 143 |     } catch (e) { }
+     :              |
+     :              `-- 'e' is declared here
+ 144 | 
+     `----
+  help: Consider handling this error.
+
+  ! eslint(no-unused-vars): Identifier 'FileText' is imported but never used.
+   ,-[src/components/PdfMetaSanitizer.tsx:4:18]
+ 3 | import { PDFDocument } from 'pdf-lib';
+ 4 | import { Upload, FileText, Loader2, Tag, Shield, CheckCircle2 } from 'lucide-react';
+   :                  ^^^^|^^^
+   :                      `-- 'FileText' is imported here
+ 5 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Catch parameter 'e' is caught but never used.
+    ,-[src/pages/PomodoroTracker.tsx:70:22]
+ 69 |                 oscillator.stop(audioCtx.currentTime + 0.5);
+ 70 |             } catch (e) { } // ignore if blocked
+    :                      |
+    :                      `-- 'e' is declared here
+ 71 |         }
+    `----
+  help: Consider handling this error.
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+    ,-[src/pages/PomodoroTracker.tsx:47:17]
+ 39 | 
+ 40 |     useEffect(() => {
+    :     ^^^^|^^^^
+    :         `-- This is the containing effect
+ 41 |         let interval: any = null;
+ 42 |         if (isActive && timeLeft > 0) {
+ 43 |             interval = setInterval(() => setTimeLeft(t => t - 1), 1000);
+ 44 |         } else if (isActive && timeLeft === 0) {
+ 45 |             // Timer finished
+ 46 |             if (mode === 'focus') {
+ 47 |                 setStreaks(s => s + 1);
+    :                 ^^^^^|^^^^
+    :                      `-- Avoid calling setState() directly within an effect
+ 48 |                 setMode('break');
+    `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! eslint(no-unused-vars): Identifier 'useEffect' is imported but never used.
+   ,-[src/components/UniversalImageConverter.tsx:1:28]
+ 1 | import { useState, useRef, useEffect } from 'react';
+   :                            ^^^^|^^^^
+   :                                `-- 'useEffect' is imported here
+ 2 | import { PrivacyFeatures } from './PrivacyFeatures';
+   `----
+  help: Consider removing this import.
+
+  ! react(purity): Cannot call impure function during render
+    ,-[src/pages/LoremBuilder.tsx:42:45]
+ 41 |             let paragraphText = '';
+ 42 |             const numSentences = Math.floor(Math.random() * 4) + 4; // 4 to 7 sentences per paragraph
+    :                                             ^^^^^^|^^^^^^
+    :                                                   `-- Cannot call impure function
+ 43 | 
+    `----
+  help: `Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component re-renders
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/purity
+
+  ! react(purity): Cannot call impure function during render
+    ,-[src/pages/LoremBuilder.tsx:45:52]
+ 44 |             for (let s = 0; s < numSentences; s++) {
+ 45 |                 const wordsInSentence = Math.floor(Math.random() * 10) + 6; // 6 to 15 words
+    :                                                    ^^^^^^|^^^^^^
+    :                                                          `-- Cannot call impure function
+ 46 |                 let sentence = '';
+    `----
+  help: `Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component re-renders
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/purity
+
+  ! react(purity): Cannot call impure function during render
+    ,-[src/pages/LoremBuilder.tsx:49:40]
+ 48 |                 for (let w = 0; w < wordsInSentence; w++) {
+ 49 |                     const isBaseWord = Math.random() > 0.4;
+    :                                        ^^^^^^|^^^^^^
+    :                                              `-- Cannot call impure function
+ 50 |                     let dict;
+    `----
+  help: `Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component re-renders
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/purity
+
+  ! react(purity): Cannot call impure function during render
+    ,-[src/pages/LoremBuilder.tsx:58:50]
+ 57 | 
+ 58 |                     const word = dict[Math.floor(Math.random() * dict.length)];
+    :                                                  ^^^^^^|^^^^^^
+    :                                                        `-- Cannot call impure function
+ 59 | 
+    `----
+  help: `Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component re-renders
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/purity
+
+  ! react-hooks(exhaustive-deps): React Hook useMemo has unnecessary dependency: seed
+    ,-[src/pages/LoremBuilder.tsx:71:8]
+ 70 |         return output.trim();
+ 71 |     }, [paragraphs, baseLanguage, domain, seed]);
+    :        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 72 | 
+    `----
+  help: Either include it or remove the dependency array.
+
+  ! eslint(no-unused-vars): Variable 'scaleFactor' is declared but never used. Unused variables should start with a '_'.
+     ,-[src/components/ImageToPdf.tsx:128:23]
+ 127 | 
+ 128 |                 const scaleFactor = Math.min(
+     :                       ^^^^^|^^^^^
+     :                            `-- 'scaleFactor' is declared here
+ 129 |                     availWidth / imgDims.width,
+     `----
+  help: Consider removing this declaration.
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+    ,-[src/components/BlogSidebar.tsx:93:9]
+ 89 | 
+ 90 |     useEffect(() => {
+    :     ^^^^|^^^^
+    :         `-- This is the containing effect
+ 91 |         // Randomize array and pick 3 tools on mount
+ 92 |         const shuffled = [...ALL_TOOLS].sort(() => 0.5 - Math.random());
+ 93 |         setTools(shuffled.slice(0, 3));
+    :         ^^^^|^^^
+    :             `-- Avoid calling setState() directly within an effect
+ 94 |     }, []);
+    `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! eslint(no-unused-vars): Catch parameter 'err' is caught but never used.
+    ,-[src/components/Footer.tsx:37:42]
+ 36 |                                     }
+ 37 |                                 } catch (err) {
+    :                                          ^|^
+    :                                           `-- 'err' is declared here
+ 38 |                                     window.dispatchEvent(new Event('show-consent-banner'));
+    `----
+  help: Consider handling this error.
+
+  ! eslint(no-unused-vars): Identifier 'useAdContext' is imported but never used.
+   ,-[src/pages/LocalPdfStudio.tsx:2:10]
+ 1 | import { useState, useEffect } from 'react';
+ 2 | import { useAdContext } from '../contexts/AdContext';
+   :          ^^^^^^|^^^^^
+   :                `-- 'useAdContext' is imported here
+ 3 | import { AdUnit } from '../components/AdUnit';
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'Download' is imported but never used.
+   ,-[src/pages/LocalPdfStudio.tsx:5:75]
+ 4 | import { useSEO } from '../hooks/useSEO';
+ 5 | import { ArrowLeft, FileText, Image as ImageIcon, Scissors, Layers, Plus, Download, Trash2, GripVertical, Type, RefreshCw, FileArchive, Tag, Hash, Grid, Menu, X } from 'lucide-react';
+   :                                                                           ^^^^|^^^
+   :                                                                               `-- 'Download' is imported here
+ 6 | import ImageToPdf from '../components/ImageToPdf';
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'GripVertical' is imported but never used.
+   ,-[src/pages/LocalPdfStudio.tsx:5:93]
+ 4 | import { useSEO } from '../hooks/useSEO';
+ 5 | import { ArrowLeft, FileText, Image as ImageIcon, Scissors, Layers, Plus, Download, Trash2, GripVertical, Type, RefreshCw, FileArchive, Tag, Hash, Grid, Menu, X } from 'lucide-react';
+   :                                                                                             ^^^^^^|^^^^^
+   :                                                                                                   `-- 'GripVertical' is imported here
+ 6 | import ImageToPdf from '../components/ImageToPdf';
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'Download' is imported but never used.
+   ,-[src/components/SplitExtractPdf.tsx:6:37]
+ 5 | import JSZip from 'jszip';
+ 6 | import { Upload, FileText, Loader2, Download, Settings, Scissors } from 'lucide-react';
+   :                                     ^^^^|^^^
+   :                                         `-- 'Download' is imported here
+ 7 | 
+   `----
+  help: Consider removing this import.
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+    ,-[src/components/SafeZoneCanvas.tsx:30:13]
+ 27 | 
+ 28 |     useEffect(() => {
+    :     ^^^^|^^^^
+    :         `-- This is the containing effect
+ 29 |         if (!mediaSrc) {
+ 30 |             setMediaObj(null);
+    :             ^^^^^|^^^^^
+    :                  `-- Avoid calling setState() directly within an effect
+ 31 |             setIsPlaying(false);
+    `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! eslint(no-unused-vars): Identifier 'Search' is imported but never used.
+   ,-[src/components/CryptoAudit.tsx:6:87]
+ 5 | import { useAdContext } from '../contexts/AdContext';
+ 6 | import { Shield, FileText, Lock, Key, RefreshCw, CheckCircle, AlertTriangle, XCircle, Search, Terminal, Zap, Fingerprint, SearchCode, Loader2, Eye, EyeOff } from 'lucide-react';
+   :                                                                                       ^^^|^^
+   :                                                                                          `-- 'Search' is imported here
+ 7 | import zxcvbn from 'zxcvbn';
+   `----
+  help: Consider removing this import.
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+     ,-[src/components/CryptoAudit.tsx:165:13]
+ 162 |     // --- PASSWORD LOGIC ---
+ 163 |     useEffect(() => {
+     :     ^^^^|^^^^
+     :         `-- This is the containing effect
+ 164 |         if (password.length > 0) {
+ 165 |             setPasswordResult(zxcvbn(password));
+     :             ^^^^^^^^|^^^^^^^^
+     :                     `-- Avoid calling setState() directly within an effect
+ 166 |         } else {
+     `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! react(immutability): Cannot access variable while it is being initialized
+    ,-[src/components/CookieConsent.tsx:12:13]
+ 11 |         } else {
+ 12 |             updateGoogleConsent(consent === 'accepted');
+    :             ^^^^^^^^^|^^^^^^^^^
+    :                      `-- `updateGoogleConsent` is read during its own initialization
+ 13 |         }
+    `----
+  help: `updateGoogleConsent` is read while its declaration is still being initialized. Move the access after initialization. For a recursive callback, use a named function expression or restructure the callback so it does not capture itself during initialization
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/immutability
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+    ,-[src/components/CookieConsent.tsx:10:13]
+  6 | 
+  7 |     useEffect(() => {
+    :     ^^^^|^^^^
+    :         `-- This is the containing effect
+  8 |         const consent = localStorage.getItem('user_consent_state');
+  9 |         if (!consent) {
+ 10 |             setIsVisible(true);
+    :             ^^^^^^|^^^^^
+    :                   `-- Avoid calling setState() directly within an effect
+ 11 |         } else {
+    `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! react(only-export-components): Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components.
+    ,-[src/App.tsx:43:17]
+ 42 | 
+ 43 | export function useRouter() {
+    :                 ^^^^^^^^^
+ 44 |   return useContext(RouterContext);
+    `----
+
+  ! react(only-export-components): Fast refresh only works when a file only exports components. Move your React context(s) to a separate file.
+    ,-[src/App.tsx:39:14]
+ 38 | 
+ 39 | export const RouterContext = createContext({
+    :              ^^^^^^^^^^^^^
+ 40 |   navigate: (_path: string) => { }
+    `----
+
+  ! react(set-state-in-effect): Calling setState synchronously within an effect can trigger cascading renders
+    ,-[src/App.tsx:64:53]
+ 63 |   const [lastToolPath, setLastToolPath] = useState(currentPath !== '/success' ? currentPath : '/');
+ 64 |   useEffect(() => { if (currentPath !== '/success') setLastToolPath(currentPath); }, [currentPath]);
+    :   ^^^^|^^^^                                         ^^^^^^^|^^^^^^^
+    :       |                                                    `-- Avoid calling setState() directly within an effect
+    :       `-- This is the containing effect
+ 65 |   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+    `----
+  help: Effects should synchronize React with external systems. Calling setState synchronously inside an effect starts another render and is usually unnecessary. Derive the value during render, initialize state directly, or update it from the event that caused the change. Use an effect only when synchronizing with an external system.
+  note: React Compiler skipped optimizing this component or hook. Additional guidance: https://react.dev/reference/eslint-plugin-react-hooks/lints/set-state-in-effect
+
+  ! eslint(no-unused-vars): Identifier 'useEffect' is imported but never used.
+   ,-[src/components/RemoveReorderPdf.tsx:1:28]
+ 1 | import { useState, useRef, useEffect } from 'react';
+   :                            ^^^^|^^^^
+   :                                `-- 'useEffect' is imported here
+ 2 | import { useAdContext } from '../contexts/AdContext';
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'X' is imported but never used.
+   ,-[src/components/RemoveReorderPdf.tsx:5:18]
+ 4 | import * as pdfjsLib from 'pdfjs-dist';
+ 5 | import { Upload, X, Loader2, Download, Trash2, GripVertical } from 'lucide-react';
+   :                  |
+   :                  `-- 'X' is imported here
+ 6 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Interface 'ExtractedImage' is declared but never used.
+   ,-[src/components/PdfToJpg.tsx:7:11]
+ 6 | 
+ 7 | interface ExtractedImage {
+   :           ^^^^^^^|^^^^^^
+   :                  `-- 'ExtractedImage' is declared here
+ 8 |     pageNum: number;
+   `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Identifier 'useEffect' is imported but never used.
+   ,-[src/components/PrivaShield.tsx:1:28]
+ 1 | import { useState, useRef, useEffect } from 'react';
+   :                            ^^^^|^^^^
+   :                                `-- 'useEffect' is imported here
+ 2 | import { PrivacyFeatures } from './PrivacyFeatures';
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Catch parameter 'err' is caught but never used.
+    ,-[src/components/PrivaShield.tsx:60:18]
+ 59 |             return { meta: tags, risk: rawRisk };
+ 60 |         } catch (err) {
+    :                  ^|^
+    :                   `-- 'err' is declared here
+ 61 |             // Failed to parse means it likely has no EXIF or a stripped header.
+    `----
+  help: Consider handling this error.
+
+  ! eslint(no-unused-vars): Catch parameter 'err' is caught but never used.
+     ,-[src/components/PrivaShield.tsx:219:22]
+ 218 |                 } : f));
+ 219 |             } catch (err: any) {
+     :                      ^|^
+     :                       `-- 'err' is declared here
+ 220 |                 setFiles(prev => prev.map(f => f.id === currentFiles[i].id ? { ...f, status: 'error' } : f));
+     `----
+  help: Consider handling this error.
+
+Found 44 warnings and 0 errors.
+Finished in 344ms on 67 files with 116 rules using 4 threads.
