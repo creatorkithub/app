@@ -1,5 +1,31 @@
 const articles = [
     {
+        title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software',
+        description: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.',
+        href: '/blog/webassembly-offline-future',
+        date: 'Sep 14, 2026',
+        readTime: '14 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>
+        ),
+        color: 'text-rose-400',
+        bg: 'bg-rose-500/10 hover:bg-rose-500/20',
+        border: 'border-rose-500/20'
+    },
+    {
+        title: 'Mastering the Pomodoro Technique: Why an Offline Browser Timer is the Ultimate Productivity Hack',
+        description: 'Stop relying on cloud-based timers that harvest your data. Learn how to maximize your deep work sessions using a 100% offline, privacy-focused Pomodoro Tracker directly in your browser.',
+        href: '/blog/pomodoro-tracker-guide',
+        date: 'Sep 14, 2026',
+        readTime: '12 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+        ),
+        color: 'text-indigo-400',
+        bg: 'bg-indigo-500/10 hover:bg-indigo-500/20',
+        border: 'border-indigo-500/20'
+    },
+    {
         title: 'Why Tone Analysis is Essential for Effective Digital Communication',
         description: 'Words carry weight, but context dictates meaning. Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.',
         href: '/blog/tone-analyzer-guide',

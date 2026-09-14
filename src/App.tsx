@@ -35,6 +35,8 @@ const CryptoAuditGuide = lazy(() => import('./pages/blog/CryptoAuditGuide'));
 const SafeZoneGuide = lazy(() => import('./pages/blog/SafeZoneGuide'));
 const ToneAnalyzerGuide = lazy(() => import('./pages/blog/ToneAnalyzerGuide'));
 const UniversalImageConverterGuide = lazy(() => import('./pages/blog/UniversalImageConverterGuide'));
+const PomodoroTrackerGuide = lazy(() => import('./pages/blog/PomodoroTrackerGuide'));
+const WebAssemblyOfflineFuture = lazy(() => import('./pages/blog/WebAssemblyOfflineFuture'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -365,6 +367,8 @@ export default function App() {
     if (activePath === '/blog/safe-zone-guide') return <SafeZoneGuide onNavigate={navigate} />;
     if (activePath === '/blog/tone-analyzer-guide') return <ToneAnalyzerGuide onNavigate={navigate} />;
     if (activePath === '/blog/universal-image-converter-guide') return <UniversalImageConverterGuide onNavigate={navigate} />;
+    if (activePath === '/blog/pomodoro-tracker-guide') return <PomodoroTrackerGuide onNavigate={navigate} />;
+    if (activePath === '/blog/webassembly-offline-future') return <WebAssemblyOfflineFuture onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {

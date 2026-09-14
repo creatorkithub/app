@@ -62,7 +62,9 @@ const routes = [
   'blog/crypto-audit-guide',
   'blog/safe-zone-guide',
   'blog/tone-analyzer-guide',
-  'blog/universal-image-converter-guide'
+  'blog/universal-image-converter-guide',
+  'blog/pomodoro-tracker-guide',
+  'blog/webassembly-offline-future'
 ];
 
 function generateRoutes() {
@@ -143,7 +145,9 @@ function generateRoutes() {
     'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
     'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' },
     'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
-    'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' }
+    'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' },
+    'blog/pomodoro-tracker-guide': { title: 'Mastering the Pomodoro Technique: Why an Offline Browser Timer is the Ultimate Productivity Hack', desc: 'Stop relying on cloud-based timers that harvest your data. Learn how to maximize your deep work sessions using a 100% offline, privacy-focused Pomodoro Tracker directly in your browser.' },
+    'blog/webassembly-offline-future': { title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software', desc: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.' }
   };
 
   const defaultSeoParagraphs = `
