@@ -48,6 +48,8 @@ Because the application runs entirely in the browser using client-side JavaScrip
 - [The Rise of Offline WebAssembly Tools](https://creatorkithub.org/blog/webassembly-offline-future/): Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.
 - [Why Tone Analysis is Essential for Effective Digital Communication](https://creatorkithub.org/blog/tone-analyzer-guide/): Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.
 - [The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy](https://creatorkithub.org/blog/universal-image-converter-guide/): Learn why completely offline image conversion protects your privacy and handles modern web formats securely.
+- [The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences](https://creatorkithub.org/blog/future-offline-pwas/): Discover how Progressive Web Apps are bringing desktop-class power and robust offline capabilities directly into your browser.
+- [Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security](https://creatorkithub.org/blog/zero-trust-web-design/): Explore how radical zero-trust architectures and isolated client-side processing restore true security compared to cloud implementations.
 
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).

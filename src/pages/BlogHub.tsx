@@ -1,5 +1,31 @@
 const articles = [
     {
+        title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security',
+        description: 'As high-profile data breaches become the accepted norm of the modern web, relying on traditional cloud safety measures is profoundly inadequate. Explore how radical zero-trust architectures and isolated client-side processing restore true security.',
+        href: '/blog/zero-trust-web-design',
+        date: 'Sep 15, 2026',
+        readTime: '14 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><line x1="12" x2="12" y1="9" y2="13" /><line x1="12" x2="12.01" y1="17" y2="17" /></svg>
+        ),
+        color: 'text-orange-400',
+        bg: 'bg-orange-500/10 hover:bg-orange-500/20',
+        border: 'border-orange-500/20'
+    },
+    {
+        title: 'The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences',
+        description: 'The era of constantly loading browsers is fading. Progressive Web Apps are bringing desktop-class power, robust offline capabilities, and uncompromised speed directly into your browser.',
+        href: '/blog/future-offline-pwas',
+        date: 'Sep 15, 2026',
+        readTime: '15 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+        ),
+        color: 'text-purple-400',
+        bg: 'bg-purple-500/10 hover:bg-purple-500/20',
+        border: 'border-purple-500/20'
+    },
+    {
         title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software',
         description: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.',
         href: '/blog/webassembly-offline-future',

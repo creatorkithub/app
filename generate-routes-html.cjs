@@ -64,7 +64,9 @@ const routes = [
   'blog/tone-analyzer-guide',
   'blog/universal-image-converter-guide',
   'blog/pomodoro-tracker-guide',
-  'blog/webassembly-offline-future'
+  'blog/webassembly-offline-future',
+  'blog/future-offline-pwas',
+  'blog/zero-trust-web-design'
 ];
 
 function generateRoutes() {
@@ -147,7 +149,9 @@ function generateRoutes() {
     'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
     'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' },
     'blog/pomodoro-tracker-guide': { title: 'Mastering the Pomodoro Technique: Why an Offline Browser Timer is the Ultimate Productivity Hack', desc: 'Stop relying on cloud-based timers that harvest your data. Learn how to maximize your deep work sessions using a 100% offline, privacy-focused Pomodoro Tracker directly in your browser.' },
-    'blog/webassembly-offline-future': { title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software', desc: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.' }
+    'blog/webassembly-offline-future': { title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software', desc: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.' },
+    'blog/future-offline-pwas': { title: 'The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences', desc: 'The era of constantly loading browsers is fading. Progressive Web Apps are bringing desktop-class power and robust offline capabilities directly into your browser.' },
+    'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security', desc: 'As high-profile data breaches become the accepted norm, explore how radical zero-trust architectures and isolated client-side processing restore true security.' }
   };
 
   const defaultSeoParagraphs = `

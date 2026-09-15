@@ -37,6 +37,8 @@ const ToneAnalyzerGuide = lazy(() => import('./pages/blog/ToneAnalyzerGuide'));
 const UniversalImageConverterGuide = lazy(() => import('./pages/blog/UniversalImageConverterGuide'));
 const PomodoroTrackerGuide = lazy(() => import('./pages/blog/PomodoroTrackerGuide'));
 const WebAssemblyOfflineFuture = lazy(() => import('./pages/blog/WebAssemblyOfflineFuture'));
+const FutureOfOfflinePwas = lazy(() => import('./pages/blog/FutureOfOfflinePwas'));
+const ZeroTrustWebDesign = lazy(() => import('./pages/blog/ZeroTrustWebDesign'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -174,7 +176,9 @@ export default function App() {
       'blog/crypto-audit-guide': { title: 'Password Security in 2026: Why Local Auditing is the Future', desc: 'Test and audit your master passwords locally with true cryptographic entropy analysis directly inside your secure browser.' },
       'blog/safe-zone-guide': { title: 'Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones', desc: 'Avoid critical editing errors by flawlessly designing within UI and comment overlay safe zones for TikTok, Reels, and Shorts.' },
       'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
-      'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' }
+      'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' },
+      'blog/future-offline-pwas': { title: 'The Future of Offline PWAs: Bridging the Gap', desc: 'The era of constantly loading browsers is fading. Progressive Web Apps (PWAs) are bringing desktop-class power and robust offline capabilities directly into your browser.' },
+      'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard', desc: 'As data breaches become the norm, relying on traditional cloud safety measures is inadequate. Explore how zero-trust architectures and client-side processing restore security.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -369,6 +373,8 @@ export default function App() {
     if (activePath === '/blog/universal-image-converter-guide') return <UniversalImageConverterGuide onNavigate={navigate} />;
     if (activePath === '/blog/pomodoro-tracker-guide') return <PomodoroTrackerGuide onNavigate={navigate} />;
     if (activePath === '/blog/webassembly-offline-future') return <WebAssemblyOfflineFuture onNavigate={navigate} />;
+    if (activePath === '/blog/future-offline-pwas') return <FutureOfOfflinePwas onNavigate={navigate} />;
+    if (activePath === '/blog/zero-trust-web-design') return <ZeroTrustWebDesign onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {
