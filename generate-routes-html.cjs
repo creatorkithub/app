@@ -66,7 +66,9 @@ const routes = [
   'blog/pomodoro-tracker-guide',
   'blog/webassembly-offline-future',
   'blog/future-offline-pwas',
-  'blog/zero-trust-web-design'
+  'blog/zero-trust-web-design',
+  'blog/browser-fingerprinting',
+  'blog/canvas-api-manipulation'
 ];
 
 function generateRoutes() {
@@ -151,7 +153,9 @@ function generateRoutes() {
     'blog/pomodoro-tracker-guide': { title: 'Mastering the Pomodoro Technique: Why an Offline Browser Timer is the Ultimate Productivity Hack', desc: 'Stop relying on cloud-based timers that harvest your data. Learn how to maximize your deep work sessions using a 100% offline, privacy-focused Pomodoro Tracker directly in your browser.' },
     'blog/webassembly-offline-future': { title: 'The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software', desc: 'Discover how WebAssembly is revolutionizing client-side capabilities, allowing professional-grade software to run natively in your browser entirely offline.' },
     'blog/future-offline-pwas': { title: 'The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences', desc: 'The era of constantly loading browsers is fading. Progressive Web Apps are bringing desktop-class power and robust offline capabilities directly into your browser.' },
-    'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security', desc: 'As high-profile data breaches become the accepted norm, explore how radical zero-trust architectures and isolated client-side processing restore true security.' }
+    'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security', desc: 'As high-profile data breaches become the accepted norm, explore how radical zero-trust architectures and isolated client-side processing restore true security.' },
+    'blog/browser-fingerprinting': { title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking', desc: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.' },
+    'blog/canvas-api-manipulation': { title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline', desc: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.' }
   };
 
   const defaultSeoParagraphs = `

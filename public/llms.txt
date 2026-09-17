@@ -51,5 +51,8 @@ Because the application runs entirely in the browser using client-side JavaScrip
 - [The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences](https://creatorkithub.org/blog/future-offline-pwas/): Discover how Progressive Web Apps are bringing desktop-class power and robust offline capabilities directly into your browser.
 - [Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security](https://creatorkithub.org/blog/zero-trust-web-design/): Explore how radical zero-trust architectures and isolated client-side processing restore true security compared to cloud implementations.
 
+- [Beyond Cookies: Browser Fingerprinting](https://creatorkithub.org/blog/browser-fingerprinting/): Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.
+- [The Evolution of the Canvas API](https://creatorkithub.org/blog/canvas-api-manipulation/): Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.
+
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).

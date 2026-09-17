@@ -10,7 +10,7 @@ export default function ColorTheoryWebDesign({ onNavigate }: { onNavigate: (path
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -60,7 +60,7 @@ export default function ColorTheoryWebDesign({ onNavigate }: { onNavigate: (path
 
                         <p>Historically, finding an accessible, free tool to execute median-cut quantization meant uploading your proprietary brand photography, sensitive UI mockups, or unreleased product shots to a random backend server located halfway across the world. This violates foundational data security principles. Furthermore, moving hefty 20MB raw photographs over weak Wi-Fi networks just to extract a few bytes of hex codes is architecturally inefficient and completely maddening.</p>
 
-                        <p>By heavily leveraging the HTML5 Canvas API in direct tandem with modern, deeply optimized JavaScript engines running precisely in your browser, the <a href="/palette-extractor" onClick={(e) => { e.preventDefault(); onNavigate('/palette-extractor'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">Palette Extractor</a> completely eliminates the server middleman. When you drag an image onto the offline tool, the browser instantly loads the pixel data into a localized, invisible in-memory canvas. The median-cut quantization mathematics execute incredibly rapidly using your device's native CPU, instantly calculating the dominant hex codes without sending a solitary pixel out of your private environment.</p>
+                        <p>By heavily leveraging the HTML5 Canvas API in direct tandem with modern, deeply optimized JavaScript engines running precisely in your browser, the <a href="/palette-extractor/" onClick={(e) => { e.preventDefault(); onNavigate('/palette-extractor/'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">Palette Extractor</a> completely eliminates the server middleman. When you drag an image onto the offline tool, the browser instantly loads the pixel data into a localized, invisible in-memory canvas. The median-cut quantization mathematics execute incredibly rapidly using your device's native CPU, instantly calculating the dominant hex codes without sending a solitary pixel out of your private environment.</p>
 
                         <p>Because the complex processing happens strictly localized on the client side, offline palette extraction feels practically instantaneous and completely frictionless. You can literally disconnect your laptop from the Wi-Fi entirely, load up complex architectural renderings, and watch brilliant, harmonious palettes generate dynamically in real-time. This offline architecture fundamentally respects your absolute right to creative privacy and strictly protects proprietary source files from web scrapers.</p>
 

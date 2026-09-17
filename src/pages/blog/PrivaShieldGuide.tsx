@@ -10,7 +10,7 @@ export default function PrivaShieldGuide({ onNavigate }: { onNavigate: (path: st
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -64,7 +64,7 @@ export default function PrivaShieldGuide({ onNavigate }: { onNavigate: (path: st
 
                         <p>The only genuinely foolproof method to guarantee your digital location safety is to proactively strip the metadata manually before the image ever leaves your possession. Previously, this required downloading clunky desktop applications or navigating highly complex terminal commands. Alternatively, users frequently utilized cloud-based EXIF cleaners, which outrageously subjected the user to entirely new privacy violations by forcing them to upload private images to unknown, unverified third-party servers just to clean them.</p>
 
-                        <p>Modern browser capabilities profoundly changed this dynamic. Tools like the <a href="/privashield" onClick={(e) => { e.preventDefault(); onNavigate('/privashield'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">PrivaShield EXIF Stripper</a> leverage offline client-side processing to solve this massive friction perfectly. By utilizing WebAssembly components directly inside your browser cache, you elegantly drag and drop your sensitive personal images directly onto the screen, and the tool rapidly scrubs the metadata in sheer milliseconds.</p>
+                        <p>Modern browser capabilities profoundly changed this dynamic. Tools like the <a href="/privashield/" onClick={(e) => { e.preventDefault(); onNavigate('/privashield/'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">PrivaShield EXIF Stripper</a> leverage offline client-side processing to solve this massive friction perfectly. By utilizing WebAssembly components directly inside your browser cache, you elegantly drag and drop your sensitive personal images directly onto the screen, and the tool rapidly scrubs the metadata in sheer milliseconds.</p>
 
                         <p>The monumental distinction here is that your photo never once uploads to the internet. Because the processing is rigidly confined to your device's memory, you can physically sever your Wi-Fi connection, run gigabytes of private photos completely through the stripping process, and cleanly save the sanitized copies back to your local hard drive. There is absolutely zero risk of server interception or data harvesting.</p>
 

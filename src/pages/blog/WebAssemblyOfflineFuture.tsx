@@ -9,7 +9,7 @@ export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group mb-6"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -45,7 +45,7 @@ export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (
                             Everything changed when major browsers adopted WebAssembly. WebAssembly is a binary instruction format designed as a portable compilation target for high-level languages like C, C++, and Rust. It runs completely natively in your browser sandbox alongside JavaScript, achieving near-native execution speeds.
                         </p>
                         <p>
-                            This allows developers to take highly complex desktop-grade libraries and package them into small, secure payloads that run locally on your device. The architectural implications of this are staggering. Let's look at image conversion as an example. Traditionally, converting modern formats like HEIC to a standard web-safe JPEG required uploading the file or installing clunky desktop software. Now, utilizing tools like our <a href="/universal-image-converter" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter'); }} className="text-rose-400 hover:text-rose-300">Universal Image Converter</a>, the browser itself reads the file bytes, leverages Wasm-compiled libraries to re-map the visual data, and outputs the JPEG natively. It happens instantly, and your original file never leaves your solid state drive.
+                            This allows developers to take highly complex desktop-grade libraries and package them into small, secure payloads that run locally on your device. The architectural implications of this are staggering. Let's look at image conversion as an example. Traditionally, converting modern formats like HEIC to a standard web-safe JPEG required uploading the file or installing clunky desktop software. Now, utilizing tools like our <a href="/universal-image-converter/" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter/'); }} className="text-rose-400 hover:text-rose-300">Universal Image Converter</a>, the browser itself reads the file bytes, leverages Wasm-compiled libraries to re-map the visual data, and outputs the JPEG natively. It happens instantly, and your original file never leaves your solid state drive.
                         </p>
 
                         <div className="bg-[#18181b] p-8 rounded-2xl border border-zinc-800 my-6 shadow-2xl">
@@ -74,15 +74,15 @@ export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (
                             The transition away from thick-client desktop apps to offline web tools is highly practical. Installing software requires admin rights, pollutes the registry, introduces potential malware vectors, and clutters your hard drive with background daemons and auto-updaters.
                         </p>
                         <p>
-                            By centralizing utilities inside the browser, you maintain a pristine operating system environment. When you use the <a href="/pdf-toolkit/all-tools" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/all-tools'); }} className="text-rose-400 hover:text-rose-300">Comprehensive PDF Toolkit</a> on our site, you get the exact functionality of paid enterprise desktop solutions: merging, splitting, watermarking, and metadata extraction, but it requires zero installation overhead. The logic is purged from your RAM the second you close the tab.
+                            By centralizing utilities inside the browser, you maintain a pristine operating system environment. When you use the <a href="/pdf-toolkit/all-tools/" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/all-tools/'); }} className="text-rose-400 hover:text-rose-300">Comprehensive PDF Toolkit</a> on our site, you get the exact functionality of paid enterprise desktop solutions: merging, splitting, watermarking, and metadata extraction, but it requires zero installation overhead. The logic is purged from your RAM the second you close the tab.
                         </p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Protecting Highly Sensitive Data Assets</h2>
                         <p>
-                            The most critical use case for offline web logic is the handler layer for sensitive personal information. Take password security. Passing text over the wire for evaluation is a terrifying prospect, even over TLS encryption. Our <a href="/crypto-audit" onClick={(e) => { e.preventDefault(); onNavigate('/crypto-audit'); }} className="text-rose-400 hover:text-rose-300">CryptoAudit Password Analyzer</a> and <a href="/text-encryption" onClick={(e) => { e.preventDefault(); onNavigate('/text-encryption'); }} className="text-rose-400 hover:text-rose-300">Text Encryption tool</a> compute mathematical entropy and AES encryption strictly client-side. The threat model is effectively reduced to the physical security of your local device.
+                            The most critical use case for offline web logic is the handler layer for sensitive personal information. Take password security. Passing text over the wire for evaluation is a terrifying prospect, even over TLS encryption. Our <a href="/crypto-audit/" onClick={(e) => { e.preventDefault(); onNavigate('/crypto-audit/'); }} className="text-rose-400 hover:text-rose-300">CryptoAudit Password Analyzer</a> and <a href="/text-encryption/" onClick={(e) => { e.preventDefault(); onNavigate('/text-encryption/'); }} className="text-rose-400 hover:text-rose-300">Text Encryption tool</a> compute mathematical entropy and AES encryption strictly client-side. The threat model is effectively reduced to the physical security of your local device.
                         </p>
                         <p>
-                            The same concept applies to privacy scrubbing. Stripping EXIF metadata using the <a href="/privashield" onClick={(e) => { e.preventDefault(); onNavigate('/privashield'); }} className="text-rose-400 hover:text-rose-300">PrivaShield tool</a> ensures that GPS coordinates stored in smartphone photography are obliterated before you post them to public social media networks. Uploading these photos to a third-party server specifically to strip privacy data creates an absurd paradox. The client-side approach structurally enforces the privacy you are attempting to achieve.
+                            The same concept applies to privacy scrubbing. Stripping EXIF metadata using the <a href="/privashield/" onClick={(e) => { e.preventDefault(); onNavigate('/privashield/'); }} className="text-rose-400 hover:text-rose-300">PrivaShield tool</a> ensures that GPS coordinates stored in smartphone photography are obliterated before you post them to public social media networks. Uploading these photos to a third-party server specifically to strip privacy data creates an absurd paradox. The client-side approach structurally enforces the privacy you are attempting to achieve.
                         </p>
 
                         <h2>The Bottom Line</h2>
@@ -95,7 +95,7 @@ export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (
                                 <h3 className="text-xl font-bold text-white mb-2 mt-0">Experience raw client-side speed.</h3>
                                 <p className="text-slate-300 mb-0">Try converting a massive file locally within your browser.</p>
                             </div>
-                            <a href="/universal-image-converter" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter'); }} className="px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white font-medium rounded-lg transition-colors shrink-0 flex items-center gap-2">
+                            <a href="/universal-image-converter/" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter/'); }} className="px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white font-medium rounded-lg transition-colors shrink-0 flex items-center gap-2">
                                 <Cpu className="w-5 h-5" />
                                 Convert Locally
                             </a>

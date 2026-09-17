@@ -39,6 +39,8 @@ const PomodoroTrackerGuide = lazy(() => import('./pages/blog/PomodoroTrackerGuid
 const WebAssemblyOfflineFuture = lazy(() => import('./pages/blog/WebAssemblyOfflineFuture'));
 const FutureOfOfflinePwas = lazy(() => import('./pages/blog/FutureOfOfflinePwas'));
 const ZeroTrustWebDesign = lazy(() => import('./pages/blog/ZeroTrustWebDesign'));
+const BrowserFingerprinting = lazy(() => import('./pages/blog/BrowserFingerprinting'));
+const CanvasApiManipulation = lazy(() => import('./pages/blog/CanvasApiManipulation'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -117,7 +119,7 @@ export default function App() {
     const base = import.meta.env.BASE_URL || '/';
     const baseUrl = base !== '/' ? base.replace(/\/$/, '') : '';
     let manifestUrl = baseUrl + '/manifest.webmanifest';
-    if (currentPath.startsWith('/pdf-toolkit') || currentPath.startsWith('/local-pdf')) manifestUrl = baseUrl + '/manifests/pdf.json';
+    if (currentPath.startsWith('/pdf-toolkit') || currentPath.startsWith('/pdf-toolkit')) manifestUrl = baseUrl + '/manifests/pdf.json';
     else if (currentPath.startsWith('/crypto-audit') || currentPath.startsWith('/password-analyzer')) manifestUrl = baseUrl + '/manifests/crypto.json';
     else if (currentPath.startsWith('/privashield') || currentPath.startsWith('/exif-stripper')) manifestUrl = baseUrl + '/manifests/exif.json';
     else if (currentPath.startsWith('/a11y-scorecard') || currentPath.startsWith('/accessibility')) manifestUrl = baseUrl + '/manifests/a11y.json';
@@ -178,7 +180,9 @@ export default function App() {
       'blog/tone-analyzer-guide': { title: 'Why Tone Analysis is Essential for Effective Digital Communication', desc: 'Discover how emotional intelligence in writing and local sentiment analysis can radically alter your professional and personal digital footprints.' },
       'blog/universal-image-converter-guide': { title: 'The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy', desc: 'Learn why completely offline image conversion protects your privacy and handles modern web formats securely.' },
       'blog/future-offline-pwas': { title: 'The Future of Offline PWAs: Bridging the Gap', desc: 'The era of constantly loading browsers is fading. Progressive Web Apps (PWAs) are bringing desktop-class power and robust offline capabilities directly into your browser.' },
-      'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard', desc: 'As data breaches become the norm, relying on traditional cloud safety measures is inadequate. Explore how zero-trust architectures and client-side processing restore security.' }
+      'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard', desc: 'As data breaches become the norm, relying on traditional cloud safety measures is inadequate. Explore how zero-trust architectures and client-side processing restore security.' },
+      'blog/browser-fingerprinting': { title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking', desc: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.' },
+      'blog/canvas-api-manipulation': { title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline', desc: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -246,7 +250,7 @@ export default function App() {
     if (activePath === '/social-media-safe-zone-overlay' || activePath === '/safe-zone') {
       return <SafeZoneTool onBack={() => navigate('/')} />;
     }
-    if (activePath.startsWith('/pdf-toolkit') || activePath.startsWith('/local-pdf')) {
+    if (activePath.startsWith('/pdf-toolkit') || activePath.startsWith('/pdf-toolkit')) {
       const toolId = activePath.split('/')[2];
       return <LocalPdfStudio onBack={() => navigate('/')} initialTool={toolId} />;
     }
@@ -375,21 +379,23 @@ export default function App() {
     if (activePath === '/blog/webassembly-offline-future') return <WebAssemblyOfflineFuture onNavigate={navigate} />;
     if (activePath === '/blog/future-offline-pwas') return <FutureOfOfflinePwas onNavigate={navigate} />;
     if (activePath === '/blog/zero-trust-web-design') return <ZeroTrustWebDesign onNavigate={navigate} />;
+    if (activePath === '/blog/browser-fingerprinting') return <BrowserFingerprinting onNavigate={navigate} />;
+    if (activePath === '/blog/canvas-api-manipulation') return <CanvasApiManipulation onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {
-        if (toolId === 'local-pdf') navigate('/pdf-toolkit');
-        else if (toolId === 'safe-zone') navigate('/social-media-safe-zone-overlay');
-        else if (toolId === 'image-converter') navigate('/universal-image-converter');
-        else if (toolId === 'a11y-scorecard') navigate('/a11y-scorecard');
-        else if (toolId === 'privashield') navigate('/privashield');
-        else if (toolId === 'crypto-audit') navigate('/crypto-audit');
-        else if (toolId === 'text-encryption') navigate('/text-encryption');
-        else if (toolId === 'palette-extractor') navigate('/palette-extractor');
-        else if (toolId === 'pomodoro-tracker') navigate('/pomodoro-tracker');
-        else if (toolId === 'tone-analyzer') navigate('/tone-analyzer');
-        else if (toolId === 'lorem-builder') navigate('/lorem-builder');
-        else if (toolId === 'svg-tracer') navigate('/svg-tracer');
+        if (toolId === 'local-pdf') navigate('/pdf-toolkit/');
+        else if (toolId === 'safe-zone') navigate('/social-media-safe-zone-overlay/');
+        else if (toolId === 'image-converter') navigate('/universal-image-converter/');
+        else if (toolId === 'a11y-scorecard') navigate('/a11y-scorecard/');
+        else if (toolId === 'privashield') navigate('/privashield/');
+        else if (toolId === 'crypto-audit') navigate('/crypto-audit/');
+        else if (toolId === 'text-encryption') navigate('/text-encryption/');
+        else if (toolId === 'palette-extractor') navigate('/palette-extractor/');
+        else if (toolId === 'pomodoro-tracker') navigate('/pomodoro-tracker/');
+        else if (toolId === 'tone-analyzer') navigate('/tone-analyzer/');
+        else if (toolId === 'lorem-builder') navigate('/lorem-builder/');
+        else if (toolId === 'svg-tracer') navigate('/svg-tracer/');
       }} />
     );
   };

@@ -10,7 +10,7 @@ export default function SvgTracingTechniques({ onNavigate }: { onNavigate: (path
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -64,7 +64,7 @@ export default function SvgTracingTechniques({ onNavigate }: { onNavigate: (path
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Why Our Canvas-Driven Engine Wins</h2>
 
-                        <p>The philosophical approach behind CreatorKitHub is completely removing the intermediary server, and vector conversion is where this methodology truly shines. When using the <a href="/svg-tracer" onClick={(e) => { e.preventDefault(); onNavigate('/svg-tracer'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">SVG Tracer</a>, the architecture actively utilizes your native browser’s Canvas API integrated closely with advanced WebAssembly modules to handle the heavy mathematical matrix operations required to analyze dense pixel buffers.</p>
+                        <p>The philosophical approach behind CreatorKitHub is completely removing the intermediary server, and vector conversion is where this methodology truly shines. When using the <a href="/svg-tracer/" onClick={(e) => { e.preventDefault(); onNavigate('/svg-tracer/'); }} className="text-indigo-400 hover:text-indigo-300 underline font-medium">SVG Tracer</a>, the architecture actively utilizes your native browser’s Canvas API integrated closely with advanced WebAssembly modules to handle the heavy mathematical matrix operations required to analyze dense pixel buffers.</p>
 
                         <p>This provides two radical advantages. Firstly, it offers real-time visual feedback based instantly on the parameters you slide; there is no loading bar connecting to an external API to see how a higher threshold might change the tracing outcome. The feedback loop is immediate, letting the designer dial in absolute perfection. Secondly, you gain complete isolation. When tracing sensitive architectural floor plans or unreleased branding aesthetics, offline execution guarantees zero metadata retention, scraping, or leakage. The vector lives strictly in-memory until you click download, keeping it securely contained within your immediate local environment.</p>
 

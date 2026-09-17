@@ -9,7 +9,7 @@ export default function ToneAnalyzerGuide({ onNavigate }: { onNavigate: (path: s
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -36,13 +36,13 @@ export default function ToneAnalyzerGuide({ onNavigate }: { onNavigate: (path: s
 
                         <p>We’ve all experienced the sheer anxiety of sending a carefully drafted email, only to receive a reply that proves our message was entirely misread. Perhaps what you intended as constructive professional feedback landed as outright hostility. In the digital age, where communication happens asynchronously across time zones and without the benefit of body language or vocal inflection, emotional context is incredibly easy to lose.</p>
 
-                        <p>Text-based correspondence is a minefield. A simple period at the end of a sentence can shift a message from friendly to passive-aggressive. This subtle failure in translation often yields profound consequences: mismanaged teams, frustrated clients, and strained interpersonal relationships. This is precisely where algorithmic linguistic insights become mandatory, making tools like the offline <button onClick={() => onNavigate('/tone-analyzer')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Tone Analyzer</button> incredibly valuable for your daily digital communications.</p>
+                        <p>Text-based correspondence is a minefield. A simple period at the end of a sentence can shift a message from friendly to passive-aggressive. This subtle failure in translation often yields profound consequences: mismanaged teams, frustrated clients, and strained interpersonal relationships. This is precisely where algorithmic linguistic insights become mandatory, making tools like the offline <button onClick={() => onNavigate('/tone-analyzer/')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Tone Analyzer</button> incredibly valuable for your daily digital communications.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">The Erosion of Nuance</h2>
 
                         <p>In spoken conversation, human beings intuitively rely on non-verbal cues. Pitch, volume, facial expressions, and physical posture convey up to 90 percent of our underlying intent. If you tell a coworker "That’s fine," while smiling, it conveys genuine agreement. But type "That's fine." in a Slack message with no accompanying emoji or context, and it instantly generates tension. The recipient is forced to project their own internal emotional state onto your flat text, which almost always results in a negative bias.</p>
 
-                        <p>As professionals write thousands of words every day - across emails, internal messaging apps, customer support tickets, and social media networks like <button onClick={() => onNavigate('/blog/safe-zone-guide')} className="text-orange-400 hover:text-orange-300 underline underline-offset-4 decoration-orange-900">social media platforms</button> - understanding exactly how to engineer emotional nuance becomes critical. Relying purely on gut instinct is no longer sufficient when the text you write serves as the definitive record of your professional competency.</p>
+                        <p>As professionals write thousands of words every day - across emails, internal messaging apps, customer support tickets, and social media networks like <button onClick={() => onNavigate('/blog/safe-zone-guide/')} className="text-orange-400 hover:text-orange-300 underline underline-offset-4 decoration-orange-900">social media platforms</button> - understanding exactly how to engineer emotional nuance becomes critical. Relying purely on gut instinct is no longer sufficient when the text you write serves as the definitive record of your professional competency.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">How Sentiment Analysis Operates</h2>
 
@@ -75,17 +75,17 @@ export default function ToneAnalyzerGuide({ onNavigate }: { onNavigate: (path: s
 
                         <p>Most commercial grammar and tone checkers require you to upload your text to their cloud API, or worse, install a keyboard plugin that logs every keystroke across your entire operating system. This essentially surrenders all of your proprietary internal communications to third-party data conglomerates.</p>
 
-                        <p>This is why an offline browser tool is revolutionary. An offline <button onClick={() => onNavigate('/tone-analyzer')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Tone Analyzer</button> downloads the linguistic dictionaries directly into your browser memory and runs completely inside your local RAM. It never phones home, guaranteeing that your sensitive data remains entirely invisible to anyone but you.</p>
+                        <p>This is why an offline browser tool is revolutionary. An offline <button onClick={() => onNavigate('/tone-analyzer/')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Tone Analyzer</button> downloads the linguistic dictionaries directly into your browser memory and runs completely inside your local RAM. It never phones home, guaranteeing that your sensitive data remains entirely invisible to anyone but you.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Crafting Better Digital Relationships</h2>
 
-                        <p>Beyond avoiding conflict, deploying sentiment awareness heavily benefits branding and marketing. When copywriters are drafting ad campaigns, social media posts, or <button onClick={() => onNavigate('/blog/mastering-typography')} className="text-blue-400 hover:text-blue-300 underline underline-offset-4 decoration-blue-900">typographical layouts</button>, matching the specific emotional resonance of the target audience dramatically increases engagement and conversion rates.</p>
+                        <p>Beyond avoiding conflict, deploying sentiment awareness heavily benefits branding and marketing. When copywriters are drafting ad campaigns, social media posts, or <button onClick={() => onNavigate('/blog/mastering-typography/')} className="text-blue-400 hover:text-blue-300 underline underline-offset-4 decoration-blue-900">typographical layouts</button>, matching the specific emotional resonance of the target audience dramatically increases engagement and conversion rates.</p>
 
                         <p>Similarly in customer support, ensuring an apologetic, deeply empathetic tone can de-escalate tension and salvage a damaged customer relationship. An analyzer acts as a rapid quality-assurance check before high-stakes messages are formalized.</p>
 
                         <p>The words we choose are our primary asset in the digital workspace. Becoming acutely aware of the underlying emotion driving your text allows you to exert incredible control over how you are perceived. Don’t leave your tone to chance. By testing your communications in real time with private offline tools, you can ensure that your meaning always connects exactly as intended.</p>
 
-                        <p>Improve your digital workflow and secure your semantic privacy today by visiting the <button onClick={() => onNavigate('/blog')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Blog Hub</button> and mastering offline client-side tools.</p>
+                        <p>Improve your digital workflow and secure your semantic privacy today by visiting the <button onClick={() => onNavigate('/blog/')} className="text-purple-400 hover:text-purple-300 underline underline-offset-4 decoration-purple-900">Blog Hub</button> and mastering offline client-side tools.</p>
 
                     </article>
                     <BlogFooter tags={['Communication', 'Psychology', 'Offline Productivity']} currentPath="/blog/tone-analyzer-guide" onNavigate={onNavigate} />

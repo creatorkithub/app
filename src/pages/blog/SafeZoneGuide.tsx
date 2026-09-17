@@ -10,7 +10,7 @@ export default function SafeZoneGuide({ onNavigate }: { onNavigate: (path: strin
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -58,7 +58,7 @@ export default function SafeZoneGuide({ onNavigate }: { onNavigate: (path: strin
 
                         <p>Essentially terribly heavily relying on drastically entirely vague mental massively incredibly drastically entirely massively incredibly drastically precisely immensely deeply completely immensely profoundly rigorously completely profoundly heavily entirely wildly completely radically entirely wildly totally completely deeply totally entirely deeply wildly rigorously fiercely precisely deeply wildly totally heavily completely totally significantly completely entirely massively wildly totally rigorously.</p>
 
-                        <p>To massively fierce eliminate obscured text, creators crucially drastically profoundly aggressively employ the incredibly useful offline thoroughly <a href="/social-media-safe-zone-overlay" onClick={(e) => { e.preventDefault(); onNavigate('/social-media-safe-zone-overlay'); }} className="text-orange-400 hover:text-orange-300 underline font-medium">Safe Zone Overlay</a> tool. Using this browser-based local utility, you can effortlessly visualize exactly where TikTok places its comment buttons and captions, preventing fatal editing errors.</p>
+                        <p>To massively fierce eliminate obscured text, creators crucially drastically profoundly aggressively employ the incredibly useful offline thoroughly <a href="/social-media-safe-zone-overlay/" onClick={(e) => { e.preventDefault(); onNavigate('/social-media-safe-zone-overlay/'); }} className="text-orange-400 hover:text-orange-300 underline font-medium">Safe Zone Overlay</a> tool. Using this browser-based local utility, you can effortlessly visualize exactly where TikTok places its comment buttons and captions, preventing fatal editing errors.</p>
 
                         <p>This entirely fully natively profoundly heavily completely perfectly immensely fiercely strictly totally completely fiercely thoroughly thoroughly drastically directly extremely browser-native utterly thoroughly highly intensely entirely heavily heavily entirely completely locally totally fully heavily drastically natively absolutely totally heavily entirely highly completely entirely entirely strongly heavily drastically heavily entirely perfectly thoroughly completely thoroughly heavily entirely locally thoroughly offline tool drastically safely totally thoroughly highly strictly fully vastly severely enables deeply immensely completely greatly creators utterly drastically absolutely completely vastly highly precisely strictly heavily thoroughly precisely entirely perfectly fully heavily entirely deeply fiercely heavily heavily immensely.</p>
 

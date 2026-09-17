@@ -9,7 +9,7 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -38,7 +38,7 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
 
                         <p>A designer might want to export an SVG to a high-fidelity PNG to maintain transparency, while a developer might need to compress a heavy JPG folder into WebP. In nearly every scenario, users instinctively flock to search engines to find a fast, free image converter.</p>
 
-                        <p>However, what happens behind the scenes of popular web-based converters is highly concerning. When you upload your files to a random server, you immediately surrender privacy. That’s why using a completely offline <button onClick={() => onNavigate('/universal-image-converter')} className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-900">Universal Image Converter</button> that leverages local browser power is becoming an indispensable part of secure digital workflows.</p>
+                        <p>However, what happens behind the scenes of popular web-based converters is highly concerning. When you upload your files to a random server, you immediately surrender privacy. That’s why using a completely offline <button onClick={() => onNavigate('/universal-image-converter/')} className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-900">Universal Image Converter</button> that leverages local browser power is becoming an indispensable part of secure digital workflows.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">The Format Fragmentation Challenge</h2>
 
@@ -55,7 +55,7 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">The Hidden Dangers of Cloud-Based Converters</h2>
 
-                        <p>Most internet users naturally search for terms like "HEIC to JPG" and click the first result. These websites feel safe because they're well-designed, but their backend architecture poses serious risks to <button onClick={() => onNavigate('/blog/why-offline-tools-matter')} className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-900">data privacy and security</button>.</p>
+                        <p>Most internet users naturally search for terms like "HEIC to JPG" and click the first result. These websites feel safe because they're well-designed, but their backend architecture poses serious risks to <button onClick={() => onNavigate('/blog/why-offline-tools-matter/')} className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-900">data privacy and security</button>.</p>
 
                         <p>When an image leaves your computer, you must transmit the file to a remote cloud server. This is problematic for several reasons. First, your image might contain sensitive information. Are you converting a snapshot of a confidential document, a high-value artistic asset, or a deeply private photograph? Sending it to a server means it sits on someone else’s hard drive, susceptible to data breaches or silently kept for AI dataset scraping.</p>
 
@@ -87,7 +87,7 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
 
                         <p>Using a local offline Universal Image Converter ensures that you dictate the precise degree of compression. Because bandwidth isn't a factor, the tool can safely yield a 100% quality output without hesitation.</p>
 
-                        <p>Furthermore, image files naturally carry EXIF metadata: hidden tags that store your exact camera model, time of creation, and deeply sensitive GPS coordinates showing exactly where you were. Local converters often strip this metadata during the conversion process, serving as an excellent privacy shield. For advanced stripping, robust utilities like the <button onClick={() => onNavigate('/privashield')} className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-900">PrivaShield</button> go even further in sanitizing metadata offline.</p>
+                        <p>Furthermore, image files naturally carry EXIF metadata: hidden tags that store your exact camera model, time of creation, and deeply sensitive GPS coordinates showing exactly where you were. Local converters often strip this metadata during the conversion process, serving as an excellent privacy shield. For advanced stripping, robust utilities like the <button onClick={() => onNavigate('/privashield/')} className="text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-900">PrivaShield</button> go even further in sanitizing metadata offline.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">How to Integrate Seamless Conversion into Your Workflow</h2>
 
@@ -97,7 +97,7 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
 
                         <p>Second, ensure that you always use offline, client-side tools for the task. The modern web doesn't mandate compromising your privacy for simple file transformations. By utilizing a Universal Image Converter built on robust client-side architecture, you ensure your images output flawlessly with maximum fidelity and zero risk of external exposure.</p>
 
-                        <p>Take charge of your image assets today. Explore the rich suite of secure tools within the <button onClick={() => onNavigate('/blog')} className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-900">Blog Hub</button> and upgrade you productivity natively inside your browser.</p>
+                        <p>Take charge of your image assets today. Explore the rich suite of secure tools within the <button onClick={() => onNavigate('/blog/')} className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-900">Blog Hub</button> and upgrade you productivity natively inside your browser.</p>
 
                     </article>
                     <BlogFooter tags={['Privacy', 'Image Processing', 'Workflow']} currentPath="/blog/universal-image-converter-guide" onNavigate={onNavigate} />

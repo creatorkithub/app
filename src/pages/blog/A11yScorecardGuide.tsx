@@ -10,7 +10,7 @@ export default function A11yScorecardGuide({ onNavigate }: { onNavigate: (path: 
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -66,7 +66,7 @@ export default function A11yScorecardGuide({ onNavigate }: { onNavigate: (path: 
 
                         <p>Guessing at contrast combinations by blindly trusting your eye is incredibly dangerous. As we age, or simply stare at backlit screens for ten hours straight, our perception becomes deeply skewed. You absolutely must employ rigorous mathematical evaluation tools before pushing your product into public production. This step is completely non-negotiable for serious software engineering teams.</p>
 
-                        <p>Historically, designers would upload full screenshots of their impending prototypes to obscure third-party cloud servers to get these grades. That severely opens up massive security vulnerabilities regarding unreleased proprietary intellectual property. Today, utilizing client-side tools strictly operating in your local browser completely solves this. With utility applications like the <a href="/a11y-scorecard" onClick={(e) => { e.preventDefault(); onNavigate('/a11y-scorecard'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">A11y Scorecard checker</a>, you can vigorously test hex codes rapidly without a single byte of your data ever leaving your own secure desktop.</p>
+                        <p>Historically, designers would upload full screenshots of their impending prototypes to obscure third-party cloud servers to get these grades. That severely opens up massive security vulnerabilities regarding unreleased proprietary intellectual property. Today, utilizing client-side tools strictly operating in your local browser completely solves this. With utility applications like the <a href="/a11y-scorecard/" onClick={(e) => { e.preventDefault(); onNavigate('/a11y-scorecard/'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">A11y Scorecard checker</a>, you can vigorously test hex codes rapidly without a single byte of your data ever leaving your own secure desktop.</p>
 
                         <p>By inputting your primary background hue alongside your intended text color, the scorecard definitively validates passing grades across WCAG 2.0 AA and the much stricter AAA standards. It instantaneously takes the guesswork drastically out of the equation, outputting undeniable pass or fail metrics.</p>
 

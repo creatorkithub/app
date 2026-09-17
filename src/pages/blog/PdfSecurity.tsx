@@ -11,7 +11,7 @@ export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string)
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -61,19 +61,19 @@ export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string)
 
                         <p>It's always a smart idea to scrub your documents before you share them. But doing so presents an interesting dilemma: you really shouldn't be uploading a super sensitive file to a random online converter just to sanitize it. That kind of defeats the point of protecting your privacy.</p>
 
-                        <p>That is why using an <strong>offline, client-side metadata scrubber</strong> is the best approach. By using tools like the <a href="/pdf-toolkit/sanitizer" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">LocalPDF Sanitizer</a>, the cleanup process happens safely right here on your own computer. The browser rewrites the file locally, wiping out all those hidden author tags and timestamps, and hands it right back to you without a single byte going over the internet.</p>
+                        <p>That is why using an <strong>offline, client-side metadata scrubber</strong> is the best approach. By using tools like the <a href="/pdf-toolkit/sanitizer/" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">LocalPDF Sanitizer</a>, the cleanup process happens safely right here on your own computer. The browser rewrites the file locally, wiping out all those hidden author tags and timestamps, and hands it right back to you without a single byte going over the internet.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Protecting the Surface Layer</h2>
 
                         <p>While scrubbing protects the hidden background layers of your document, watermarking handles the visible layer you actually read. If you are sending around early drafts, financial estimates, or original artwork, it's pretty important to deter people from misusing them.</p>
 
-                        <p>Slapping a semi-transparent watermark across the center is a great way to prevent casual theft. Crucially, it sets clear boundaries (like clearly stating <em>"CONFIDENTIAL - DRAFT"</em>). Using a fast client-side <a href="/pdf-toolkit/watermark" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">Watermark Stamper</a> lets you brand a massive document instantly without waiting in annoying server queues on typical cloud-based watermark sites.</p>
+                        <p>Slapping a semi-transparent watermark across the center is a great way to prevent casual theft. Crucially, it sets clear boundaries (like clearly stating <em>"CONFIDENTIAL - DRAFT"</em>). Using a fast client-side <a href="/pdf-toolkit/watermark/" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">Watermark Stamper</a> lets you brand a massive document instantly without waiting in annoying server queues on typical cloud-based watermark sites.</p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Managing Your Files Locally</h2>
 
                         <p>Eventually, you'll probably need to collect and merge various files from different places - maybe sorting a stack of tax forms or client invoices. Keeping all of this local just ensures your financial breadcrumbs aren't floating around a third-party server.</p>
 
-                        <p>Using a <a href="/pdf-toolkit/merger" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">Client-Side PDF Merger</a> means your sensitive documents never have to sit in someone else's database. You keep total control over where they go, moving them around safely on your own machine.</p>
+                        <p>Using a <a href="/pdf-toolkit/merger/" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/'); }} className="text-rose-400 hover:text-rose-300 underline font-medium">Client-Side PDF Merger</a> means your sensitive documents never have to sit in someone else's database. You keep total control over where they go, moving them around safely on your own machine.</p>
 
                         <p>Solid document security really comes down to two simple habits: clearing out the invisible junk hiding under the surface, and asserting ownership over the visible pages - all while doing the work safely on your own private device.</p>
 

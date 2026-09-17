@@ -10,7 +10,7 @@ export default function MasteringProductivity({ onNavigate }: { onNavigate: (pat
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -73,7 +73,7 @@ export default function MasteringProductivity({ onNavigate }: { onNavigate: (pat
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Integrating with Creator Kit Hub Workflows</h2>
 
-                        <p>While screen stickynotes handle the physical organization of your thoughts, they work in absolute tandem with local offline utilities. For instance, when utilizing the tools on Creator Kit Hub - such as the <a href="/universal-image-converter" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter'); }} className="text-emerald-400 hover:text-emerald-300 underline font-medium">Universal Image Converter</a> or extracting a color palette - you often need a place to "hold" hex codes, file names, or rapid aesthetic decisions.</p>
+                        <p>While screen stickynotes handle the physical organization of your thoughts, they work in absolute tandem with local offline utilities. For instance, when utilizing the tools on Creator Kit Hub - such as the <a href="/universal-image-converter/" onClick={(e) => { e.preventDefault(); onNavigate('/universal-image-converter/'); }} className="text-emerald-400 hover:text-emerald-300 underline font-medium">Universal Image Converter</a> or extracting a color palette - you often need a place to "hold" hex codes, file names, or rapid aesthetic decisions.</p>
 
                         <p>Instead of tabbing between your graphics editor, Creator Kit Hub, and a heavy note application, a floating sticky note bridges the gap. It holds your extracted hex codes perfectly in the corner of your eye while you apply them to your creative work.</p>
 

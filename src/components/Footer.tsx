@@ -17,11 +17,11 @@ export const Footer = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-medium text-zinc-400">
-                        <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('/blog'); }} className="hover:text-zinc-200 transition-colors">Blog</a>
-                        <a href="/about-us" onClick={(e) => { e.preventDefault(); navigate('/about-us'); }} className="hover:text-zinc-200 transition-colors">About</a>
-                        <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); navigate('/privacy-policy'); }} className="hover:text-zinc-200 transition-colors">Privacy Policy</a>
-                        <a href="/terms-of-service" onClick={(e) => { e.preventDefault(); navigate('/terms-of-service'); }} className="hover:text-zinc-200 transition-colors">Terms of Service</a>
-                        <a href="/contact-us" onClick={(e) => { e.preventDefault(); navigate('/contact-us'); }} className="hover:text-zinc-200 transition-colors">Contact</a>
+                        <a href="/blog/" onClick={(e) => { e.preventDefault(); navigate('/blog/'); }} className="hover:text-zinc-200 transition-colors">Blog</a>
+                        <a href="/about-us/" onClick={(e) => { e.preventDefault(); navigate('/about-us/'); }} className="hover:text-zinc-200 transition-colors">About</a>
+                        <a href="/privacy-policy/" onClick={(e) => { e.preventDefault(); navigate('/privacy-policy/'); }} className="hover:text-zinc-200 transition-colors">Privacy Policy</a>
+                        <a href="/terms-of-service/" onClick={(e) => { e.preventDefault(); navigate('/terms-of-service/'); }} className="hover:text-zinc-200 transition-colors">Terms of Service</a>
+                        <a href="/contact-us/" onClick={(e) => { e.preventDefault(); navigate('/contact-us/'); }} className="hover:text-zinc-200 transition-colors">Contact</a>
                         <button
                             className="google-privacy-options hover:text-zinc-200 transition-colors text-xs opacity-80 border-t border-zinc-800 md:border-none pt-2 md:pt-0 w-full md:w-auto text-center md:text-left mt-2 md:mt-0"
                             onClick={(e) => {

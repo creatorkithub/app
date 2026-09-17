@@ -1,8 +1,34 @@
 const articles = [
     {
+        title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking',
+        description: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.',
+        href: '/blog/browser-fingerprinting/',
+        date: 'Sep 18, 2026',
+        readTime: '15 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><circle cx="12" cy="10" r="3" /></svg>
+        ),
+        color: 'text-rose-400',
+        bg: 'bg-rose-500/10 hover:bg-rose-500/20',
+        border: 'border-rose-500/20'
+    },
+    {
+        title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline',
+        description: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.',
+        href: '/blog/canvas-api-manipulation/',
+        date: 'Sep 18, 2026',
+        readTime: '12 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg>
+        ),
+        color: 'text-teal-400',
+        bg: 'bg-teal-500/10 hover:bg-teal-500/20',
+        border: 'border-teal-500/20'
+    },
+    {
         title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security',
         description: 'As high-profile data breaches become the accepted norm of the modern web, relying on traditional cloud safety measures is profoundly inadequate. Explore how radical zero-trust architectures and isolated client-side processing restore true security.',
-        href: '/blog/zero-trust-web-design',
+        href: '/blog/zero-trust-web-design/',
         date: 'Sep 15, 2026',
         readTime: '14 min read',
         icon: (

@@ -10,7 +10,7 @@ export default function CryptoAuditGuide({ onNavigate }: { onNavigate: (path: st
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -58,7 +58,7 @@ export default function CryptoAuditGuide({ onNavigate }: { onNavigate: (path: st
 
                         <p>The sole method to evaluate a credential completely safely is an offline-first architecture. By deeply utilizing robust cryptographic checking algorithms actively executing strictly within the highly secure sandbox of your local browser memory, you essentially get the profound benefit of rapid institutional-grade analysis securely without transferring a single byte of sensitive payload across the scary web.</p>
 
-                        <p>Tools aggressively engineered like the <a href="/crypto-audit" onClick={(e) => { e.preventDefault(); onNavigate('/crypto-audit'); }} className="text-purple-400 hover:text-purple-300 underline font-medium">CryptoAudit Password Analyzer</a> perfectly embody this strict design philosophy. Unlike ancient web servers that wildly threw your password around backend databases, an offline application rigidly performs heavily mathematical entropies right on your CPU. It intensely analyzes the sheer cryptographic entropy, calculates crack time estimates purely against theoretical hardware clusters, and severely flags terrible keyboard walk patterns (like "qwerty" or "asdfgh") completely blindly.</p>
+                        <p>Tools aggressively engineered like the <a href="/crypto-audit/" onClick={(e) => { e.preventDefault(); onNavigate('/crypto-audit/'); }} className="text-purple-400 hover:text-purple-300 underline font-medium">CryptoAudit Password Analyzer</a> perfectly embody this strict design philosophy. Unlike ancient web servers that wildly threw your password around backend databases, an offline application rigidly performs heavily mathematical entropies right on your CPU. It intensely analyzes the sheer cryptographic entropy, calculates crack time estimates purely against theoretical hardware clusters, and severely flags terrible keyboard walk patterns (like "qwerty" or "asdfgh") completely blindly.</p>
 
                         <p>Because the complex underlying JavaScript entirely governs the heavy processing, you can aggressively audit fifty incredibly complex variations of your master password directly while severely disconnected from any Wi-Fi. The data literally just structurally ceases to exist the exact moment you aggressively refresh or close that specific browser tab securely.</p>
 

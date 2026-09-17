@@ -10,7 +10,7 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                 {/* Left Column: Article */}
                 <div className="flex-1 lg:max-w-3xl flex flex-col gap-8">
                     <button
-                        onClick={() => onNavigate('/blog')}
+                        onClick={() => onNavigate('/blog/')}
                         className="self-start flex items-center gap-2 text-zinc-500 hover:text-zinc-200 transition-colors text-sm font-semibold tracking-wide uppercase group mb-6"
                     >
                         <svg className="transform group-hover:-translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7" /><path d="M19 12H5" /></svg>
@@ -39,7 +39,7 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                         </p>
 
                         <p>
-                            That is exactly why we built the <a href="/pomodoro-tracker" onClick={(e) => { e.preventDefault(); onNavigate('/pomodoro-tracker'); }} className="text-indigo-400 hover:text-indigo-300">Pomodoro Tracker</a>. It runs completely client-side. The moment the page loads, you can physically disconnect your ethernet cable, and it will function perfectly. We are going to explore why this offline-first architecture is not just a privacy requirement, but a genuine workflow enhancement.
+                            That is exactly why we built the <a href="/pomodoro-tracker/" onClick={(e) => { e.preventDefault(); onNavigate('/pomodoro-tracker/'); }} className="text-indigo-400 hover:text-indigo-300">Pomodoro Tracker</a>. It runs completely client-side. The moment the page loads, you can physically disconnect your ethernet cable, and it will function perfectly. We are going to explore why this offline-first architecture is not just a privacy requirement, but a genuine workflow enhancement.
                         </p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">The Fundamental Flaw of Cloud-Based Apps</h2>
@@ -82,7 +82,7 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                             However, the reason people fail at this method is because they treat the work sessions as "suggestions." If an email notification pops up at minute 14, they check it. If someone messages them on Slack, they respond. The session is immediately ruined.
                         </p>
                         <p>
-                            To successfully pull this off on a computer, you must ruthlessly curate your digital environment before hitting start. We highly recommend pairing our timer with other offline methods. Keep your sensitive documents managed entirely through local applications. If you are handling PDFs, do not use cloud processors that require waiting on uploads. Process them rapidly with our <a href="/pdf-toolkit/all-tools" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/all-tools'); }} className="text-indigo-400 hover:text-indigo-300">Offline PDF Toolkit</a>, which handles everything in your browser cache. Speed and workflow isolation are crucial. Removing friction removes excuses.
+                            To successfully pull this off on a computer, you must ruthlessly curate your digital environment before hitting start. We highly recommend pairing our timer with other offline methods. Keep your sensitive documents managed entirely through local applications. If you are handling PDFs, do not use cloud processors that require waiting on uploads. Process them rapidly with our <a href="/pdf-toolkit/all-tools/" onClick={(e) => { e.preventDefault(); onNavigate('/pdf-toolkit/all-tools/'); }} className="text-indigo-400 hover:text-indigo-300">Offline PDF Toolkit</a>, which handles everything in your browser cache. Speed and workflow isolation are crucial. Removing friction removes excuses.
                         </p>
 
                         <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mt-10 mb-2">Protecting Your Cognitive Load</h2>
@@ -90,7 +90,7 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                             Every time a website requests permission to send you notifications, track your location, or store cross-site cookies, it actively drains a tiny fraction of your cognitive battery. It forces a micro-decision. Over the course of an eight-hour sprint, these micro-decisions compound, leading to decision fatigue.
                         </p>
                         <p>
-                            We built the entire hub specifically to eliminate this fatigue. Want to check if a color palette is accessible? Jump straight to the <a href="/a11y-scorecard" onClick={(e) => { e.preventDefault(); onNavigate('/a11y-scorecard'); }} className="text-indigo-400 hover:text-indigo-300">A11y Scorecard</a>. Need to convert a PNG mockup to an SVG vector for your web build? Our <a href="/svg-tracer" onClick={(e) => { e.preventDefault(); onNavigate('/svg-tracer'); }} className="text-indigo-400 hover:text-indigo-300">SVG Tracer</a> executes entirely in your browser memory via WebAssembly. Neither tool asks for a login, neither prompts you for newsletter signups, and neither harvests your IP address.
+                            We built the entire hub specifically to eliminate this fatigue. Want to check if a color palette is accessible? Jump straight to the <a href="/a11y-scorecard/" onClick={(e) => { e.preventDefault(); onNavigate('/a11y-scorecard/'); }} className="text-indigo-400 hover:text-indigo-300">A11y Scorecard</a>. Need to convert a PNG mockup to an SVG vector for your web build? Our <a href="/svg-tracer/" onClick={(e) => { e.preventDefault(); onNavigate('/svg-tracer/'); }} className="text-indigo-400 hover:text-indigo-300">SVG Tracer</a> executes entirely in your browser memory via WebAssembly. Neither tool asks for a login, neither prompts you for newsletter signups, and neither harvests your IP address.
                         </p>
                         <p>
                             When you combine these local tools with a disciplined Pomodoro rhythm, you create an impenetrable bubble of focus. The software works for you, instantly responding to your inputs without generating friction or demanding information in return.
@@ -109,7 +109,7 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                                 <h3 className="text-xl font-bold text-white mb-2 mt-0">Ready to reclaim your focus?</h3>
                                 <p className="text-slate-300 mb-0">Start a timer right now, securely in your browser.</p>
                             </div>
-                            <a href="/pomodoro-tracker" onClick={(e) => { e.preventDefault(); onNavigate('/pomodoro-tracker'); }} className="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-colors shrink-0 flex items-center gap-2">
+                            <a href="/pomodoro-tracker/" onClick={(e) => { e.preventDefault(); onNavigate('/pomodoro-tracker/'); }} className="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-lg transition-colors shrink-0 flex items-center gap-2">
                                 <RefreshCw className="w-5 h-5" />
                                 Launch Tracker
                             </a>

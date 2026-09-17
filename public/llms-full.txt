@@ -65,6 +65,12 @@ Convert raster images (PNG, JPG) to scalable vector graphics (SVG) entirely with
 Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked by native app elements.
 
 ### Productivity Utilities
+**Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking**
+The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.
+
+**The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline**
+Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.
+
 
 **A11y Scorecard**
 Analyze color contrast ratios and ensure web accessibility compliance (WCAG) instantly in your browser.
