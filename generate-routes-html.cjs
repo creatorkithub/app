@@ -362,7 +362,40 @@ function generateRoutes() {
   const publicSitemapPath = path.join(__dirname, 'public', 'sitemap.xml');
   if (fs.existsSync(path.dirname(publicSitemapPath))) fs.writeFileSync(publicSitemapPath, sitemapContent);
 
-  console.log(`Successfully generated ${count} route files, 404.html SPA fallback, and fully populated dynamic sitemap.xml.`);
+  // --- Feed.xml Generation ---
+  const blogRoutes = Array.from(uniqueCanonicals).filter(r => r.startsWith('blog/'));
+  const feedItems = blogRoutes.map(route => {
+    const meta = seoMetaMap[route];
+    if (!meta) return '';
+    const link = `https://creatorkithub.org/${route}/`;
+    return `    <item>\n      <title><![CDATA[${meta.title}]]></title>\n      <link>${link}</link>\n      <guid>${link}</guid>\n      <description><![CDATA[${meta.desc}]]></description>\n      <pubDate>${new Date().toUTCString()}</pubDate>\n    </item>`;
+  }).filter(Boolean);
+
+  const feedContent = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n  <channel>\n    <title>Creator Kit Hub - Blog</title>\n    <link>https://creatorkithub.org/blog/</link>\n    <description>Privacy & Offline Security Guides</description>\n    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n${feedItems.join('\n')}\n  </channel>\n</rss>`;
+
+  fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), feedContent);
+  const publicFeedPath = path.join(__dirname, 'public', 'feed.xml');
+  if (fs.existsSync(path.dirname(publicFeedPath))) fs.writeFileSync(publicFeedPath, feedContent);
+
+  // --- llms-full.txt Generation ---
+  let llmsFullContent = '# Creator Kit Hub - Full Context & Capabilities Overview\n\n> Creator Kit Hub offers a comprehensive, completely free, and 100% offline suite of client-side web tools.\n\n';
+  llmsFullContent += '## All Capabilities and Descriptions:\n\n';
+  Object.keys(seoMetaMap).forEach(route => {
+    const meta = seoMetaMap[route];
+    llmsFullContent += `### ${meta.title}\n**URL:** https://creatorkithub.org/${route}/\n**Description:** ${meta.desc}\n\n`;
+    const inDepth = seoContentMap[route];
+    if (inDepth) {
+      // Clean HTML tags but preserve some semantic spacing
+      const plainText = inDepth.replace(/<\/?h[1-6]>/g, '\n\n').replace(/<\/p>/g, '\n\n').replace(/<[^>]+>/g, '').trim();
+      llmsFullContent += plainText + '\n\n';
+    }
+  });
+
+  fs.writeFileSync(path.join(DIST_DIR, 'llms-full.txt'), llmsFullContent);
+  const publicLlmsPath = path.join(__dirname, 'public', 'llms-full.txt');
+  if (fs.existsSync(path.dirname(publicLlmsPath))) fs.writeFileSync(publicLlmsPath, llmsFullContent);
+
+  console.log(`Successfully generated ${count} route files, 404.html SPA fallback, feed.xml, llms-full.txt, and fully populated dynamic sitemap.xml.`);
 }
 
 generateRoutes();

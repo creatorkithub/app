@@ -1,0 +1,17 @@
+{
+    "name": "Creator Kit Hub",
+    "short_name": "CreatorKit",
+    "description": "A free, 100% offline suite of client-side web tools for creators.",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#09090b",
+    "background_color": "#09090b",
+    "icons": [
+        {
+            "src": "/icon.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

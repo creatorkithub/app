@@ -1,0 +1,3 @@
+Contact: mailto:security@creatorkithub.org
+Preferred-Languages: en
+Canonical: https://creatorkithub.org/.well-known/security.txt
