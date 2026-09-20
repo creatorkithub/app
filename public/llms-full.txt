@@ -71,6 +71,11 @@ The era of clearing cookies is over. Explore how aggressive browser fingerprinti
 **The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline**
 Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.
 
+**The Psychology of Typography: How Dummy Text Enhances UI Prototyping**
+Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.
+
+**Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems**
+The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.
 
 **A11y Scorecard**
 Analyze color contrast ratios and ensure web accessibility compliance (WCAG) instantly in your browser.

@@ -1,5 +1,31 @@
 const articles = [
     {
+        title: 'The Psychology of Typography: How Dummy Text Enhances UI Prototyping',
+        description: 'Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.',
+        href: '/blog/psychology-of-typography/',
+        date: 'Sep 20, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 7V4h16v3" /><path d="M9 20h6" /><path d="M12 4v16" /></svg>
+        ),
+        color: 'text-blue-400',
+        bg: 'bg-blue-500/10 hover:bg-blue-500/20',
+        border: 'border-blue-500/20'
+    },
+    {
+        title: 'Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems',
+        description: 'The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.',
+        href: '/blog/offline-pomodoro-productivity/',
+        date: 'Sep 20, 2026',
+        readTime: '8 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+        ),
+        color: 'text-emerald-400',
+        bg: 'bg-emerald-500/10 hover:bg-emerald-500/20',
+        border: 'border-emerald-500/20'
+    },
+    {
         title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking',
         description: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.',
         href: '/blog/browser-fingerprinting/',

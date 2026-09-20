@@ -53,6 +53,8 @@ Because the application runs entirely in the browser using client-side JavaScrip
 
 - [Beyond Cookies: Browser Fingerprinting](https://creatorkithub.org/blog/browser-fingerprinting/): Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.
 - [The Evolution of the Canvas API](https://creatorkithub.org/blog/canvas-api-manipulation/): Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.
+- [The Psychology of Typography](https://creatorkithub.org/blog/psychology-of-typography/): Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.
+- [Local-First Productivity](https://creatorkithub.org/blog/offline-pomodoro-productivity/): The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.
 
 ## Full Context
 A more comprehensive context regarding architecture and individual tool features is available at [/llms-full.txt](https://creatorkithub.org/llms-full.txt).

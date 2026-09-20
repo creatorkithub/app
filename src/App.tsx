@@ -41,6 +41,8 @@ const FutureOfOfflinePwas = lazy(() => import('./pages/blog/FutureOfOfflinePwas'
 const ZeroTrustWebDesign = lazy(() => import('./pages/blog/ZeroTrustWebDesign'));
 const BrowserFingerprinting = lazy(() => import('./pages/blog/BrowserFingerprinting'));
 const CanvasApiManipulation = lazy(() => import('./pages/blog/CanvasApiManipulation'));
+const TypographyDummyText = lazy(() => import('./pages/blog/TypographyDummyText'));
+const OfflinePomodoro = lazy(() => import('./pages/blog/OfflinePomodoro'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -182,7 +184,9 @@ export default function App() {
       'blog/future-offline-pwas': { title: 'The Future of Offline PWAs: Bridging the Gap', desc: 'The era of constantly loading browsers is fading. Progressive Web Apps (PWAs) are bringing desktop-class power and robust offline capabilities directly into your browser.' },
       'blog/zero-trust-web-design': { title: 'Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard', desc: 'As data breaches become the norm, relying on traditional cloud safety measures is inadequate. Explore how zero-trust architectures and client-side processing restore security.' },
       'blog/browser-fingerprinting': { title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking', desc: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.' },
-      'blog/canvas-api-manipulation': { title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline', desc: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.' }
+      'blog/canvas-api-manipulation': { title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline', desc: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.' },
+      'blog/psychology-of-typography': { title: 'The Psychology of Typography: How Dummy Text Enhances UI Prototyping', desc: 'Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.' },
+      'blog/offline-pomodoro-productivity': { title: 'Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems', desc: 'The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.' }
     };
 
     const canonicalMap: Record<string, string> = {
@@ -381,6 +385,8 @@ export default function App() {
     if (activePath === '/blog/zero-trust-web-design') return <ZeroTrustWebDesign onNavigate={navigate} />;
     if (activePath === '/blog/browser-fingerprinting') return <BrowserFingerprinting onNavigate={navigate} />;
     if (activePath === '/blog/canvas-api-manipulation') return <CanvasApiManipulation onNavigate={navigate} />;
+    if (activePath === '/blog/psychology-of-typography') return <TypographyDummyText onNavigate={navigate} />;
+    if (activePath === '/blog/offline-pomodoro-productivity') return <OfflinePomodoro onNavigate={navigate} />;
 
     return (
       <Hub onSelectTool={(toolId) => {
