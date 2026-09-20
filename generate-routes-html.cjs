@@ -371,7 +371,7 @@ function generateRoutes() {
     return `    <item>\n      <title><![CDATA[${meta.title}]]></title>\n      <link>${link}</link>\n      <guid>${link}</guid>\n      <description><![CDATA[${meta.desc}]]></description>\n      <pubDate>${new Date().toUTCString()}</pubDate>\n    </item>`;
   }).filter(Boolean);
 
-  const feedContent = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n  <channel>\n    <title>Creator Kit Hub - Blog</title>\n    <link>https://creatorkithub.org/blog/</link>\n    <description>Privacy & Offline Security Guides</description>\n    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n${feedItems.join('\n')}\n  </channel>\n</rss>`;
+  const feedContent = `<?xml version="1.0" encoding="UTF-8" ?>\n<rss version="2.0">\n  <channel>\n    <title>Creator Kit Hub - Blog</title>\n    <link>https://creatorkithub.org/blog/</link>\n    <description><![CDATA[Privacy & Offline Security Guides]]></description>\n    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n${feedItems.join('\n')}\n  </channel>\n</rss>`;
 
   fs.writeFileSync(path.join(DIST_DIR, 'feed.xml'), feedContent);
   const publicFeedPath = path.join(__dirname, 'public', 'feed.xml');
