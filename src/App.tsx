@@ -43,6 +43,8 @@ const BrowserFingerprinting = lazy(() => import('./pages/blog/BrowserFingerprint
 const CanvasApiManipulation = lazy(() => import('./pages/blog/CanvasApiManipulation'));
 const TypographyDummyText = lazy(() => import('./pages/blog/TypographyDummyText'));
 const OfflinePomodoro = lazy(() => import('./pages/blog/OfflinePomodoro'));
+const LocalFirstWorkstation = lazy(() => import('./pages/blog/LocalFirstWorkstation'));
+const DataSovereigntyClientSide = lazy(() => import('./pages/blog/DataSovereigntyClientSide'));
 
 export const RouterContext = createContext({
   navigate: (_path: string) => { }
@@ -167,6 +169,8 @@ export default function App() {
       'svg-tracer': { title: 'SVG Tracer - Raster to Vector Converter Offline', desc: 'Convert raster images (PNG, JPG) to scalable vector graphics (SVG) entirely within your browser memory.' },
       'social-media-safe-zone-overlay': { title: 'Social Media Safe Zone Overlay - TikTok & Reels Template', desc: 'Preview your videos with TikTok, Reels, and YouTube Shorts UI overlays to ensure your content is never blocked.' },
       'blog': { title: 'Creator Kit Blog - Privacy & Offline Security Guides', desc: 'Deep dives, security insights, and comprehensive guides curated to elevate your digital workflows and maximize offline efficiency.' },
+      'blog/local-first-workstation': { title: 'The Complete Local-First Workstation', desc: 'Your browser is powerful enough to handle your entire workflow silently, securely, and natively. Reclaim your digital independence.' },
+      'blog/data-sovereignty-client-side': { title: 'Data Sovereignty and Pure Client-Side Architecture', desc: 'Through client-side tools, we are taking back ownership of our digital labor. Starve the data vacuums and understand local-first ethics.' },
       'blog/why-offline-tools-matter': { title: 'Why Offline Client-Side Web Tools Matter for Privacy', desc: 'Discover how strictly processing your data inside the browser guarantees absolute privacy and security compared to cloud-based solutions.' },
       'blog/pdf-security-best-practices': { title: 'The Ultimate Guide to PDF Security and Metadata Scrubbing', desc: 'Learn the hidden dangers within your PDFs. We explore the critical importance of digital hygiene, watermark stamping, and complete metadata sanitation limit.' },
       'blog/mastering-productivity': { title: 'Mastering Digital Productivity with Stickynotes on Windows', desc: 'In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus.' },
@@ -365,6 +369,8 @@ export default function App() {
     if (activePath === '/lorem-builder') return <LoremBuilder onBack={() => navigate('/')} />;
     if (activePath === '/svg-tracer') return <SvgTracer onBack={() => navigate('/')} />;
     if (activePath === '/blog') return <BlogHub onNavigate={navigate} />;
+    if (activePath === '/blog/local-first-workstation') return <LocalFirstWorkstation onNavigate={navigate} />;
+    if (activePath === '/blog/data-sovereignty-client-side') return <DataSovereigntyClientSide onNavigate={navigate} />;
     if (activePath === '/blog/why-offline-tools-matter') return <WhyOfflineTools onNavigate={navigate} />;
     if (activePath === '/blog/pdf-security-best-practices') return <PdfSecurity onNavigate={navigate} />;
     if (activePath === '/blog/mastering-productivity') return <MasteringProductivity onNavigate={navigate} />;

@@ -70,7 +70,9 @@ const routes = [
   'blog/browser-fingerprinting',
   'blog/canvas-api-manipulation',
   'blog/psychology-of-typography',
-  'blog/offline-pomodoro-productivity'
+  'blog/offline-pomodoro-productivity',
+  'blog/local-first-workstation',
+  'blog/data-sovereignty-client-side'
 ];
 
 function generateRoutes() {
@@ -159,7 +161,9 @@ function generateRoutes() {
     'blog/browser-fingerprinting': { title: 'Browser Fingerprinting: How Offline Client-Side Execution Defeats Tracking', desc: 'The era of clearing cookies is over. Explore how aggressive browser fingerprinting tracks users, and how strictly local processing creates an anonymous workspace.' },
     'blog/canvas-api-manipulation': { title: 'The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline', desc: 'Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling heavy offline image manipulations natively.' },
     'blog/psychology-of-typography': { title: 'The Psychology of Typography: How Dummy Text Enhances UI Prototyping', desc: 'Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.' },
-    'blog/offline-pomodoro-productivity': { title: 'Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems', desc: 'The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.' }
+    'blog/offline-pomodoro-productivity': { title: 'Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems', desc: 'The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.' },
+    'blog/local-first-workstation': { title: 'The Complete Local-First Workstation', desc: 'Your browser is powerful enough to handle your entire workflow silently, securely, and natively. Reclaim your digital independence.' },
+    'blog/data-sovereignty-client-side': { title: 'Data Sovereignty and Pure Client-Side Architecture', desc: 'Through client-side tools, we are taking back ownership of our digital labor. Starve the data vacuums and understand local-first ethics.' }
   };
 
   const defaultSeoParagraphs = `

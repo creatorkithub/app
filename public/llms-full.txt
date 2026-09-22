@@ -300,3 +300,11 @@ Eliminating Cloud Latency
 **URL:** https://creatorkithub.org/blog/offline-pomodoro-productivity/
 **Description:** The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management.
 
+### The Complete Local-First Workstation
+**URL:** https://creatorkithub.org/blog/local-first-workstation/
+**Description:** Your browser is powerful enough to handle your entire workflow silently, securely, and natively. Reclaim your digital independence.
+
+### Data Sovereignty and Pure Client-Side Architecture
+**URL:** https://creatorkithub.org/blog/data-sovereignty-client-side/
+**Description:** Through client-side tools, we are taking back ownership of our digital labor. Starve the data vacuums and understand local-first ethics.
+

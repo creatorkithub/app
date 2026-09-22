@@ -32,6 +32,8 @@ Because the application runs entirely in the browser using client-side JavaScrip
 
 ### Blog
 - [Blog Hub](https://creatorkithub.org/blog/): Access our latest privacy and offline security guides.
+- [The Complete Local-First Workstation](https://creatorkithub.org/blog/local-first-workstation/): Your browser is powerful enough to handle your entire workflow silently, securely, and natively. Reclaim your digital independence.
+- [Data Sovereignty and Pure Client-Side Architecture](https://creatorkithub.org/blog/data-sovereignty-client-side/): Through client-side tools, we are taking back ownership of our digital labor. Starve the data vacuums and understand local-first ethics.
 - [Why Offline Tools Matter](https://creatorkithub.org/blog/why-offline-tools-matter/): Why strictly processing your data inside the browser guarantees absolute privacy compared to cloud solutions.
 - [PDF Security Best Practices](https://creatorkithub.org/blog/pdf-security-best-practices/): Exploring the hidden dangers within PDFs and how to sanitize them natively.
 - [Mastering Digital Productivity](https://creatorkithub.org/blog/mastering-productivity/): How minimalist offline tools like screen stickynotes are the key to true desktop focus.

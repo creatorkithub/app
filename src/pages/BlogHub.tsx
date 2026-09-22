@@ -1,5 +1,31 @@
 const articles = [
     {
+        title: 'The Complete Local-First Workstation: Turning Your Browser into a Private Setup',
+        description: 'Your browser is powerful enough to handle your entire workflow silently, securely, and natively. Reclaim your digital independence with local-first utilities.',
+        href: '/blog/local-first-workstation/',
+        date: 'Sep 22, 2026',
+        readTime: '8 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" /><line x1="8" x2="16" y1="21" y2="21" /><line x1="12" x2="12" y1="17" y2="21" /></svg>
+        ),
+        color: 'text-zinc-300',
+        bg: 'bg-zinc-500/10 hover:bg-zinc-500/20',
+        border: 'border-zinc-500/20'
+    },
+    {
+        title: 'Data Sovereignty and the Rise of Pure Client-Side Architecture',
+        description: 'Through client-side tools, we are taking back ownership of our digital labor. Starve the data vacuums and understand why processing locally is the ultimate zero-trust setup.',
+        href: '/blog/data-sovereignty-client-side/',
+        date: 'Sep 22, 2026',
+        readTime: '9 min read',
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><circle cx="12" cy="11" r="1" /></svg>
+        ),
+        color: 'text-rose-400',
+        bg: 'bg-rose-500/10 hover:bg-rose-500/20',
+        border: 'border-rose-500/20'
+    },
+    {
         title: 'The Psychology of Typography: How Dummy Text Enhances UI Prototyping',
         description: 'Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts.',
         href: '/blog/psychology-of-typography/',
