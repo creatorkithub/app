@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function PrivaShieldGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -75,6 +77,9 @@ export default function PrivaShieldGuide({ onNavigate }: { onNavigate: (path: st
                         <p>The digital age firmly demands robust personal accountability regarding data emission. We simply cannot blindly trust massive software corporations to altruistically protect our intimate metadata. By aggressively seizing control through localized, privacy-first web utilities, you decisively lock down your digital footprint, fiercely protecting everything from your physical safety to your peace of mind.</p>
 
                     </article>
+                    
+                    <BlogSchema title="The Hidden Threat in Your Photos: A Complete Guide to EXIF Data Stripping" description="Before you casually upload that seemingly harmless photo of your new puppy to social media, you might be unknowingly broadcasting your exact home address to the entire internet. Here is how to stop it completely." datePublished="Sep 11, 2026" url="/blog/privashield-guide" />
+                    <AuthorBio />
                     <BlogFooter tags={['Privacy', 'Security', 'EXIF', 'Data Privacy']} currentPath="/blog/privashield-guide" onNavigate={onNavigate} />
                 </div>
 

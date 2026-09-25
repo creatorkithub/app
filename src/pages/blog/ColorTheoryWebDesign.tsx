@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function ColorTheoryWebDesign({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -72,6 +74,9 @@ export default function ColorTheoryWebDesign({ onNavigate }: { onNavigate: (path
 
                         <p>Stop agonizing over the color wheel. Stop painstakingly injecting random contrast checks that yield terrible, muddy results. Look toward photography, cinematography, and nature. By harnessing local, strictly offline algorithms, you can effortlessly extract the harmonic brilliance inherently embedded within the world's best visuals and seamlessly inject that exact magic directly into your code.</p>
                     </article>
+                    
+                    <BlogSchema title="Color Extraction Magic: Building Harmonious Palettes directly from Images" description="Designing a beautiful UI often starts with a solitary piece of inspiration photography. Learn how to algorithmically extract dominant and harmonious hex codes straight from visual media using strictly offline client-side tools." datePublished="Sep 9, 2026" url="/blog/color-theory-web-design" />
+                    <AuthorBio />
                     <BlogFooter tags={['Design', 'Color Theory', 'UI/UX']} currentPath="/blog/color-theory-web-design" onNavigate={onNavigate} />
                 </div>
 

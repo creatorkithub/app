@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function TextEncryptionPrivacy({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -66,6 +68,9 @@ export default function TextEncryptionPrivacy({ onNavigate }: { onNavigate: (pat
 
                         <p>It is vastly superior to operate under the incredibly safe assumption that every network, every logging system, and every commercial database is currently actively compromised. When you start operating offensively rather than entirely defensively-when you encrypt your secrets at the exact source level before they ever touch an active HTTP packet-you fundamentally reclaim true ownership of your critical data infrastructure. With incredibly robust offline browser utilities dynamically facilitating seamless localized encryption, there is absolutely zero excuse for passing raw credentials blindly across the precarious void of the modern internet. Security begins and strictly ends localized on your own hardware.</p>
                     </article>
+                    
+                    <BlogSchema title="Data Privacy in the Digital Age: Understanding Client-Side Text Encryption" description="Sending passwords or API keys over instant messaging apps is incredibly risky. Learn how zero-knowledge client-side encryption safely bridges the communication gap without compromising sensitive data." datePublished="Sep 9, 2026" url="/blog/text-encryption-privacy" />
+                    <AuthorBio />
                     <BlogFooter tags={['Privacy', 'Cryptography', 'Security']} currentPath="/blog/text-encryption-privacy" onNavigate={onNavigate} />
                 </div>
 

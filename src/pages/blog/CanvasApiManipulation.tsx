@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function CanvasApiManipulation({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -62,6 +64,9 @@ export default function CanvasApiManipulation({ onNavigate }: { onNavigate: (pat
 
                     </article>
 
+                    
+                    <BlogSchema title="The Evolution of the Canvas API: Engineering Complex Image Manipulation Offline" description="Discover how HTML5 Canvas combined with WebAssembly engines bypassed the traditional server model, enabling designers to perform heavy image manipulations natively in their browsers." datePublished="Sep 18, 2026" url="/blog/canvas-api-manipulation" />
+                    <AuthorBio />
                     <BlogFooter tags={['WebAssembly', 'HTML5 Canvas', 'Image Processing', 'Frontend Architecture']} currentPath="/blog/canvas-api-manipulation" onNavigate={onNavigate} />
                 </div>
 

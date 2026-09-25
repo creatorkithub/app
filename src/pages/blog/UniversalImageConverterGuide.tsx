@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function UniversalImageConverterGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -100,6 +102,9 @@ export default function UniversalImageConverterGuide({ onNavigate }: { onNavigat
                         <p>Take charge of your image assets today. Explore the rich suite of secure tools within the <button onClick={() => onNavigate('/blog/')} className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-900">Blog Hub</button> and upgrade you productivity natively inside your browser.</p>
 
                     </article>
+                    
+                    <BlogSchema title="The Ultimate Guide to Universal Image Conversion: Preserving Quality and Privacy" description="Formats like HEIC and WebP rule the modern web, but interoperability still demands a solid image converter. Here is why doing it locally protects your privacy while delivering superior quality." datePublished="Sep 12, 2026" url="/blog/universal-image-converter-guide" />
+                    <AuthorBio />
                     <BlogFooter tags={['Privacy', 'Image Processing', 'Workflow']} currentPath="/blog/universal-image-converter-guide" onNavigate={onNavigate} />
                 </div>
 

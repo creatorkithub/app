@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function SafeZoneGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -69,6 +71,9 @@ export default function SafeZoneGuide({ onNavigate }: { onNavigate: (path: strin
                         <p>Stop aggressively guessing directly blindly heavily. Start employing strict offline metric calculators fully entirely to guide your video structural positioning intelligently effectively extensively explicitly securely seamlessly deeply precisely.</p>
 
                     </article>
+                    
+                    <BlogSchema title="Mastering Social Media Video Dimensions: A Deep Dive into Safe Zones" description="Nothing severely ruins a highly viral video faster than having your crucial text caption tragically obscured entirely by a massive follow button or a terribly placed comment icon." datePublished="Sep 11, 2026" url="/blog/safe-zone-guide" />
+                    <AuthorBio />
                     <BlogFooter tags={['Video Editing', 'Social Media', 'UI/UX']} currentPath="/blog/safe-zone-guide" onNavigate={onNavigate} />
                 </div>
 

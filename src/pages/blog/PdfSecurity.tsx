@@ -1,6 +1,8 @@
 
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -78,6 +80,9 @@ export default function PdfSecurity({ onNavigate }: { onNavigate: (path: string)
                         <p>Solid document security really comes down to two simple habits: clearing out the invisible junk hiding under the surface, and asserting ownership over the visible pages - all while doing the work safely on your own private device.</p>
 
                     </article>
+                    
+                    <BlogSchema title="A Simple Guide to PDF Security and Scrubbing" description="You might assume your PDF is completely safe to email out, but there is usually a lot of invisible data hiding beneath the surface. Here's how to properly clean it up." datePublished="Sep 7, 2026" url="/blog/pdf-security-best-practices" />
+                    <AuthorBio />
                     <BlogFooter tags={['PDF', 'Metadata', 'Security']} currentPath="/blog/pdf-security-best-practices" onNavigate={onNavigate} />
                 </div>
 

@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function A11yScorecardGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -79,6 +81,9 @@ export default function A11yScorecardGuide({ onNavigate }: { onNavigate: (path: 
                         <p>It fundamentally boils down to deep digital empathy. Software is the primary bridge connecting humanity today. By prioritizing rigorous contrast checking explicitly through lightning-fast offline tools, we ensure that the digital bridges we passionately construct remain wide open, welcoming, and entirely accessible to everyone on earth.</p>
 
                     </article>
+                    
+                    <BlogSchema title="The Complete Guide to Web Accessibility and Color Contrast" description="Designing a beautiful UI entails more than just aesthetics. It is heavily about ensuring every single user, regardless of their visual capabilities, can smoothly navigate and digest your content." datePublished="Sep 11, 2026" url="/blog/a11y-scorecard-guide" />
+                    <AuthorBio />
                     <BlogFooter tags={['Accessibility', 'UI/UX', 'Design', 'WCAG']} currentPath="/blog/a11y-scorecard-guide" onNavigate={onNavigate} />
                 </div>
 

@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function TypographyDummyText({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -76,6 +78,9 @@ export default function TypographyDummyText({ onNavigate }: { onNavigate: (path:
                         <p>Ultimately, dummy text is not just a placeholder; it is an active diagnostic tool. Next time you build a layout, resist the urge to drop in real data. Relish the nonsense, focus on the geometry, and let the typography speak purely through its form.</p>
 
                     </article>
+                    
+                    <BlogSchema title="The Psychology of Typography: How Dummy Text Enhances UI Prototyping" description="Real text introduces bias. Discover how using generated dummy text strips away meaning to reveal the true visual hierarchy of your design layouts." datePublished="Sep 20, 2026" url="/blog/psychology-of-typography" />
+                    <AuthorBio />
                     <BlogFooter tags={['Typography', 'Design', 'Prototyping']} currentPath="/blog/psychology-of-typography" onNavigate={onNavigate} />
                 </div>
 

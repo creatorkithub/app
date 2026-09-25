@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function MasteringTypography({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -68,6 +70,9 @@ export default function MasteringTypography({ onNavigate }: { onNavigate: (path:
 
                         <p>In conclusion, never let unpolished client copy dictate early-stage structural wireframes. Defend your visual layouts aggressively. Deploy sophisticated, entirely client-side Lorem Ipsum to carefully mask semantic distractions, heavily stress-test responsive overflow behavior in brutal conditions, and firmly guide the feedback dialogue directly back to overarching visual geometry and deeply rooted user experience flow.</p>
                     </article>
+                    
+                    <BlogSchema title="The Art of Lorem Ipsum: How to Use Mock Text for Better UI Design Prototyping" description="Using real copy during early layout phases heavily biases spatial assessment. Discover why utilizing robust offline dummy text generators deeply enhances structural wireframing and enforces robust responsive design architecture." datePublished="Sep 9, 2026" url="/blog/mastering-typography" />
+                    <AuthorBio />
                     <BlogFooter tags={['Typography', 'Design Systems', 'CSS']} currentPath="/blog/mastering-typography" onNavigate={onNavigate} />
                 </div>
 

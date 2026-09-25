@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function FutureOfOfflinePwas({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -75,6 +77,9 @@ export default function FutureOfOfflinePwas({ onNavigate }: { onNavigate: (path:
 
                     </article>
 
+                    
+                    <BlogSchema title="The Future of Offline PWAs: Bridging the Gap Between Web and Native Experiences" description="The era of constantly loading browsers and internet-dependent tools is fading. Progressive Web Apps (PWAs) are bringing desktop-class power, robust offline capabilities, and uncompromised speed directly into your browser window." datePublished="Sep 15, 2026" url="/blog/future-offline-pwas" />
+                    <AuthorBio />
                     <BlogFooter tags={['Web Architecture', 'PWAs', 'Offline Development', 'Performance']} currentPath="/blog/future-offline-pwas" onNavigate={onNavigate} />
                 </div>
 

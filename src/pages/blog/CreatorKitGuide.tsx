@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function CreatorKitGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -76,6 +78,9 @@ export default function CreatorKitGuide({ onNavigate }: { onNavigate: (path: str
                         <p>The next time you quickly search Google for a "free converter" and find a site asking you to upload your files, pause and consider the implications. You have alternatives. The tools you need are right here on CreatorKitHub, running silently, securely, and brilliantly fast, exactly where they belong: securely on your own device.</p>
 
                     </article>
+                    
+                    <BlogSchema title="The Comprehensive Guide to CreatorKitHub Tools" description="Our ultimate guide to maximizing your offline, client-side digital workflows. Explore how each tool inside the Hub is engineered to guarantee 100% privacy while radically speeding up productivity." datePublished="Sep 8, 2026" url="/blog/creator-kit-guide" />
+                    <AuthorBio />
                     <BlogFooter tags={['Tools', 'Workflow', 'Developer']} currentPath="/blog/creator-kit-guide" onNavigate={onNavigate} />
                 </div>
 

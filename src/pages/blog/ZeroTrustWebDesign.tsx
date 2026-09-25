@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function ZeroTrustWebDesign({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -75,6 +77,9 @@ export default function ZeroTrustWebDesign({ onNavigate }: { onNavigate: (path: 
 
                     </article>
 
+                    
+                    <BlogSchema title="Designing for a Zero-Trust World: Why Client-Side Tools Are The Gold Standard for Security" description="As high-profile data breaches become the accepted norm of the modern web, relying on traditional cloud safety measures is profoundly inadequate. Explore how radical zero-trust architectures and isolated client-side processing restore true security." datePublished="Sep 15, 2026" url="/blog/zero-trust-web-design" />
+                    <AuthorBio />
                     <BlogFooter tags={['Cybersecurity', 'Privacy', 'Offline Architecture', 'Zero-Trust']} currentPath="/blog/zero-trust-web-design" onNavigate={onNavigate} />
                 </div>
 

@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function OfflinePomodoro({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -74,6 +76,9 @@ export default function OfflinePomodoro({ onNavigate }: { onNavigate: (path: str
                         <p>When the network is severed and the distractions are neutralized, you will be shocked by how much you can accomplish. Reclaim your focus, protect your privacy, and let the local-first revolution enhance your best work.</p>
 
                     </article>
+                    
+                    <BlogSchema title="Local-First Productivity: Reclaiming Focus with Offline Pomodoro Systems" description="The modern workplace is an endless cycle of digital interruptions. Learn why true deep work requires disconnecting from cloud-sync apps and embracing offline, local-first time management." datePublished="Sep 20, 2026" url="/blog/offline-pomodoro-productivity" />
+                    <AuthorBio />
                     <BlogFooter tags={['Productivity', 'Offline', 'Focus']} currentPath="/blog/offline-pomodoro-productivity" onNavigate={onNavigate} />
                 </div>
 

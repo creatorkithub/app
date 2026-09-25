@@ -1,6 +1,8 @@
 import { Cpu, ShieldCheck, Zap, Globe, Lock } from 'lucide-react';
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -110,7 +112,10 @@ export default function WebAssemblyOfflineFuture({ onNavigate }: { onNavigate: (
                 </aside>
             </div>
 
-            <BlogFooter tags={['Architecture', 'Privacy', 'Offline']} currentPath="/blog/webassembly-offline-future" onNavigate={onNavigate} />
+            
+                    <BlogSchema title="The Rise of Offline WebAssembly Tools: Why Browser-Based Apps are Replacing Desktop Software" description="We are witnessing a massive paradigm shift. The days of downloading heavy, proprietary software just to convert an image or edit a PDF are ending. Modern browsers, supercharged by WebAssembly and local-first computing, are rapidly becoming the only operating system you will ever need." datePublished="Sep 14, 2026" url="/blog/webassembly-offline-future" />
+                    <AuthorBio />
+                    <BlogFooter tags={['Architecture', 'Privacy', 'Offline']} currentPath="/blog/webassembly-offline-future" onNavigate={onNavigate} />
         </div >
     );
 }

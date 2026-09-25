@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function MasteringProductivity({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -86,6 +88,10 @@ export default function MasteringProductivity({ onNavigate }: { onNavigate: (pat
                         <p>Embracing these simple, spatial, and inherently private tools allows us to reclaim our digital space. By stripping away unnecessary features, we paradoxically enhance our ability to focus, executing tasks with unprecedented clarity on the Windows platform and beyond.</p>
 
                     </article>
+                    
+                    <BlogSchema title="Mastering Digital Productivity with Stickynotes on Windows" description="In an age of endless digital distraction, simple offline tools like screen stickynotes are the key to true focus.
+                            Discover how integrating minimalist tools can radically improve your daily desktop workflow." datePublished="Sep 8, 2026" url="/blog/mastering-productivity" />
+                    <AuthorBio />
                     <BlogFooter tags={['Productivity', 'Focus', 'Windows']} currentPath="/blog/mastering-productivity" onNavigate={onNavigate} />
                 </div>
 

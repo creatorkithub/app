@@ -1,5 +1,7 @@
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function DataSovereigntyClientSide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -99,6 +101,9 @@ export default function DataSovereigntyClientSide({ onNavigate }: { onNavigate: 
                         <p>When you use offline tools, you are voting for a more decentralized internet. You are proving that we do not need to rely on massive, invasive tech monopolies to accomplish basic digital tasks. As we move closer to 2030, strict data sovereignty will shift from a luxury to an absolute necessity. Embrace client-side processing, take ownership of your digital lifecycle, and shut the door on unwarranted cloud surveillance.</p>
 
                     </article>
+                    
+                    <BlogSchema title="Data Sovereignty and the Rise of Pure Client-Side Architecture" description="The internet's original promise was decentralization. Now, through client-side tools, we are finally taking back ownership of our digital labor from massive centralized data silos. Here is why the shift matters." datePublished="Sep 22, 2026" url="/blog/data-sovereignty-client-side" />
+                    <AuthorBio />
                     <BlogFooter tags={['Privacy', 'Data Sovereignty', 'Security', 'Zero-Trust']} currentPath="/blog/data-sovereignty-client-side" onNavigate={onNavigate} />
                 </div>
 

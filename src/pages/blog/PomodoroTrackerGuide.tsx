@@ -2,6 +2,8 @@
 import { RefreshCw, Target, CheckCircle } from 'lucide-react';
 import { BlogSidebar } from '../../components/BlogSidebar';
 import { BlogFooter } from '../../components/BlogFooter';
+import { AuthorBio } from '../../components/AuthorBio';
+import { BlogSchema } from '../../components/BlogSchema';
 
 export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path: string) => void }) {
     return (
@@ -124,7 +126,10 @@ export default function PomodoroTrackerGuide({ onNavigate }: { onNavigate: (path
                 </aside>
             </div>
 
-            <BlogFooter tags={['Productivity', 'Focus', 'Timer']} currentPath="/blog/pomodoro-tracker-guide" onNavigate={onNavigate} />
+            
+                    <BlogSchema title="Mastering the Pomodoro Technique: Why an Offline Browser Timer is the Ultimate Productivity Hack" description="If you find yourself constantly checking tabs, losing focus, and wondering where your hours went, it is time to rethink how you track time. The standard remote web apps are full of distractions. You need an isolated, hyper-focused tool that respects your privacy and works without a server connection." datePublished="Sep 14, 2026" url="/blog/pomodoro-tracker-guide" />
+                    <AuthorBio />
+                    <BlogFooter tags={['Productivity', 'Focus', 'Timer']} currentPath="/blog/pomodoro-tracker-guide" onNavigate={onNavigate} />
         </div >
     );
 }
