@@ -54,7 +54,7 @@ export default function RemoveReorderPdf() {
                 canvas.height = scaledViewport.height;
 
                 if (context) {
-                    await page.render({ canvasContext: context, viewport: scaledViewport }).promise;
+                    await page.render({ canvasContext: context, viewport: scaledViewport, canvas: canvas as any }).promise;
 
                     const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/webp'));
                     if (blob) {

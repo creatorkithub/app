@@ -63,7 +63,7 @@ export default function PdfToJpg() {
                 canvas.height = viewport.height;
 
                 if (context) {
-                    await page.render({ canvasContext: context, viewport }).promise;
+                    await page.render({ canvasContext: context, viewport, canvas: canvas as any }).promise;
 
                     const blob = await new Promise<Blob | null>((resolve) =>
                         canvas.toBlob(resolve, 'image/jpeg', parseFloat(extractQuality))

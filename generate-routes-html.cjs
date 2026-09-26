@@ -75,6 +75,34 @@ const routes = [
   'blog/data-sovereignty-client-side'
 ];
 
+function getBlogContent(route) {
+  if (!route.startsWith('blog/') || route === 'blog') return null;
+  try {
+    const appTsx = fs.readFileSync(path.join(__dirname, 'src', 'App.tsx'), 'utf-8');
+    const routeCheckRegex = new RegExp("activePath === '/" + route + "'\\) return <([A-Za-z0-9_]+)");
+    const componentMatch = appTsx.match(routeCheckRegex);
+    if (componentMatch) {
+      const componentName = componentMatch[1];
+      const importRegex = new RegExp("const " + componentName + " = lazy\\(\\(\\) => import\\('\\./pages/blog/([^']+)'\\)\\);");
+      const importMatch = appTsx.match(importRegex);
+      if (importMatch) {
+        const tsxPath = path.join(__dirname, 'src', 'pages', 'blog', importMatch[1] + '.tsx');
+        if (fs.existsSync(tsxPath)) {
+          const content = fs.readFileSync(tsxPath, 'utf-8');
+          const articleMatch = content.match(/<article[^>]*>([\s\S]*?)<\/article>/);
+          if (articleMatch) {
+            let cleanHtml = articleMatch[1].replace(/className="[^"]*"/g, '').replace(/onClick=\{[^}]*\}/g, '');
+            return `<article>${cleanHtml}</article>`;
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.error("Error reading blog content for SEO:", route, e);
+  }
+  return null;
+}
+
 function generateRoutes() {
   const indexPath = path.join(DIST_DIR, 'index.html');
 
@@ -314,7 +342,7 @@ function generateRoutes() {
 
     const h1TitleTag = `<h1>${newTitle}</h1>`;
     const h2DescTag = `<h2>${newDescription}</h2>`;
-    const activeSeoParagraphs = seoContentMap[canonicalRoute] || defaultSeoParagraphs;
+    const activeSeoParagraphs = seoContentMap[canonicalRoute] || getBlogContent(canonicalRoute) || defaultSeoParagraphs;
     const seoRootContent = `<div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;" aria-hidden="true">\n      ${h1TitleTag}\n      ${h2DescTag}\n      ${internalLinksHtml}\n      ${activeSeoParagraphs}\n    </div>`;
 
     customHtml = customHtml.split(`<title>${baseTitle}</title>`).join(`<title>${newTitle}</title>`);

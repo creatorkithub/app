@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAdContext } from '../contexts/AdContext';
 import { ShieldAlert } from 'lucide-react';
 
